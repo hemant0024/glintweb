@@ -646,10 +646,10 @@
       <span style="color:var(--ink3); margin-left:8px;">© 2026</span>
     </div>
     <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Support</a>
-      <a href="https://github.com/hemant0024/glintweb">GitHub</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:khanna.hemant3@gmail.com">Support</a>
+      <a href="https://github.com/hemant0024/glintweb" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
@@ -674,29 +674,70 @@
     if (!form) return;
     var input = document.getElementById('waitlist-email');
     var btn = document.getElementById('waitlist-submit');
+    var btnLabel = btn.querySelector('span');
     var status = document.getElementById('waitlist-status');
     var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    var SUPABASE_URL = 'https://qtkzacjyuasglgknxghg.supabase.co';
+    var SUPABASE_ANON_KEY = 'sb_publishable_K4ZFQrnj4R7ILk7cuPNO7w_Fi17-qK3';
+
+    function setStatus(kind, msg) {
+      status.className = 'waitlist-status' + (kind ? ' ' + kind : '');
+      status.textContent = msg || '';
+    }
+
+    function markJoined(email) {
+      btn.disabled = true;
+      btnLabel.textContent = 'You’re in';
+      input.value = '';
+      input.disabled = true;
+      setStatus('ok', 'Thanks — we’ll be in touch at ' + email + '.');
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var email = (input.value || '').trim();
-      status.className = 'waitlist-status';
       if (!emailRe.test(email)) {
-        status.textContent = 'That doesn’t look like a valid email.';
-        status.classList.add('err');
+        setStatus('err', 'That doesn’t look like a valid email.');
         input.focus();
         return;
       }
-      if (window.posthog) {
-        posthog.identify(email, { email: email });
-        posthog.capture('waitlist_joined', { email: email, source: 'landing_cta' });
-      }
+
       btn.disabled = true;
-      btn.querySelector('span').textContent = 'You’re in';
-      input.value = '';
-      input.disabled = true;
-      status.textContent = 'Thanks — we’ll be in touch at ' + email + '.';
-      status.classList.add('ok');
+      btnLabel.textContent = 'Joining…';
+      setStatus('', '');
+
+      fetch(SUPABASE_URL + '/rest/v1/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          email: email,
+          source: 'landing_cta',
+          user_agent: navigator.userAgent
+        })
+      }).then(function (res) {
+        if (res.status === 201 || res.status === 204) {
+          if (window.posthog) {
+            posthog.identify(email, { email: email });
+            posthog.capture('waitlist_joined', { email: email, source: 'landing_cta' });
+          }
+          markJoined(email);
+        } else if (res.status === 409) {
+          markJoined(email);
+        } else {
+          return res.text().then(function (t) { throw new Error(t || ('HTTP ' + res.status)); });
+        }
+      }).catch(function (err) {
+        console.error('waitlist error', err);
+        btn.disabled = false;
+        btnLabel.textContent = 'Join waitlist';
+        setStatus('err', 'Something went wrong. Try again in a sec.');
+      });
     });
   })();
 </script>
