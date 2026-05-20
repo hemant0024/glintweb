@@ -303,6 +303,46 @@
   .cta-strip h2 { margin: 0 0 10px; font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -0.6px; font-weight: 600; }
   .cta-strip p { color: var(--ink2); margin: 0 0 24px; }
 
+  /* Waitlist */
+  .waitlist {
+    display: flex; gap: 8px; max-width: 460px; margin: 8px auto 16px;
+    background: var(--bg2); border: 1px solid var(--line2);
+    border-radius: 12px; padding: 6px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .waitlist:focus-within {
+    border-color: rgba(255,107,71,0.55);
+    box-shadow: 0 0 0 4px rgba(255,107,71,0.10);
+  }
+  .waitlist input {
+    flex: 1; background: transparent; border: 0; outline: 0;
+    color: var(--ink); font: inherit; font-size: 15px; padding: 10px 12px;
+  }
+  .waitlist input::placeholder { color: var(--ink3); }
+  .waitlist button {
+    border: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: 14.5px;
+    padding: 10px 18px; border-radius: 8px;
+    background: var(--primary); color: white;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .waitlist button:hover { background: #FF7C5C; transform: translateY(-1px); }
+  .waitlist button:disabled { opacity: 0.6; cursor: default; transform: none; }
+  .waitlist-status {
+    min-height: 20px; font-size: 13px; color: var(--ink3);
+    text-align: center; margin-top: 6px;
+  }
+  .waitlist-status.ok { color: var(--success); }
+  .waitlist-status.err { color: #E84545; }
+  .divider-or {
+    display: flex; align-items: center; gap: 12px; max-width: 460px;
+    margin: 18px auto; color: var(--ink3); font-size: 12px;
+    font-family: 'JetBrains Mono', monospace; letter-spacing: 2px;
+  }
+  .divider-or::before, .divider-or::after {
+    content: ""; flex: 1; height: 1px; background: var(--line);
+  }
+
   /* Footer */
   footer {
     border-top: 1px solid var(--line);
@@ -498,7 +538,16 @@
 <div id="download" class="container">
   <div class="cta-strip">
     <h2>Stop overthinking the next reply</h2>
-    <p>Glint is free to download. Five replies a day, on the house.</p>
+    <p>Join the waitlist — we&#39;ll email you the moment Glint goes live.</p>
+    <form class="waitlist" id="waitlist-form" novalidate>
+      <input type="email" name="email" id="waitlist-email" placeholder="you@example.com" autocomplete="email" required />
+      <button type="submit" id="waitlist-submit">
+        <span>Join waitlist</span>
+        <span aria-hidden="true">→</span>
+      </button>
+    </form>
+    <div class="waitlist-status" id="waitlist-status" aria-live="polite"></div>
+    <div class="divider-or">OR</div>
     <div class="cta-row" style="justify-content:center;">
       <a href="#" class="btn btn-primary" data-ph-event="download_clicked" data-ph-platform="ios">Download for iOS</a>
       <a href="#" class="btn btn-ghost" data-ph-event="download_clicked" data-ph-platform="android">Download for Android</a>
@@ -536,6 +585,37 @@
     }
     posthog.capture(name, props);
   });
+
+  (function () {
+    var form = document.getElementById('waitlist-form');
+    if (!form) return;
+    var input = document.getElementById('waitlist-email');
+    var btn = document.getElementById('waitlist-submit');
+    var status = document.getElementById('waitlist-status');
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (input.value || '').trim();
+      status.className = 'waitlist-status';
+      if (!emailRe.test(email)) {
+        status.textContent = 'That doesn’t look like a valid email.';
+        status.classList.add('err');
+        input.focus();
+        return;
+      }
+      if (window.posthog) {
+        posthog.identify(email, { email: email });
+        posthog.capture('waitlist_joined', { email: email, source: 'landing_cta' });
+      }
+      btn.disabled = true;
+      btn.querySelector('span').textContent = 'You’re in';
+      input.value = '';
+      input.disabled = true;
+      status.textContent = 'Thanks — we’ll be in touch at ' + email + '.';
+      status.classList.add('ok');
+    });
+  })();
 </script>
 
 </body>
