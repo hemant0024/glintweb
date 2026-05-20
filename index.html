@@ -489,7 +489,7 @@
           <li>Profile audit (photos + bio)</li>
           <li>Priority responses</li>
         </ul>
-        <a href="#download" class="btn btn-primary">Try Pro free for 7 days</a>
+        <a href="#download" class="btn btn-primary" data-ph-event="pricing_pro_clicked">Try Pro free for 7 days</a>
       </div>
     </div>
   </div>
@@ -500,8 +500,8 @@
     <h2>Stop overthinking the next reply</h2>
     <p>Glint is free to download. Five replies a day, on the house.</p>
     <div class="cta-row" style="justify-content:center;">
-      <a href="#" class="btn btn-primary">Download for iOS</a>
-      <a href="#" class="btn btn-ghost">Download for Android</a>
+      <a href="#" class="btn btn-primary" data-ph-event="download_clicked" data-ph-platform="ios">Download for iOS</a>
+      <a href="#" class="btn btn-ghost" data-ph-event="download_clicked" data-ph-platform="android">Download for Android</a>
     </div>
   </div>
 </div>
@@ -521,6 +521,22 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ph-event]');
+    if (!el || !window.posthog) return;
+    var name = el.getAttribute('data-ph-event');
+    var props = {};
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (a.name.indexOf('data-ph-') === 0 && a.name !== 'data-ph-event') {
+        props[a.name.slice('data-ph-'.length)] = a.value;
+      }
+    }
+    posthog.capture(name, props);
+  });
+</script>
 
 </body>
 </html>
