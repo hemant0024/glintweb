@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hemant0024.github.io/glintweb/sitemap.xml
+Sitemap: https://glintapp.app/sitemap.xml
