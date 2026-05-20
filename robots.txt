@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hemant0024.github.io/glintweb/sitemap.xml
