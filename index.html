@@ -32,7 +32,12 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF6B47'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://us-assets.i.posthog.com" crossorigin />
+<link rel="dns-prefetch" href="https://qtkzacjyuasglgknxghg.supabase.co" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="prefetch" href="/hinge-replies" />
+<link rel="prefetch" href="/tinder-openers" />
+<link rel="prefetch" href="/dating-app-rizz" />
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -463,6 +468,26 @@
     border-radius: 12px; padding: 6px;
     transition: border-color .2s ease, box-shadow .2s ease;
   }
+  .waitlist-hero {
+    margin: 28px 0 12px;
+    max-width: 480px;
+  }
+  .hero-secondary {
+    margin: 24px 0 0;
+    font-size: 14px;
+    color: var(--ink3);
+  }
+  .hero-secondary a {
+    color: var(--ink2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line2);
+    padding-bottom: 2px;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .hero-secondary a:hover {
+    color: var(--ink);
+    border-color: var(--ink3);
+  }
   .waitlist:focus-within {
     border-color: rgba(255,107,71,0.55);
     box-shadow: 0 0 0 4px rgba(255,107,71,0.10);
@@ -531,17 +556,22 @@
       <span class="eyebrow"><span class="pulse"></span> AI dating wingman</span>
       <h1>Better replies. <span class="accent">In seconds.</span></h1>
       <p class="lede">
-        Glint reads your Hinge, Tinder or Bumble conversation and writes three replies that sound like you — only sharper. Pick a tone, pick a line, send it.
+        Paste any Hinge, Tinder, or Bumble chat. Pick a tone. Get three replies that sound like you — only sharper.
       </p>
-      <div class="cta-row">
-        <a href="#download" class="btn btn-primary">Join the waitlist →</a>
-        <a href="#how" class="btn btn-ghost">See how it works</a>
-      </div>
+      <form class="waitlist waitlist-hero" id="waitlist-form-hero" novalidate>
+        <input type="email" name="email" class="waitlist-email" placeholder="you@example.com" autocomplete="email" required aria-label="Email for waitlist" />
+        <button type="submit" class="waitlist-submit">
+          <span>Join waitlist</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+      <div class="waitlist-status" aria-live="polite"></div>
       <div class="meta-line">
-        <span>Launching soon</span>
-        <span>iOS &amp; Android</span>
-        <span>5 free replies a day</span>
+        <span>Free to start</span>
+        <span>No credit card</span>
+        <span>iOS &amp; Android soon</span>
       </div>
+      <p class="hero-secondary"><a href="#how">See how it works ↓</a></p>
     </div>
 
     <div class="phone" aria-hidden="true">
@@ -733,14 +763,14 @@
   <div class="cta-strip">
     <h2>Stop overthinking the next reply</h2>
     <p>Join the waitlist — we&#39;ll email you the moment Glint goes live.</p>
-    <form class="waitlist" id="waitlist-form" novalidate>
-      <input type="email" name="email" id="waitlist-email" placeholder="you@example.com" autocomplete="email" required />
-      <button type="submit" id="waitlist-submit">
+    <form class="waitlist" novalidate>
+      <input type="email" name="email" class="waitlist-email" placeholder="you@example.com" autocomplete="email" required aria-label="Email for waitlist" />
+      <button type="submit" class="waitlist-submit">
         <span>Join waitlist</span>
         <span aria-hidden="true">→</span>
       </button>
     </form>
-    <div class="waitlist-status" id="waitlist-status" aria-live="polite"></div>
+    <div class="waitlist-status" aria-live="polite"></div>
   </div>
 </div>
 
@@ -805,73 +835,72 @@
   });
 
   (function () {
-    var form = document.getElementById('waitlist-form');
-    if (!form) return;
-    var input = document.getElementById('waitlist-email');
-    var btn = document.getElementById('waitlist-submit');
-    var btnLabel = btn.querySelector('span');
-    var status = document.getElementById('waitlist-status');
+    var forms = document.querySelectorAll('form.waitlist');
+    if (!forms.length) return;
     var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     var SUPABASE_URL = 'https://qtkzacjyuasglgknxghg.supabase.co';
     var SUPABASE_ANON_KEY = 'sb_publishable_K4ZFQrnj4R7ILk7cuPNO7w_Fi17-qK3';
 
-    function setStatus(kind, msg) {
-      status.className = 'waitlist-status' + (kind ? ' ' + kind : '');
-      status.textContent = msg || '';
-    }
+    forms.forEach(function (form) {
+      var input = form.querySelector('.waitlist-email');
+      var btn = form.querySelector('.waitlist-submit');
+      var btnLabel = btn.querySelector('span');
+      var status = form.parentNode.querySelector('.waitlist-status') || form.nextElementSibling;
+      var source = form.classList.contains('waitlist-hero') ? 'landing_hero' : 'landing_cta';
 
-    function markJoined(email) {
-      btn.disabled = true;
-      btnLabel.textContent = 'You’re in';
-      input.value = '';
-      input.disabled = true;
-      setStatus('ok', 'Thanks — we’ll be in touch at ' + email + '.');
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = (input.value || '').trim();
-      if (!emailRe.test(email)) {
-        setStatus('err', 'That doesn’t look like a valid email.');
-        input.focus();
-        return;
+      function setStatus(kind, msg) {
+        if (!status) return;
+        status.className = 'waitlist-status' + (kind ? ' ' + kind : '');
+        status.textContent = msg || '';
       }
 
-      btn.disabled = true;
-      btnLabel.textContent = 'Joining…';
-      setStatus('', '');
+      function markJoined(email) {
+        btn.disabled = true;
+        btnLabel.textContent = 'You’re in';
+        input.value = '';
+        input.disabled = true;
+        setStatus('ok', 'Thanks — we’ll email you at ' + email + '.');
+      }
 
-      fetch(SUPABASE_URL + '/rest/v1/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify({
-          email: email,
-          source: 'landing_cta',
-          user_agent: navigator.userAgent
-        })
-      }).then(function (res) {
-        if (res.status === 201 || res.status === 204) {
-          if (window.posthog) {
-            posthog.identify(email, { email: email });
-            posthog.capture('waitlist_joined', { email: email, source: 'landing_cta' });
-          }
-          markJoined(email);
-        } else if (res.status === 409) {
-          markJoined(email);
-        } else {
-          return res.text().then(function (t) { throw new Error(t || ('HTTP ' + res.status)); });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (input.value || '').trim();
+        if (!emailRe.test(email)) {
+          setStatus('err', 'That doesn’t look like a valid email.');
+          input.focus();
+          return;
         }
-      }).catch(function (err) {
-        console.error('waitlist error', err);
-        btn.disabled = false;
-        btnLabel.textContent = 'Join waitlist';
-        setStatus('err', 'Something went wrong. Try again in a sec.');
+        btn.disabled = true;
+        btnLabel.textContent = 'Joining…';
+        setStatus('', '');
+
+        fetch(SUPABASE_URL + '/rest/v1/waitlist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email: email, source: source, user_agent: navigator.userAgent })
+        }).then(function (res) {
+          if (res.status === 201 || res.status === 204) {
+            if (window.posthog) {
+              posthog.identify(email, { email: email });
+              posthog.capture('waitlist_joined', { email: email, source: source });
+            }
+            markJoined(email);
+          } else if (res.status === 409) {
+            markJoined(email);
+          } else {
+            return res.text().then(function (t) { throw new Error(t || ('HTTP ' + res.status)); });
+          }
+        }).catch(function (err) {
+          console.error('waitlist error', err);
+          btn.disabled = false;
+          btnLabel.textContent = 'Join waitlist';
+          setStatus('err', 'Something went wrong. Try again in a sec.');
+        });
       });
     });
   })();
