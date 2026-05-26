@@ -71,17 +71,37 @@
         {
           "@type": "Question",
           "name": "What is Glint?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Glint is an AI dating assistant. Paste a chat from Hinge, Tinder or Bumble, pick a tone, and get three reply candidates you can copy and send." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Glint is an AI dating-app wingman. You paste a chat from Hinge, Tinder or Bumble, pick a tone (Genuine, Rizz, or Roast), and get three reply candidates to copy back into the dating app." }
         },
         {
           "@type": "Question",
           "name": "Is Glint free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the free tier gives you 5 replies a day across all three tones. Glint Pro unlocks unlimited replies, openers, and a profile audit for $6.99 / month." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The free tier gives 5 reply generations per day across all three tones. Glint Pro adds unlimited replies, an opener generator, and a profile audit feature for $6.99 / month at launch." }
         },
         {
           "@type": "Question",
           "name": "Which dating apps does Glint support?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Glint works with screenshots or text from Hinge, Tinder, Bumble, and other major dating apps." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Glint works with screenshots or pasted text from Hinge, Tinder, Bumble, and other major dating apps. The input is the conversation itself, not an integration, so it works with any dating platform." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Glint different from a generic AI chatbot?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generic chatbots produce one reply that often sounds robotic. Glint generates three options on different tones (warm, charming, playful) so you can compare and pick the phrasing closest to how you actually talk, then edit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Glint store my conversations or train AI on them?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Screenshots and chat text are processed only long enough to generate the replies, then discarded. Glint does not train AI models on user conversations and does not sell user data." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Glint available on iOS and Android?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Glint is pre-launch as of May 2026. iOS and Android apps will ship after the waitlist build. Sign up at https://glintapp.app for early access." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'rizz' mean in the context of Glint?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rizz is slang for charisma — the ability to charm or flirt in conversation. In Glint, 'Rizz' is one of the three tone settings: confident and witty, between the warm 'Genuine' tone and the playful 'Roast' tone." }
         }
       ]
     }
@@ -403,6 +423,39 @@
   .guide-card h3 { margin: 14px 0 6px; font-size: 16px; font-weight: 600; color: var(--ink); }
   .guide-card p { margin: 0; font-size: 13.5px; color: var(--ink2); }
 
+  /* FAQ */
+  .faq-grid { display: grid; gap: 12px; max-width: 760px; margin: 0 auto; }
+  .faq-item {
+    background: var(--bg1);
+    border: 1px solid var(--line2);
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    color: var(--ink3);
+    font-weight: 400;
+    font-size: 22px;
+    transition: transform .15s ease;
+  }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item .answer { padding: 0 22px 20px; color: var(--ink2); font-size: 14.5px; line-height: 1.65; }
+  .faq-item .answer p { margin: 0; }
+
   /* Waitlist */
   .waitlist {
     display: flex; gap: 8px; max-width: 460px; margin: 8px auto 16px;
@@ -465,6 +518,7 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#download" class="nav-cta">Join waitlist</a>
     </div>
   </div>
@@ -632,6 +686,45 @@
         </ul>
         <a href="#download" class="btn btn-primary" data-ph-event="pricing_pro_clicked">Join waitlist for Pro</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions people ask</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>What is Glint?</summary>
+        <div class="answer"><p>Glint is an AI dating-app wingman. You paste a chat from Hinge, Tinder, or Bumble, pick a tone — Genuine, Rizz, or Roast — and get three reply candidates to copy back into the dating app.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Is Glint free?</summary>
+        <div class="answer"><p>Yes. The free tier gives 5 reply generations per day across all three tones. Glint Pro adds unlimited replies, an opener generator, and a profile audit feature for $6.99 / month at launch.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Which dating apps does Glint support?</summary>
+        <div class="answer"><p>Glint works with screenshots or pasted text from Hinge, Tinder, Bumble, and other major dating apps. The input is the conversation itself, not an integration, so it works with any dating platform.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How is Glint different from a generic AI chatbot?</summary>
+        <div class="answer"><p>Generic chatbots produce one reply that often sounds robotic. Glint generates three options on different tones (warm, charming, playful) so you can compare and pick the phrasing closest to how you actually talk, then edit.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Does Glint store my conversations or train AI on them?</summary>
+        <div class="answer"><p>No. Screenshots and chat text are processed only long enough to generate the replies, then discarded. Glint does not train AI models on user conversations and does not sell user data.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Is Glint available on iOS and Android?</summary>
+        <div class="answer"><p>Glint is pre-launch. iOS and Android apps will ship after the waitlist build. Sign up below for early access.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does &ldquo;rizz&rdquo; mean in the context of Glint?</summary>
+        <div class="answer"><p>Rizz is slang for charisma — the ability to charm or flirt in conversation. In Glint, &ldquo;Rizz&rdquo; is one of three tone settings: confident and witty, between the warm &ldquo;Genuine&rdquo; tone and the playful &ldquo;Roast&rdquo; tone. <a href="/dating-app-rizz">More on what rizz means</a>.</p></div>
+      </details>
     </div>
   </div>
 </section>
