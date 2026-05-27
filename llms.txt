@@ -22,7 +22,7 @@
 - [Home](https://glintapp.app/): product overview, waitlist signup.
 - [Hinge replies guide](https://glintapp.app/hinge-replies): 25+ concrete examples of Hinge replies for common prompts, photo likes, and stalled conversations.
 - [Tinder openers guide](https://glintapp.app/tinder-openers): what works and what doesn't as a first message on Tinder, with examples.
-- [Rizz guide](https://glintapp.app/dating-app-rizz): definition of "rizz", the components of charm in dating-app conversations, and where AI fits in.
+- [AI dating assistant guide](https://glintapp.app/ai-dating-assistant): what AI dating assistants do, what to look for when evaluating them, and where they actually help in dating-app messaging.
 - [Privacy policy](https://glintapp.app/privacy): what data Glint collects (waitlist email, anonymous analytics), what it doesn't, and how to request deletion.
 - [Terms of service](https://glintapp.app/terms)
 
