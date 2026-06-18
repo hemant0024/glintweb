@@ -368,13 +368,15 @@
   .step h3 { margin:0 0 7px; font-size:19px; font-weight:700; letter-spacing:-0.3px; }
   .step p { margin:0; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
 
-  /* ── Stats band ── */
-  .stats { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-elev); }
-  .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; text-align:center; }
-  @media (max-width:760px){ .stat-grid{ grid-template-columns:repeat(2,1fr); gap:36px 18px; } }
-  .stat .num { font-family:var(--mono); font-size:clamp(40px,6vw,60px); font-weight:500; letter-spacing:-2px; color:var(--ink-bright); line-height:1; }
-  .stat .num .u { font-size:0.42em; color:var(--ink-3); margin-left:4px; letter-spacing:0; }
-  .stat .cap { margin-top:12px; font-size:13px; color:var(--ink-3); font-family:var(--mono); letter-spacing:1px; text-transform:uppercase; }
+  /* ── Privacy band ── */
+  .privsec { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-elev); }
+  .priv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .priv-grid{ grid-template-columns:1fr; } }
+  .pcard { background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:28px; transition:border-color .25s var(--ease), transform .25s var(--ease); }
+  .pcard:hover { border-color:var(--border-strong); transform:translateY(-3px); }
+  .pcard .ec { width:44px; height:44px; border-radius:13px; display:grid; place-items:center; background:var(--surface-2); border:1px solid var(--border); color:var(--ink); margin-bottom:18px; }
+  .pcard h3 { margin:0 0 8px; font-size:18px; font-weight:700; letter-spacing:-0.3px; color:var(--ink-bright); }
+  .pcard p { margin:0; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
 
   /* ── Tones ── */
   .tone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
@@ -645,13 +647,29 @@
   </div>
 </section>
 
-<section class="stats">
+<section id="privacy-pitch" class="privsec">
   <div class="container">
-    <div class="stat-grid">
-      <div class="stat" data-reveal><div class="num"><span class="count" data-to="3">0</span></div><div class="cap">replies / chat</div></div>
-      <div class="stat" data-reveal><div class="num">~<span class="count" data-to="8">0</span><span class="u">sec</span></div><div class="cap">to draft</div></div>
-      <div class="stat" data-reveal><div class="num"><span class="count" data-to="3">0</span></div><div class="cap">tones</div></div>
-      <div class="stat" data-reveal><div class="num"><span class="count" data-to="0">0</span></div><div class="cap">chats stored</div></div>
+    <div class="head" data-reveal>
+      <span class="eyebrow">Privacy</span>
+      <h2>Private in a way<br/>other AI <em>can&rsquo;t be</em></h2>
+      <p>Paste a chat into a generic chatbot and it can be logged, kept, and used to train the next model. Glint is built the opposite way.</p>
+    </div>
+    <div class="priv-grid">
+      <div class="pcard" data-reveal>
+        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Never stored</h3>
+        <p>Screenshots and chat text are processed only long enough to draft your replies — then discarded. Nothing sits on a server.</p>
+      </div>
+      <div class="pcard" data-reveal>
+        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M4.5 4.5l15 15"/></svg></div>
+        <h3>Never trained on</h3>
+        <p>Your conversations never become training data — not for us, not for anyone. That&rsquo;s a line generic AI tools can&rsquo;t promise.</p>
+      </div>
+      <div class="pcard" data-reveal>
+        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>Never sold</h3>
+        <p>No data brokers, no ad targeting, no third-party tracking of who you match with or message.</p>
+      </div>
     </div>
   </div>
 </section>

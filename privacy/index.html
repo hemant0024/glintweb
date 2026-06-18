@@ -10,12 +10,13 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F4F4F5'%3E%3Cpath d='M12 2l1.7 7.2L21 12l-7.3 1.8L12 22l-1.7-8.2L3 12l7.3-1.8z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg:#000000; --surface:#121212; --surface-2:#1C1C1C;
     --border:rgba(255,255,255,0.06); --border-strong:rgba(255,255,255,0.22); --divider:rgba(255,255,255,0.12);
     --ink:#F4F4F5; --ink-bright:#FFFFFF; --ink2:rgba(244,244,245,0.62); --ink3:rgba(244,244,245,0.42);
+    --mono:"Geist Mono","JetBrains Mono",ui-monospace,monospace; --serif:"Instrument Serif",Georgia,serif; --ease:cubic-bezier(.2,.7,.2,1);
     --font:"Geist","Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
   }
@@ -44,9 +45,38 @@
   footer { border-top:1px solid var(--border); padding:24px 0; color:var(--ink3); font-size:13px; text-align:center; }
   footer a { color:var(--ink3); }
   footer a:hover { color:var(--ink); }
+
+  /* ── Atmosphere ── */
+  ::selection { background:rgba(255,255,255,0.20); color:#fff; }
+  ::-webkit-scrollbar { width:10px; }
+  ::-webkit-scrollbar-track { background:#000; }
+  ::-webkit-scrollbar-thumb { background:#1f1f1f; border-radius:10px; border:2px solid #000; }
+  .fx { position:fixed; inset:0; pointer-events:none; }
+  .fx-aurora { z-index:0; background:
+      radial-gradient(640px 420px at 78% -10%, rgba(255,255,255,0.06), transparent 62%),
+      radial-gradient(520px 480px at 6% 6%, rgba(255,255,255,0.035), transparent 60%);
+      animation:drift 26s var(--ease) infinite alternate; }
+  @keyframes drift { 0%{transform:translate3d(0,0,0) scale(1);} 100%{transform:translate3d(-2%,1.5%,0) scale(1.06);} }
+  .fx-grain { z-index:1; opacity:0.045; mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .cursor-glow { position:fixed; top:0; left:0; width:500px; height:500px; z-index:1; pointer-events:none;
+      border-radius:50%; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease;
+      background:radial-gradient(circle, rgba(255,255,255,0.045), transparent 62%); mix-blend-mode:screen; }
+  main, footer { position:relative; z-index:2; }
+  .nav { transition:background .3s ease, border-color .3s ease; }
+  .nav.scrolled { background:rgba(0,0,0,0.66) !important; backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom-color:var(--border) !important; }
+  main { animation:fadeup .7s var(--ease) both; }
+  @keyframes fadeup { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:none;} }
+  h1 { background:linear-gradient(176deg,#FFFFFF 38%, rgba(255,255,255,0.66) 100%);
+       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+  @media (prefers-reduced-motion:reduce){ *{animation:none !important;} main{opacity:1;transform:none;} }
 </style>
 </head>
 <body>
+
+<div class="fx fx-aurora"></div>
+<div class="fx fx-grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <nav class="nav">
   <div class="container nav-inner">
@@ -99,5 +129,9 @@
   <div class="container">© 2026 Glint · <a href="/terms">Terms</a></div>
 </footer>
 
+<script>
+  (function(){var n=document.querySelector('.nav');if(n){var f=function(){n.classList.toggle('scrolled',window.scrollY>12)};f();window.addEventListener('scroll',f,{passive:true});}})();
+  (function(){if(window.matchMedia('(pointer:fine)').matches){var g=document.getElementById('cursorGlow');if(!g)return;window.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';g.style.opacity='1';},{passive:true});window.addEventListener('mouseleave',function(){g.style.opacity='0';});}})();
+</script>
 </body>
 </html>
