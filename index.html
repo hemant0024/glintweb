@@ -9,7 +9,7 @@
 <meta name="author" content="Glint" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow" />
-<meta name="theme-color" content="#0A0A0B" />
+<meta name="theme-color" content="#000000" />
 <link rel="canonical" href="https://glintapp.app/" />
 
 <!-- Open Graph -->
@@ -29,12 +29,12 @@
 <meta name="twitter:description" content="Paste a chat. Pick a tone. Get three replies that sound like you, only sharper." />
 <meta name="twitter:image" content="https://glintapp.app/og.png" />
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF6B47'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F4F4F5'%3E%3Cpath d='M12 2l1.7 7.2L21 12l-7.3 1.8L12 22l-1.7-8.2L3 12l7.3-1.8z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://us-assets.i.posthog.com" crossorigin />
 <link rel="dns-prefetch" href="https://qtkzacjyuasglgknxghg.supabase.co" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="prefetch" href="/hinge-replies" />
 <link rel="prefetch" href="/tinder-openers" />
 <link rel="prefetch" href="/ai-dating-assistant" />
@@ -121,413 +121,284 @@
   });
 </script>
 <style>
+  /* ───────────────────────────────────────────────────────────────
+     Glint — Premium Dark v2 ("Glint Noir"). Tokens baked from the app's
+     src/constants/theme.ts (dark palette): true-black surfaces, near-white
+     ink, the accent is WHITE — no hue. The single speck of color is the
+     teal presence dot (#5EEAD4). Hairlines carry hierarchy, not shadows.
+     ─────────────────────────────────────────────────────────────── */
   :root {
-    --bg: #0A0A0B;
-    --bg1: #111114;
-    --bg2: #1A1A1F;
-    --bg3: #222228;
-    --line: rgba(250,250,248,0.08);
-    --line2: rgba(250,250,248,0.14);
-    --ink: #FAFAF8;
-    --ink2: rgba(250,250,248,0.66);
-    --ink3: rgba(250,250,248,0.42);
-    --ink4: rgba(250,250,248,0.18);
-    --primary: #FF6B47;
-    --primary-muted: #C44E33;
-    --ai: #7B61FF;
-    --success: #5EE6A8;
-    --warning: #FFB547;
+    --bg: #000000;
+    --bg-elev: #0A0A0A;
+    --surface: #121212;
+    --surface-2: #1C1C1C;
+    --surface-3: #262626;
+    --border: rgba(255,255,255,0.06);
+    --border-strong: rgba(255,255,255,0.22);
+    --divider: rgba(255,255,255,0.12);
+    --ink: #F4F4F5;
+    --ink-bright: #FFFFFF;
+    --ink-2: rgba(244,244,245,0.62);
+    --ink-3: rgba(244,244,245,0.42);
+    --ink-4: rgba(244,244,245,0.26);
+    --ink-inverse: #000000;
+    --accent: #FFFFFF;
+    --presence: #5EEAD4;
+    --danger: #DC2626;
+    --font: "Geist", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --serif: "Instrument Serif", Georgia, serif;
+    --glow: 0 0 40px rgba(255,255,255,0.16);
   }
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font);
     background: var(--bg);
     color: var(--ink);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
+  ::selection { background: rgba(255,255,255,0.18); color: #fff; }
   .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  /* Nav */
+  /* Brand glyph — four-point spark, the app's "spark" motif, with soft glow */
+  .spark {
+    width: 18px; height: 18px; color: var(--ink-bright); flex: none;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.35));
+  }
+
+  /* ── Nav ── */
   .nav {
     position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(16px);
-    background: rgba(10,10,11,0.72);
-    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: rgba(0,0,0,0.62);
+    border-bottom: 1px solid var(--border);
   }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.2px; }
-  .brand-dot {
-    width: 10px; height: 10px; border-radius: 999px;
-    background: var(--primary);
-    box-shadow: 0 0 16px rgba(255,107,71,0.55);
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand {
+    display: flex; align-items: center; gap: 9px;
+    font-weight: 700; font-size: 18px; letter-spacing: -0.6px; color: var(--ink-bright);
   }
   .nav-links { display: flex; gap: 28px; align-items: center; }
-  .nav-links a { color: var(--ink2); font-size: 14px; }
+  .nav-links a { color: var(--ink-2); font-size: 14px; transition: color .15s ease; }
   .nav-links a:hover { color: var(--ink); }
   .nav-cta {
-    padding: 9px 16px; border-radius: 10px;
-    background: var(--primary); color: white; font-weight: 600; font-size: 14px;
-    box-shadow: 0 8px 24px rgba(255,107,71,0.28);
-    transition: transform .15s ease;
+    padding: 9px 18px; border-radius: 999px;
+    background: var(--ink-bright); color: var(--ink-inverse);
+    font-weight: 600; font-size: 13.5px; letter-spacing: -0.1px;
+    box-shadow: var(--glow);
+    transition: transform .15s ease, opacity .15s ease;
   }
-  .nav-cta:hover { transform: translateY(-1px); }
+  .nav-cta:hover { transform: translateY(-1px); opacity: 0.92; }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
 
-  /* Hero */
-  .hero { position: relative; padding: 96px 0 80px; overflow: hidden; }
-  .hero::before {
-    content: ""; position: absolute; inset: -200px 0 auto 0; height: 600px;
-    background:
-      radial-gradient(closest-side, rgba(255,107,71,0.22), transparent 70%) 15% 30% / 720px 720px no-repeat,
-      radial-gradient(closest-side, rgba(123,97,255,0.18), transparent 70%) 80% 20% / 640px 640px no-repeat;
-    filter: blur(20px);
-    pointer-events: none;
-  }
+  /* ── Atoms ── */
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--ink2);
-    padding: 6px 10px; border-radius: 999px;
-    background: var(--bg2); border: 1px solid var(--line2);
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--ink-3); font-weight: 500;
   }
-  .eyebrow .pulse {
-    width: 6px; height: 6px; border-radius: 999px; background: var(--ai);
-    box-shadow: 0 0 10px rgba(123,97,255,0.7);
+  .eyebrow.chip {
+    padding: 6px 12px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--ink-2);
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 999px; background: var(--presence);
+    box-shadow: 0 0 10px rgba(94,234,212,0.8);
     animation: pulse 2.4s ease-in-out infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.55; transform: scale(0.85); }
-  }
-  .hero h1 {
-    font-size: clamp(40px, 6.4vw, 64px);
-    line-height: 1.04;
-    font-weight: 600;
-    letter-spacing: -1.5px;
-    margin: 22px 0 18px;
-    max-width: 14ch;
-  }
-  .hero h1 .accent {
-    background: linear-gradient(120deg, #FF6B47 0%, #FFB547 55%, #7B61FF 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero p.lede {
-    font-size: 18px; color: var(--ink2);
-    max-width: 56ch; margin: 0 0 32px;
-  }
-  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
   .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 20px; border-radius: 12px; font-weight: 600; font-size: 15px;
-    border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
+    letter-spacing: -0.1px; border: 1px solid transparent; cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease, background .15s ease, border-color .15s ease;
   }
-  .btn-primary {
-    background: var(--primary); color: white;
-    box-shadow: 0 10px 28px rgba(255,107,71,0.32);
+  .btn-primary { background: var(--ink-bright); color: var(--ink-inverse); box-shadow: var(--glow); }
+  .btn-primary:hover { transform: translateY(-1px); opacity: 0.93; }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--divider); }
+  .btn-ghost:hover { background: var(--surface-2); border-color: var(--border-strong); }
+
+  .ic { width: 1em; height: 1em; display: inline-block; vertical-align: -0.12em; flex: none; }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  /* ── Hero ── */
+  .hero { position: relative; padding: 92px 0 84px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; left: 50%; top: -260px; transform: translateX(-50%);
+    width: 900px; height: 600px; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.07), transparent 72%);
+    filter: blur(8px);
   }
-  .btn-primary:hover { transform: translateY(-1px); background: #FF7C5C; }
-  .btn-ghost {
-    background: transparent; color: var(--ink);
-    border-color: var(--line2);
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
+  .hero h1 {
+    font-size: clamp(42px, 6.6vw, 64px);
+    line-height: 1.02; font-weight: 700; letter-spacing: -2px;
+    margin: 22px 0 18px; max-width: 14ch; color: var(--ink-bright);
   }
-  .btn-ghost:hover { background: var(--bg2); }
-  .meta-line {
-    margin-top: 18px; color: var(--ink3); font-size: 13px;
-    display: flex; gap: 16px; flex-wrap: wrap;
-  }
-  .meta-line span::before { content: "·"; margin-right: 16px; color: var(--ink4); }
+  .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.5px; }
+  .hero p.lede { font-size: 18px; color: var(--ink-2); max-width: 52ch; margin: 0 0 30px; letter-spacing: -0.1px; }
+  .meta-line { margin-top: 18px; color: var(--ink-3); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .meta-line span::before { content: "·"; margin-right: 16px; color: var(--ink-4); }
   .meta-line span:first-child::before { content: ""; margin: 0; }
+  .hero-secondary { margin: 22px 0 0; font-size: 14px; color: var(--ink-3); }
+  .hero-secondary a { color: var(--ink-2); border-bottom: 1px solid var(--divider); padding-bottom: 2px; transition: color .15s ease, border-color .15s ease; }
+  .hero-secondary a:hover { color: var(--ink); border-color: var(--ink-3); }
 
-  .hero-grid {
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
-  }
-  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-  /* Phone mock */
+  /* ── Phone mock (mirrors the app's reply screen) ── */
   .phone {
-    position: relative;
-    background: var(--bg1);
-    border: 1px solid var(--line2);
-    border-radius: 28px;
-    padding: 18px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.02) inset;
+    position: relative; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 40px; padding: 16px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 40px 90px rgba(0,0,0,0.65);
   }
   .phone::after {
-    content: ""; position: absolute; inset: -1px; border-radius: 28px;
-    background: radial-gradient(60% 50% at 30% 0%, rgba(255,107,71,0.18), transparent 70%);
-    pointer-events: none; z-index: 0;
+    content: ""; position: absolute; inset: 0; border-radius: 40px; pointer-events: none;
+    background: radial-gradient(70% 40% at 50% 0%, rgba(255,255,255,0.06), transparent 70%);
   }
-  .phone-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 14px; }
-  .chat-header {
-    display: flex; align-items: center; gap: 10px;
-    padding: 6px 4px 12px; border-bottom: 1px solid var(--line);
-  }
+  .phone-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; }
+  .chat-header { display: flex; align-items: center; gap: 11px; padding: 4px 4px 14px; border-bottom: 1px solid var(--border); }
   .avatar {
-    width: 36px; height: 36px; border-radius: 999px;
-    background: linear-gradient(135deg, #FF6B47, #FFB547);
+    position: relative; width: 38px; height: 38px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--divider);
+    display: grid; place-items: center; font-weight: 700; font-size: 14px; color: var(--ink-2);
   }
-  .chat-header .name { font-weight: 600; font-size: 14.5px; }
-  .chat-header .meta { font-size: 11px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; }
-  .bubble {
-    max-width: 78%; padding: 10px 14px; border-radius: 16px;
-    font-size: 14px; line-height: 1.45;
-  }
-  .bubble.them { background: var(--bg2); align-self: flex-start; border-top-left-radius: 6px; }
-  .bubble.you { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 6px; }
-  .tones { display: flex; gap: 8px; padding-top: 4px; flex-wrap: wrap; }
+  .avatar .pdot { position: absolute; right: 0; bottom: 0; width: 9px; height: 9px; border-radius: 999px; background: var(--presence); border: 2px solid var(--bg); }
+  .chat-header .name { font-weight: 700; font-size: 14.5px; letter-spacing: -0.2px; }
+  .chat-header .meta { font-size: 10.5px; color: var(--ink-3); font-family: var(--mono); letter-spacing: 1px; }
+  .bubble { max-width: 80%; padding: 10px 14px; font-size: 14px; line-height: 1.4; }
+  .bubble.them { background: var(--surface-2); border: 1px solid var(--divider); border-radius: 18px 18px 18px 5px; align-self: flex-start; color: var(--ink); }
+  .bubble.you { background: var(--ink-bright); color: var(--ink-inverse); border-radius: 18px 18px 5px 18px; align-self: flex-end; font-weight: 500; }
+  .tones { display: flex; gap: 8px; padding-top: 6px; flex-wrap: wrap; }
   .pill {
     display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 12px; border-radius: 999px;
-    font-size: 12px; font-weight: 600;
-    border: 1px solid var(--line2); background: var(--bg2); color: var(--ink2);
+    padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--divider); background: transparent; color: var(--ink-2);
   }
-  .pill.active { color: var(--ink); }
-  .pill.genuine.active { background: rgba(94,230,168,0.12); border-color: rgba(94,230,168,0.45); }
-  .pill.rizz.active { background: rgba(123,97,255,0.14); border-color: rgba(123,97,255,0.50); }
-  .pill.roast.active { background: rgba(255,181,71,0.12); border-color: rgba(255,181,71,0.45); }
+  .pill.active { background: var(--ink-bright); color: var(--ink-inverse); border-color: var(--ink-bright); }
   .suggestion {
-    padding: 12px 14px; border: 1px solid var(--line2); border-radius: 14px;
-    background: var(--bg2); font-size: 13.5px; color: var(--ink);
-    display: flex; gap: 10px; align-items: flex-start;
+    padding: 12px 14px; border: 1px solid var(--border); border-radius: 16px;
+    background: var(--surface); font-size: 13.5px; color: var(--ink);
+    display: flex; gap: 10px; align-items: flex-start; line-height: 1.45;
   }
-  .suggestion .tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px;
-    color: var(--ai); text-transform: uppercase; margin-top: 2px;
-  }
+  .suggestion.top { background: var(--surface-3); border-color: var(--border-strong); }
+  .suggestion .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--ink-3); text-transform: uppercase; margin-top: 2px; }
 
-  /* Section base */
-  section { padding: 88px 0; position: relative; }
+  /* ── Sections ── */
+  section { padding: 92px 0; position: relative; }
   .section-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
   .section-head .eyebrow { margin-bottom: 16px; }
-  .section-head h2 {
-    font-size: clamp(28px, 3.4vw, 36px); font-weight: 600; letter-spacing: -0.6px; margin: 0 0 12px;
-  }
-  .section-head p { color: var(--ink2); font-size: 16px; margin: 0; }
+  .section-head h2 { font-size: clamp(28px, 3.6vw, 38px); font-weight: 700; letter-spacing: -1px; margin: 0 0 12px; color: var(--ink-bright); }
+  .section-head p { color: var(--ink-2); font-size: 16px; margin: 0; }
 
   /* Features */
-  .features { background: linear-gradient(180deg, transparent, rgba(255,255,255,0.012)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 880px) { .feature-grid { grid-template-columns: 1fr; } }
-  .card {
-    background: var(--bg1);
-    border: 1px solid var(--line2);
-    border-radius: 16px;
-    padding: 24px;
-    transition: transform .2s ease, border-color .2s ease;
-  }
-  .card:hover { transform: translateY(-2px); border-color: rgba(250,250,248,0.22); }
+  .features { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-elev); }
+  .feature-grid, .steps, .tone-grid, .guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .feature-grid, .steps, .tone-grid, .guides-grid { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 26px; transition: transform .2s ease, border-color .2s ease; }
+  .card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
   .card .icon {
-    width: 38px; height: 38px; border-radius: 10px;
+    width: 42px; height: 42px; border-radius: 12px;
     display: inline-flex; align-items: center; justify-content: center;
-    font-size: 18px; margin-bottom: 16px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--ink); font-size: 19px; margin-bottom: 18px;
   }
-  .icon-warm { background: rgba(255,107,71,0.14); color: var(--primary); }
-  .icon-ai { background: rgba(123,97,255,0.14); color: var(--ai); }
-  .icon-ok { background: rgba(94,230,168,0.12); color: var(--success); }
-  .card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
-  .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -0.2px; }
+  .card p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
 
-  /* How it works */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
-  @media (max-width: 880px) { .steps { grid-template-columns: 1fr; } }
-  .step {
-    padding: 24px; border: 1px solid var(--line); border-radius: 16px;
-    background: var(--bg1);
+  /* Steps */
+  .step { padding: 26px; border: 1px solid var(--border); border-radius: 24px; background: var(--surface); }
+  .step .num { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; color: var(--ink-3); margin-bottom: 14px; }
+  .step h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; letter-spacing: -0.2px; }
+  .step p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+
+  /* Editorial pull-quote — the rare serif-italic moment, like the app's EI card */
+  .quote { max-width: 760px; margin: 0 auto; text-align: center; }
+  .quote .eyebrow { justify-content: center; margin-bottom: 22px; }
+  .quote blockquote {
+    margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: clamp(26px, 4vw, 40px); line-height: 1.28; letter-spacing: -0.4px; color: var(--ink-bright);
   }
-  .step .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 2px; color: var(--ink3);
-    margin-bottom: 14px;
-  }
-  .step h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
-  .step p { margin: 0; color: var(--ink2); font-size: 14.5px; }
+  .quote cite { display: block; margin-top: 22px; font-style: normal; font-size: 13px; color: var(--ink-3); font-family: var(--mono); letter-spacing: 1px; }
 
   /* Tones */
-  .tone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 880px) { .tone-grid { grid-template-columns: 1fr; } }
-  .tone-card {
-    border-radius: 18px; padding: 28px;
-    background: var(--bg1); border: 1px solid var(--line2);
-    position: relative; overflow: hidden;
-  }
-  .tone-card::before {
-    content: ""; position: absolute; inset: 0;
-    background: radial-gradient(120% 80% at 0% 0%, var(--tone-glow), transparent 60%);
-    opacity: 0.6; pointer-events: none;
-  }
-  .tone-card > * { position: relative; }
+  .tone-card { border-radius: 24px; padding: 28px; background: var(--surface); border: 1px solid var(--border); position: relative; transition: transform .2s ease, border-color .2s ease; }
+  .tone-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
   .tone-card .emoji { font-size: 22px; margin-bottom: 14px; display: block; }
-  .tone-card h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
-  .tone-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--ink3); text-transform: uppercase; }
-  .tone-card p { color: var(--ink2); font-size: 14.5px; margin: 12px 0 0; }
-  .tone-card.g { --tone-glow: rgba(94,230,168,0.14); }
-  .tone-card.r { --tone-glow: rgba(123,97,255,0.18); }
-  .tone-card.b { --tone-glow: rgba(255,181,71,0.14); }
+  .tone-card h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -0.2px; }
+  .tone-card .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: var(--ink-3); text-transform: uppercase; }
+  .tone-card p { color: var(--ink-2); font-size: 14.5px; margin: 12px 0 0; }
 
   /* Pricing */
-  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 820px; margin: 0 auto; }
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 820px; margin: 0 auto; }
   @media (max-width: 720px) { .price-grid { grid-template-columns: 1fr; } }
-  .price {
-    border: 1px solid var(--line2); border-radius: 18px; padding: 28px;
-    background: var(--bg1);
-  }
-  .price.featured {
-    border-color: rgba(255,107,71,0.55);
-    background: linear-gradient(180deg, rgba(255,107,71,0.06), var(--bg1));
-    box-shadow: 0 24px 60px rgba(255,107,71,0.10);
-  }
-  .price h3 { margin: 0; font-size: 18px; font-weight: 600; }
-  .price .amount { font-size: 36px; font-weight: 600; letter-spacing: -1px; margin: 10px 0 4px; }
-  .price .amount small { font-size: 14px; color: var(--ink3); font-weight: 500; }
-  .price ul { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-direction: column; gap: 10px; }
-  .price ul li { color: var(--ink2); font-size: 14.5px; display: flex; gap: 10px; align-items: flex-start; }
-  .price ul li::before { content: "→"; color: var(--primary); font-weight: 700; }
-  .price .btn { width: 100%; justify-content: center; margin-top: 22px; }
+  .price { border: 1px solid var(--border); border-radius: 24px; padding: 30px; background: var(--surface); }
+  .price.featured { border-color: var(--border-strong); background: var(--surface-2); box-shadow: var(--glow); }
+  .price .ptag { display: inline-flex; align-items: center; font-family: var(--mono); font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-3); }
+  .price.featured .ptag { color: var(--ink-bright); }
+  .price h3 { margin: 4px 0 0; font-size: 19px; font-weight: 600; letter-spacing: -0.2px; }
+  .price .amount { font-family: var(--mono); font-size: 38px; font-weight: 600; letter-spacing: -1.5px; margin: 12px 0 4px; color: var(--ink-bright); }
+  .price .amount small { font-size: 14px; color: var(--ink-3); font-weight: 500; font-family: var(--font); letter-spacing: 0; }
+  .price ul { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-direction: column; gap: 11px; }
+  .price ul li { color: var(--ink-2); font-size: 14.5px; display: flex; gap: 10px; align-items: flex-start; }
+  .price ul li svg { color: var(--ink); margin-top: 3px; }
+  .price .btn { width: 100%; margin-top: 24px; }
 
   /* CTA strip */
   .cta-strip {
-    margin: 80px auto;
-    max-width: 980px;
-    border-radius: 24px;
-    padding: 56px 40px;
-    background:
-      radial-gradient(80% 120% at 0% 0%, rgba(255,107,71,0.18), transparent 60%),
-      radial-gradient(80% 120% at 100% 100%, rgba(123,97,255,0.20), transparent 60%),
-      var(--bg1);
-    border: 1px solid var(--line2);
-    text-align: center;
+    margin: 84px auto; max-width: 980px; border-radius: 32px; padding: 60px 40px;
+    background: radial-gradient(90% 130% at 50% 0%, rgba(255,255,255,0.07), transparent 60%), var(--surface);
+    border: 1px solid var(--border); text-align: center;
   }
-  .cta-strip h2 { margin: 0 0 10px; font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -0.6px; font-weight: 600; }
-  .cta-strip p { color: var(--ink2); margin: 0 0 24px; }
+  .cta-strip .spark { width: 26px; height: 26px; margin-bottom: 18px; }
+  .cta-strip h2 { margin: 0 0 10px; font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -1px; font-weight: 700; color: var(--ink-bright); }
+  .cta-strip p { color: var(--ink-2); margin: 0 0 26px; }
 
   /* Guides */
-  .guides { padding: 80px 0 40px; border-top: 1px solid var(--line); margin-top: 56px; }
-  .guides .section-head { margin-bottom: 32px; }
-  .guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 880px) { .guides-grid { grid-template-columns: 1fr; } }
-  .guide-card {
-    display: block;
-    background: var(--bg1);
-    border: 1px solid var(--line2);
-    border-radius: 16px;
-    padding: 22px;
-    color: inherit;
-    text-decoration: none;
-    transition: transform .15s ease, border-color .15s ease;
-  }
-  .guide-card:hover { transform: translateY(-2px); border-color: rgba(250,250,248,0.24); text-decoration: none; }
-  .guide-card .eyebrow { font-size: 10px; }
-  .guide-card h3 { margin: 14px 0 6px; font-size: 16px; font-weight: 600; color: var(--ink); }
-  .guide-card p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .guides { padding: 84px 0 40px; border-top: 1px solid var(--border); }
+  .guides .section-head { margin-bottom: 36px; }
+  .guide-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 24px; color: inherit; transition: transform .15s ease, border-color .15s ease; }
+  .guide-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+  .guide-card h3 { margin: 14px 0 6px; font-size: 16px; font-weight: 600; letter-spacing: -0.2px; color: var(--ink); }
+  .guide-card p { margin: 0; font-size: 13.5px; color: var(--ink-2); }
+  .guide-card .arrow { margin-top: 14px; color: var(--ink-3); font-size: 13px; }
 
   /* FAQ */
   .faq-grid { display: grid; gap: 12px; max-width: 760px; margin: 0 auto; }
-  .faq-item {
-    background: var(--bg1);
-    border: 1px solid var(--line2);
-    border-radius: 14px;
-    padding: 0;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 18px 22px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--ink);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 18px 22px; font-size: 16px; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 16px; letter-spacing: -0.2px; }
   .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after {
-    content: "+";
-    color: var(--ink3);
-    font-weight: 400;
-    font-size: 22px;
-    transition: transform .15s ease;
-  }
+  .faq-item summary::after { content: "+"; color: var(--ink-3); font-weight: 300; font-size: 24px; transition: transform .15s ease; }
   .faq-item[open] summary::after { content: "–"; }
-  .faq-item .answer { padding: 0 22px 20px; color: var(--ink2); font-size: 14.5px; line-height: 1.65; }
+  .faq-item .answer { padding: 0 22px 20px; color: var(--ink-2); font-size: 14.5px; line-height: 1.65; }
   .faq-item .answer p { margin: 0; }
+  .faq-item .answer a { color: var(--ink); border-bottom: 1px solid var(--divider); }
 
   /* Waitlist */
-  .waitlist {
-    display: flex; gap: 8px; max-width: 460px; margin: 8px auto 16px;
-    background: var(--bg2); border: 1px solid var(--line2);
-    border-radius: 12px; padding: 6px;
-    transition: border-color .2s ease, box-shadow .2s ease;
-  }
-  .waitlist-hero {
-    margin: 28px 0 12px;
-    max-width: 480px;
-  }
-  .hero-secondary {
-    margin: 24px 0 0;
-    font-size: 14px;
-    color: var(--ink3);
-  }
-  .hero-secondary a {
-    color: var(--ink2);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line2);
-    padding-bottom: 2px;
-    transition: color .15s ease, border-color .15s ease;
-  }
-  .hero-secondary a:hover {
-    color: var(--ink);
-    border-color: var(--ink3);
-  }
-  .waitlist:focus-within {
-    border-color: rgba(255,107,71,0.55);
-    box-shadow: 0 0 0 4px rgba(255,107,71,0.10);
-  }
-  .waitlist input {
-    flex: 1; background: transparent; border: 0; outline: 0;
-    color: var(--ink); font: inherit; font-size: 15px; padding: 10px 12px;
-  }
-  .waitlist input::placeholder { color: var(--ink3); }
-  .waitlist button {
-    border: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: 14.5px;
-    padding: 10px 18px; border-radius: 8px;
-    background: var(--primary); color: white;
-    display: inline-flex; align-items: center; gap: 6px;
-    transition: transform .15s ease, background .15s ease;
-  }
-  .waitlist button:hover { background: #FF7C5C; transform: translateY(-1px); }
-  .waitlist button:disabled { opacity: 0.6; cursor: default; transform: none; }
-  .waitlist-status {
-    min-height: 20px; font-size: 13px; color: var(--ink3);
-    text-align: center; margin-top: 6px;
-  }
-  .waitlist-status.ok { color: var(--success); }
-  .waitlist-status.err { color: #E84545; }
-  .divider-or {
-    display: flex; align-items: center; gap: 12px; max-width: 460px;
-    margin: 18px auto; color: var(--ink3); font-size: 12px;
-    font-family: 'JetBrains Mono', monospace; letter-spacing: 2px;
-  }
-  .divider-or::before, .divider-or::after {
-    content: ""; flex: 1; height: 1px; background: var(--line);
-  }
+  .waitlist { display: flex; gap: 8px; max-width: 460px; margin: 8px auto 14px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 6px; transition: border-color .2s ease, box-shadow .2s ease; }
+  .waitlist-hero { margin: 28px 0 12px; max-width: 480px; }
+  .waitlist:focus-within { border-color: var(--border-strong); box-shadow: 0 0 0 4px rgba(255,255,255,0.06); }
+  .waitlist input { flex: 1; background: transparent; border: 0; outline: 0; color: var(--ink); font: inherit; font-size: 15px; padding: 11px 13px; }
+  .waitlist input::placeholder { color: var(--ink-3); }
+  .waitlist button { border: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: 14.5px; padding: 11px 20px; border-radius: 10px; background: var(--ink-bright); color: var(--ink-inverse); display: inline-flex; align-items: center; gap: 6px; transition: transform .15s ease, opacity .15s ease; }
+  .waitlist button:hover { opacity: 0.92; transform: translateY(-1px); }
+  .waitlist button:disabled { opacity: 0.55; cursor: default; transform: none; }
+  .waitlist-status { min-height: 20px; font-size: 13px; color: var(--ink-3); text-align: center; margin-top: 4px; }
+  .waitlist-status.ok { color: var(--presence); }
+  .waitlist-status.err { color: #F87171; }
 
   /* Footer */
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 40px 0; color: var(--ink3); font-size: 13px;
-  }
-  .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .footer-links { display: flex; gap: 20px; }
+  footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--ink-3); font-size: 13px; }
+  .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a { transition: color .15s ease; }
   .footer-links a:hover { color: var(--ink); }
 </style>
 </head>
@@ -536,8 +407,7 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a href="#" class="brand">
-      <span class="brand-dot"></span>
-      <span>glint</span>
+      <span>Glint</span>
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
@@ -553,8 +423,8 @@
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow"><span class="pulse"></span> AI dating wingman</span>
-      <h1>Better replies. <span class="accent">In seconds.</span></h1>
+      <span class="eyebrow chip">AI dating wingman</span>
+      <h1>Better replies. <em>In seconds.</em></h1>
       <p class="lede">
         Paste any Hinge, Tinder, or Bumble chat. Pick a tone. Get three replies that sound like you — only sharper.
       </p>
@@ -577,7 +447,7 @@
     <div class="phone" aria-hidden="true">
       <div class="phone-inner">
         <div class="chat-header">
-          <div class="avatar"></div>
+          <div class="avatar">M</div>
           <div>
             <div class="name">Maya</div>
             <div class="meta">HINGE · 2 MIN AGO</div>
@@ -587,12 +457,12 @@
         <div class="bubble you">say less, dinner&#39;s at mine friday</div>
 
         <div class="tones">
-          <span class="pill genuine">💚 Genuine</span>
-          <span class="pill rizz active">✨ Rizz</span>
-          <span class="pill roast">🔥 Roast</span>
+          <span class="pill">💚 Genuine</span>
+          <span class="pill active">✨ Rizz</span>
+          <span class="pill">🔥 Roast</span>
         </div>
 
-        <div class="suggestion">
+        <div class="suggestion top">
           <span class="tag">AI</span>
           <span>bold of you to assume i&#39;d let you near my kitchen on the first date — counter offer: i cook, you pour the wine.</span>
         </div>
@@ -608,23 +478,29 @@
 <section id="features" class="features">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Why glint</span>
+      <span class="eyebrow">Why Glint</span>
       <h2>Smarter messaging, without sounding like a chatbot</h2>
       <p>Built for the awkward middle of the conversation — the part where most matches go cold.</p>
     </div>
     <div class="feature-grid">
       <div class="card">
-        <div class="icon icon-warm">⚡</div>
+        <div class="icon">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 11 14 11 22 21 10 13 10 13 2"/></svg>
+        </div>
         <h3>Three replies, instantly</h3>
         <p>Paste a screenshot or the text. Get three on-tone candidates in seconds. Copy the one that lands.</p>
       </div>
       <div class="card">
-        <div class="icon icon-ai">✨</div>
+        <div class="icon">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4L12 3z"/><path d="M18.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></svg>
+        </div>
         <h3>Picks up your voice</h3>
         <p>Glint reads the whole thread, not just the last message — so replies match how the conversation actually sounds.</p>
       </div>
       <div class="card">
-        <div class="icon icon-ok">🛡️</div>
+        <div class="icon">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <h3>Private by default</h3>
         <p>Screenshots aren&#39;t stored. We don&#39;t train on your chats. Generate, copy, move on.</p>
       </div>
@@ -659,6 +535,14 @@
 </section>
 
 <section>
+  <div class="container quote">
+    <span class="eyebrow">The voice</span>
+    <blockquote>It doesn&#39;t write for you. It writes like&nbsp;you — only on a better day.</blockquote>
+    <cite>— how Glint thinks about every reply</cite>
+  </div>
+</section>
+
+<section>
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">The three tones</span>
@@ -666,19 +550,19 @@
       <p>Each tone is tuned for a different kind of moment.</p>
     </div>
     <div class="tone-grid">
-      <div class="tone-card g">
+      <div class="tone-card">
         <span class="emoji">💚</span>
         <span class="label">Genuine</span>
         <h3>Warm, authentic</h3>
         <p>For when the conversation is going somewhere real and you don&#39;t want to flatten it with a joke.</p>
       </div>
-      <div class="tone-card r">
+      <div class="tone-card">
         <span class="emoji">✨</span>
         <span class="label">Rizz</span>
         <h3>Charming, witty</h3>
         <p>Confident, a little playful. The default if you&#39;re trying to keep momentum without coming on too strong.</p>
       </div>
-      <div class="tone-card b">
+      <div class="tone-card">
         <span class="emoji">🔥</span>
         <span class="label">Roast</span>
         <h3>Playful banter</h3>
@@ -696,23 +580,23 @@
     </div>
     <div class="price-grid">
       <div class="price">
-        <h3>Free</h3>
+        <span class="ptag">Free</span>
         <div class="amount">$0 <small>/ forever</small></div>
         <ul>
-          <li>5 replies per day</li>
-          <li>All three tones</li>
-          <li>Screenshot &amp; text input</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 replies per day</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> All three tones</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Screenshot &amp; text input</li>
         </ul>
         <a href="#download" class="btn btn-ghost">Join waitlist</a>
       </div>
       <div class="price featured">
-        <h3>Pro</h3>
+        <span class="ptag">Pro</span>
         <div class="amount">$6.99 <small>/ month</small></div>
         <ul>
-          <li>Unlimited replies</li>
-          <li>Opener generator</li>
-          <li>Profile audit (photos + bio)</li>
-          <li>Priority responses</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited replies</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Opener generator</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Profile audit (photos + bio)</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority responses</li>
         </ul>
         <a href="#download" class="btn btn-primary" data-ph-event="pricing_pro_clicked">Join waitlist for Pro</a>
       </div>
@@ -783,19 +667,22 @@
     </div>
     <div class="guides-grid">
       <a href="/hinge-replies" class="guide-card">
-        <span class="eyebrow">HINGE</span>
+        <span class="eyebrow">Hinge</span>
         <h3>How to reply on Hinge — 25+ examples</h3>
         <p>What to send for the most common prompts, photo likes, and stalled chats.</p>
+        <div class="arrow">Read →</div>
       </a>
       <a href="/tinder-openers" class="guide-card">
-        <span class="eyebrow">TINDER</span>
+        <span class="eyebrow">Tinder</span>
         <h3>Best Tinder openers that get replies</h3>
         <p>The four openers that get ignored, the formula that doesn&#39;t.</p>
+        <div class="arrow">Read →</div>
       </a>
       <a href="/ai-dating-assistant" class="guide-card">
         <span class="eyebrow">AI</span>
         <h3>What is an AI dating assistant?</h3>
         <p>What these tools do, what to look for, and where they actually help.</p>
+        <div class="arrow">Read →</div>
       </a>
     </div>
   </div>
@@ -806,9 +693,8 @@
 <footer>
   <div class="container footer-inner">
     <div class="brand">
-      <span class="brand-dot"></span>
-      <span>glint</span>
-      <span style="color:var(--ink3); margin-left:8px;">© 2026</span>
+      <span>Glint</span>
+      <span style="color:var(--ink-3); font-weight:400; margin-left:8px;">© 2026</span>
     </div>
     <div class="footer-links">
       <a href="/privacy">Privacy</a>

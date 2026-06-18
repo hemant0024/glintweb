@@ -1,94 +1,89 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!--
+    Glint OG card — "Glint Noir" (Premium Dark v2). True-black ground, white-only
+    accent, hierarchy from hairlines. One speck of color: the teal presence dot.
+    Tokens baked from src/constants/theme.ts (dark palette).
+  -->
   <defs>
-    <radialGradient id="warm" cx="20%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.42"/>
-      <stop offset="60%" stop-color="#FF6B47" stop-opacity="0"/>
+    <radialGradient id="glowtop" cx="50%" cy="-6%" r="72%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.07"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="ai" cx="85%" cy="80%" r="55%">
-      <stop offset="0%" stop-color="#7B61FF" stop-opacity="0.38"/>
-      <stop offset="60%" stop-color="#7B61FF" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="headline" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FF6B47"/>
-      <stop offset="55%" stop-color="#FFB547"/>
-      <stop offset="100%" stop-color="#7B61FF"/>
-    </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="14" result="b"/>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <rect width="1200" height="630" fill="#0A0A0B"/>
-  <rect width="1200" height="630" fill="url(#warm)"/>
-  <rect width="1200" height="630" fill="url(#ai)"/>
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect width="1200" height="630" fill="url(#glowtop)"/>
 
-  <!-- Brand row -->
-  <g transform="translate(80, 96)">
-    <circle cx="14" cy="14" r="14" fill="#FF6B47" filter="url(#glow)"/>
-    <text x="44" y="24" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="#FAFAF8" letter-spacing="-0.4">glint</text>
+  <!-- Brand row — wordmark only -->
+  <g transform="translate(80, 92)">
+    <text x="0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="700" fill="#F4F4F5" letter-spacing="-0.8">Glint</text>
   </g>
 
-  <!-- Eyebrow -->
+  <!-- Eyebrow — surface pill, hairline border -->
   <g transform="translate(80, 200)">
-    <rect x="0" y="0" width="220" height="36" rx="18" fill="#1A1A1F" stroke="rgba(250,250,248,0.18)"/>
-    <circle cx="20" cy="18" r="4" fill="#7B61FF"/>
-    <text x="36" y="23" font-family="Menlo, monospace" font-size="11" fill="rgba(250,250,248,0.66)" letter-spacing="2">AI DATING WINGMAN</text>
+    <rect x="0" y="0" width="208" height="38" rx="19" fill="#1C1C1C" stroke="rgba(255,255,255,0.06)"/>
+    <text x="20" y="24" font-family="Menlo, monospace" font-size="11" fill="rgba(244,244,245,0.62)" letter-spacing="2">AI DATING WINGMAN</text>
   </g>
 
-  <!-- Headline -->
-  <text x="80" y="340" font-family="Helvetica, Arial, sans-serif" font-size="92" font-weight="700" fill="#FAFAF8" letter-spacing="-3">Better replies.</text>
-  <text x="80" y="436" font-family="Helvetica, Arial, sans-serif" font-size="92" font-weight="700" fill="url(#headline)" letter-spacing="-3">In seconds.</text>
+  <!-- Headline — solid white; second line in serif italic (the rare emphasis) -->
+  <text x="80" y="344" font-family="Helvetica, Arial, sans-serif" font-size="92" font-weight="700" fill="#FFFFFF" letter-spacing="-3">Better replies.</text>
+  <text x="80" y="440" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="92" font-weight="400" fill="#FFFFFF" letter-spacing="-2">In seconds.</text>
 
   <!-- Tagline -->
-  <text x="80" y="500" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="rgba(250,250,248,0.66)" letter-spacing="-0.2">AI wingman for Hinge, Tinder &amp; Bumble.</text>
+  <text x="80" y="504" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="rgba(244,244,245,0.62)" letter-spacing="-0.2">AI wingman for Hinge, Tinder &amp; Bumble.</text>
 
-  <!-- Tone pills -->
-  <g transform="translate(80, 540)">
+  <!-- Tone pills — monochrome; Rizz is the active white pill -->
+  <g transform="translate(80, 544)">
     <g>
-      <rect x="0" y="0" width="130" height="40" rx="20" fill="rgba(94,230,168,0.12)" stroke="rgba(94,230,168,0.45)"/>
-      <text x="65" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#5EE6A8">💚 Genuine</text>
+      <rect x="0" y="0" width="134" height="40" rx="20" fill="none" stroke="rgba(255,255,255,0.12)"/>
+      <text x="67" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="rgba(244,244,245,0.62)">💚 Genuine</text>
     </g>
-    <g transform="translate(144, 0)">
-      <rect x="0" y="0" width="110" height="40" rx="20" fill="rgba(123,97,255,0.14)" stroke="rgba(123,97,255,0.50)"/>
-      <text x="55" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#7B61FF">✨ Rizz</text>
+    <g transform="translate(148, 0)">
+      <rect x="0" y="0" width="106" height="40" rx="20" fill="#FFFFFF"/>
+      <text x="53" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#000000">✨ Rizz</text>
     </g>
     <g transform="translate(268, 0)">
-      <rect x="0" y="0" width="110" height="40" rx="20" fill="rgba(255,181,71,0.12)" stroke="rgba(255,181,71,0.45)"/>
-      <text x="55" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#FFB547">🔥 Roast</text>
+      <rect x="0" y="0" width="112" height="40" rx="20" fill="none" stroke="rgba(255,255,255,0.12)"/>
+      <text x="56" y="26" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="rgba(244,244,245,0.62)">🔥 Roast</text>
     </g>
   </g>
 
   <!-- Phone mock on the right -->
   <g transform="translate(780, 130)">
-    <rect x="0" y="0" width="340" height="380" rx="28" fill="#111114" stroke="rgba(250,250,248,0.14)"/>
+    <rect x="0" y="0" width="340" height="380" rx="30" fill="#000000" stroke="rgba(255,255,255,0.16)"/>
+
     <!-- Chat header -->
-    <circle cx="32" cy="36" r="14" fill="#FF6B47"/>
-    <text x="56" y="32" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#FAFAF8">Maya</text>
-    <text x="56" y="48" font-family="Menlo, monospace" font-size="10" fill="rgba(250,250,248,0.42)" letter-spacing="1">HINGE · 2 MIN AGO</text>
-    <line x1="20" y1="64" x2="320" y2="64" stroke="rgba(250,250,248,0.08)"/>
+    <circle cx="32" cy="36" r="15" fill="#1C1C1C" stroke="rgba(255,255,255,0.12)"/>
+    <text x="32" y="41" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="rgba(244,244,245,0.62)">M</text>
+    <text x="58" y="32" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F4F4F5">Maya</text>
+    <text x="58" y="48" font-family="Menlo, monospace" font-size="10" fill="rgba(244,244,245,0.42)" letter-spacing="1">HINGE · 2 MIN AGO</text>
+    <line x1="20" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.06)"/>
 
     <!-- Bubble them -->
-    <rect x="20" y="80" width="240" height="48" rx="14" fill="#1A1A1F"/>
-    <text x="32" y="100" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FAFAF8">prove you can cook pasta from</text>
-    <text x="32" y="118" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FAFAF8">scratch 👀</text>
+    <rect x="20" y="82" width="244" height="48" rx="14" fill="#1C1C1C" stroke="rgba(255,255,255,0.12)"/>
+    <text x="34" y="102" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#F4F4F5">prove you can cook pasta from</text>
+    <text x="34" y="120" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#F4F4F5">scratch 👀</text>
 
-    <!-- Bubble you -->
-    <rect x="120" y="142" width="200" height="36" rx="14" fill="#FF6B47"/>
-    <text x="132" y="166" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="white">say less, dinner&apos;s at mine friday</text>
+    <!-- Bubble you — white pill, black ink -->
+    <rect x="120" y="144" width="200" height="36" rx="14" fill="#FFFFFF"/>
+    <text x="132" y="167" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="500" fill="#000000">say less, dinner&apos;s at mine friday</text>
 
-    <!-- AI suggestion -->
-    <rect x="20" y="200" width="300" height="74" rx="12" fill="#1A1A1F" stroke="rgba(250,250,248,0.14)"/>
-    <text x="32" y="220" font-family="Menlo, monospace" font-size="10" fill="#7B61FF" letter-spacing="1">AI</text>
-    <text x="32" y="242" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#FAFAF8">bold of you to assume i&apos;d let you</text>
-    <text x="32" y="258" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#FAFAF8">near my kitchen on the first date</text>
+    <!-- AI suggestion — top pick, elevated surface -->
+    <rect x="20" y="202" width="300" height="74" rx="14" fill="#262626" stroke="rgba(255,255,255,0.22)"/>
+    <text x="34" y="222" font-family="Menlo, monospace" font-size="10" fill="rgba(244,244,245,0.42)" letter-spacing="1">AI</text>
+    <text x="34" y="244" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F4F4F5">bold of you to assume i&apos;d let you</text>
+    <text x="34" y="260" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F4F4F5">near my kitchen on the first date</text>
 
     <!-- AI suggestion 2 -->
-    <rect x="20" y="288" width="300" height="58" rx="12" fill="#1A1A1F" stroke="rgba(250,250,248,0.14)"/>
-    <text x="32" y="308" font-family="Menlo, monospace" font-size="10" fill="#7B61FF" letter-spacing="1">AI</text>
-    <text x="32" y="330" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#FAFAF8">friday, 8pm, bring an appetite</text>
+    <rect x="20" y="290" width="300" height="58" rx="14" fill="#121212" stroke="rgba(255,255,255,0.06)"/>
+    <text x="34" y="310" font-family="Menlo, monospace" font-size="10" fill="rgba(244,244,245,0.42)" letter-spacing="1">AI</text>
+    <text x="34" y="332" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F4F4F5">friday, 8pm, bring an appetite</text>
   </g>
 
   <!-- Domain at bottom right -->
-  <text x="1120" y="600" text-anchor="end" font-family="Menlo, monospace" font-size="14" fill="rgba(250,250,248,0.42)" letter-spacing="1">GLINTAPP.APP</text>
+  <text x="1120" y="600" text-anchor="end" font-family="Menlo, monospace" font-size="14" fill="rgba(244,244,245,0.42)" letter-spacing="1">GLINTAPP.APP</text>
 </svg>
