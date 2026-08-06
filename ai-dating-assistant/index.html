@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://glintapp.app/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230A0A0A'%3E%3Cpath d='M12 2l1.7 7.2L21 12l-7.3 1.8L12 22l-1.7-8.2L3 12l7.3-1.8z'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233A5F8F'%3E%3Cpath d='M13 2 3 14h8l-1 8 10-12h-8l1-8z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -41,12 +41,12 @@
     {
       "@type": "Question",
       "name": "What is an AI dating assistant?",
-      "acceptedAnswer": { "@type": "Answer", "text": "An AI dating assistant is a tool that helps with dating-app messaging. The most common type reads your chat (text or screenshot) and generates reply candidates you can copy and send. Some also help with opening lines, profile reviews, or photo selection. The AI doesn't message anyone for you — you stay in control of what's actually sent." }
+      "acceptedAnswer": { "@type": "Answer", "text": "An AI dating assistant is a tool that helps with dating-app messaging. The most common type reads your chat (text or screenshot) and generates reply candidates you can copy and send. Some also help with opening lines, profile reviews, or photo selection. The AI doesn't message anyone for you. You stay in control of what's actually sent." }
     },
     {
       "@type": "Question",
       "name": "Are AI dating assistants worth it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "They're worth it for the awkward middle of conversations — the moments when you've read the profile, you have something in mind, but the phrasing isn't landing. They're less useful as a complete replacement for thinking; the people who get the most value treat AI as a brainstorm partner, not an autopilot." }
+      "acceptedAnswer": { "@type": "Answer", "text": "They're worth it for the awkward middle of conversations, the moments when you've read the profile, you have something in mind, but the phrasing isn't landing. They're less useful as a complete replacement for thinking; the people who get the most value treat AI as a brainstorm partner, not an autopilot." }
     },
     {
       "@type": "Question",
@@ -61,153 +61,65 @@
     {
       "@type": "Question",
       "name": "Is using an AI dating assistant cheating?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not in any meaningful sense. People have used friends, dating coaches, and books for the same purpose for decades. AI assistants are a faster version of asking a friend 'what should I say back to this?' The honesty line is whether you'd be comfortable telling the other person you used a tool — most people would, in the same way they'd say they ran a draft past a friend." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Not in any meaningful sense. People have used friends, dating coaches, and books for the same purpose for decades. AI assistants are a faster version of asking a friend 'what should I say back to this?' The honesty line is whether you'd be comfortable telling the other person you used a tool. Most people would, in the same way they'd say they ran a draft past a friend." }
     }
   ]
 }
 </script>
 
-<style>
-  :root {
-    --bg:#FFFFFF; --bg-elev:#FAFAFA; --surface:#FFFFFF; --surface-2:#F4F4F5; --surface-3:#ECECEE;
-    --border:rgba(0,0,0,0.08); --border-strong:rgba(0,0,0,0.22); --divider:rgba(0,0,0,0.10);
-    --ink:#0A0A0A; --ink-bright:#000000; --ink-inverse:#FFFFFF;
-    --ink2:rgba(10,10,10,0.62); --ink3:rgba(10,10,10,0.44); --ink4:rgba(10,10,10,0.26);
-    --presence:#5EEAD4;
-    --mono:"Geist Mono","JetBrains Mono",ui-monospace,monospace; --serif:"Instrument Serif",Georgia,serif; --ease:cubic-bezier(.2,.7,.2,1);
-    --font:"Geist","Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-    --mono:"JetBrains Mono",ui-monospace,monospace;
-    --serif:"Instrument Serif",Georgia,serif;
-    --glow:0 12px 34px rgba(0,0,0,0.16);
-  }
-  *,*::before,*::after { box-sizing:border-box; }
-  body { margin:0; font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-  ::selection { background:rgba(0,0,0,0.12); color:#000; }
-  a { color:var(--ink); text-decoration:none; border-bottom:1px solid var(--divider); padding-bottom:1px; transition:color .15s ease,border-color .15s ease; }
-  a:hover { color:var(--ink-bright); border-color:var(--ink3); }
-  .container { max-width:720px; margin:0 auto; padding:0 24px; }
-  .nav { position:sticky; top:0; z-index:50; border-bottom:1px solid var(--border); padding:14px 0; background:rgba(255,255,255,0.72); backdrop-filter:blur(20px) saturate(140%); -webkit-backdrop-filter:blur(20px) saturate(140%); }
-  .nav-inner { display:flex; justify-content:space-between; align-items:center; }
-  .brand { display:flex; align-items:center; gap:9px; font-weight:700; font-size:18px; letter-spacing:-0.6px; color:var(--ink-bright); border:0; }
-  .brand:hover { color:var(--ink-bright); }
-  .spark { width:18px; height:18px; color:var(--ink-bright); flex:none; filter:none; }
-  .nav .links a { color:var(--ink2); font-size:14px; margin-left:22px; border:0; padding:0; }
-  .nav .links a:hover { color:var(--ink); }
-  @media (max-width:560px){ .nav .links a { margin-left:14px; font-size:13px; } }
-  main { padding:56px 0 96px; }
-  h1 { font-size:clamp(32px,4.5vw,46px); font-weight:700; letter-spacing:-1.2px; margin:0 0 14px; line-height:1.1; color:var(--ink-bright); }
-  .meta { color:var(--ink3); font-size:12px; font-family:var(--mono); letter-spacing:1.5px; margin:0 0 36px; text-transform:uppercase; }
-  .lede { font-size:19px; color:var(--ink2); margin:0 0 36px; letter-spacing:-0.1px; }
-  h2 { font-size:24px; font-weight:700; letter-spacing:-0.5px; margin:48px 0 14px; color:var(--ink-bright); }
-  h3 { font-size:17px; font-weight:600; margin:28px 0 8px; letter-spacing:-0.2px; }
-  p,li { color:var(--ink2); font-size:16px; }
-  ul,ol { padding-left:22px; margin:12px 0 20px; }
-  li { margin-bottom:8px; }
-  li::marker { color:var(--ink3); }
-  strong { color:var(--ink); font-weight:600; }
-  em { color:var(--ink); font-style:italic; }
-  blockquote { margin:16px 0; padding:14px 18px; background:var(--surface); border-left:2px solid var(--border-strong); border-radius:0 12px 12px 0; color:var(--ink); font-style:italic; }
-  blockquote.them { border-left-color:var(--presence); }
-  .reply-block { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px 20px; margin:14px 0; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.05); }
-  .reply-block .label { font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--ink3); text-transform:uppercase; }
-  .reply-block.bad { border-color:rgba(220,38,38,0.32); }
-  .reply-block.bad .label { color:#DC2626; }
-  .reply-block.good { border-color:var(--border-strong); }
-  .reply-block.good .label { color:var(--ink-bright); }
-  .reply-block .prompt { font-size:13px; color:var(--ink3); margin:4px 0 10px; font-style:italic; }
-  .reply-block .reply { color:var(--ink); font-size:15.5px; }
-  .checklist { list-style:none; padding-left:0; }
-  .checklist li { position:relative; padding-left:28px; margin-bottom:12px; }
-  .checklist li::before { content:""; position:absolute; left:0; top:7px; width:16px; height:16px; border-radius:5px; background:var(--surface-2); border:1px solid var(--border-strong); }
-  .checklist li::after { content:"\2713"; position:absolute; left:3.5px; top:3px; color:var(--ink-bright); font-size:11px; font-weight:700; }
-  .cta { margin:56px 0 0; padding:34px; border-radius:24px; background:radial-gradient(90% 130% at 50% 0%, rgba(0,0,0,0.035), transparent 60%), var(--surface); border:1px solid var(--border); box-shadow:0 12px 34px rgba(0,0,0,0.08); }
-  .cta h3 { margin:0 0 8px; font-size:22px; color:var(--ink-bright); letter-spacing:-0.4px; }
-  .cta p { margin:0 0 18px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px; background:var(--ink-bright); color:var(--ink-inverse); font-weight:600; border:0; box-shadow:var(--glow); transition:transform .15s ease,opacity .15s ease; }
-  .btn:hover { opacity:0.93; transform:translateY(-1px); color:var(--ink-inverse); }
-  footer { border-top:1px solid var(--border); padding:28px 0; color:var(--ink3); font-size:13px; }
-  .foot-inner { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  .foot-inner a { color:var(--ink3); margin-left:18px; border:0; }
-  .foot-inner a:first-child { margin-left:0; }
-  .foot-inner a:hover { color:var(--ink); }
-  .related { margin:56px 0 0; padding-top:32px; border-top:1px solid var(--border); }
-  .related h3 { margin:0 0 14px; font-size:13px; color:var(--ink3); font-family:var(--mono); letter-spacing:2px; text-transform:uppercase; }
-  .related ul { list-style:none; padding:0; }
-  .related li { margin-bottom:8px; }
-  .related a { font-weight:500; }
-
-  /* ── Atmosphere ── */
-  ::selection { background:rgba(0,0,0,0.12); color:#000; }
-  ::-webkit-scrollbar { width:10px; }
-  ::-webkit-scrollbar-track { background:#fff; }
-  ::-webkit-scrollbar-thumb { background:#d8d8dc; border-radius:10px; border:2px solid #fff; }
-  .fx { position:fixed; inset:0; pointer-events:none; }
-  .fx-aurora { z-index:0; background:
-      radial-gradient(640px 420px at 78% -10%, rgba(0,0,0,0.03), transparent 62%),
-      radial-gradient(520px 480px at 6% 6%, rgba(0,0,0,0.022), transparent 60%);
-      animation:drift 26s var(--ease) infinite alternate; }
-  @keyframes drift { 0%{transform:translate3d(0,0,0) scale(1);} 100%{transform:translate3d(-2%,1.5%,0) scale(1.06);} }
-  .fx-grain { z-index:1; opacity:0.035; mix-blend-mode:multiply;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  .cursor-glow { position:fixed; top:0; left:0; width:500px; height:500px; z-index:1; pointer-events:none;
-      border-radius:50%; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease;
-      background:radial-gradient(circle, rgba(0,0,0,0.035), transparent 62%); mix-blend-mode:multiply; }
-  main, footer { position:relative; z-index:2; }
-  .nav { transition:background .3s ease, border-color .3s ease; }
-  .nav.scrolled { background:rgba(255,255,255,0.78) !important; backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom-color:var(--border) !important; }
-  main { animation:fadeup .7s var(--ease) both; }
-  @keyframes fadeup { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:none;} }
-  h1 { background:linear-gradient(176deg,#0A0A0A 22%, rgba(10,10,10,0.58) 100%);
-       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
-  @media (prefers-reduced-motion:reduce){ *{animation:none !important;} main{opacity:1;transform:none;} }
-</style>
+<link rel="stylesheet" href="/glint.css" />
 </head>
 <body>
 
 <div class="fx fx-aurora"></div>
+<div class="fx fx-grid"></div>
 <div class="fx fx-grain"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<div class="pointer-halo" id="halo"></div>
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="/" class="brand"><span>Glint</span></a>
-    <div class="links">
-      <a href="/">Home</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Glint home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+      Glint
+    </a>
+    <div class="nav-links">
       <a href="/hinge-replies">Hinge replies</a>
       <a href="/tinder-openers">Tinder openers</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#join" class="nav-cta">Join waitlist</a>
     </div>
   </div>
 </nav>
 
-<main>
+<main class="doc">
   <div class="container">
-    <p class="meta">GUIDE · UPDATED 27 MAY 2026</p>
-    <h1>What Is an AI Dating Assistant? A Practical Guide</h1>
-    <p class="lede">An <em>AI dating assistant</em> is a tool that helps you write better messages on dating apps. It doesn&rsquo;t pretend to be you, doesn&rsquo;t send anything automatically, and doesn&rsquo;t replace the part where you actually talk to a person. Here&rsquo;s what they do, what to look for, and where they actually help.</p>
+    <p class="meta" data-rv="fade"><span class="tick"></span> GUIDE · UPDATED 27 MAY 2026</p>
+    <h1 data-rv>What Is an AI Dating Assistant? A Practical Guide</h1>
+    <p class="lede" data-rv style="--d:90ms">An <em>AI dating assistant</em> is a tool that helps you write better messages on dating apps. It doesn&rsquo;t pretend to be you, doesn&rsquo;t send anything automatically, and doesn&rsquo;t replace the part where you actually talk to a person. Here&rsquo;s what they do, what to look for, and where they actually help.</p>
 
     <h2>What an AI dating assistant actually does</h2>
     <p>Most tools in this category do one or more of these:</p>
     <ul>
-      <li><strong>Reply generation.</strong> You paste a chat (text or screenshot) and the tool produces 2–5 candidate replies. You pick one, edit it, and send. This is the core use case.</li>
+      <li><strong>Reply generation.</strong> You paste a chat (text or screenshot) and the tool produces 2 to 5 candidate replies. You pick one, edit it, and send. This is the core use case.</li>
       <li><strong>Opener generation.</strong> You give it a profile (screenshot or text) and it suggests first messages tailored to what&rsquo;s in the profile.</li>
       <li><strong>Profile audit.</strong> You upload your own profile photos and prompts; the tool flags weak photos, generic prompts, and suggests rewrites.</li>
-      <li><strong>Conversation coaching.</strong> Less common — some tools score the back-and-forth and suggest what to do next.</li>
+      <li><strong>Conversation coaching.</strong> Less common. Some tools score the back-and-forth and suggest what to do next.</li>
     </ul>
     <p>What they don&rsquo;t do (and you should be wary of any tool that claims otherwise): automatically message matches on your behalf, swipe for you, or maintain conversations without your involvement. That crosses from &ldquo;assistant&rdquo; into &ldquo;deception&rdquo; and most dating apps&rsquo; terms of service explicitly prohibit it.</p>
 
     <h2>What to look for</h2>
     <p>If you&rsquo;re evaluating tools, here&rsquo;s a checklist of the things that actually matter:</p>
     <ul class="checklist">
-      <li><strong>Multiple options per request.</strong> A single AI-generated reply is a coin flip; three options on different tones lets you pick the one closest to how you actually talk.</li>
+      <li><strong>Multiple options per request.</strong> A single AI-generated reply is a coin flip; three drafts in different voices lets you pick the one closest to how you actually talk.</li>
       <li><strong>Reads the full chat, not just the last message.</strong> Context matters. Tools that only see the last incoming message produce generic replies that ignore the conversation&rsquo;s history.</li>
       <li><strong>Doesn&rsquo;t train on your private messages.</strong> The honest tools say this explicitly in their privacy policy. If you can&rsquo;t find a clear statement, assume they do.</li>
-      <li><strong>A free tier that&rsquo;s actually usable.</strong> 3–5 generations per day is enough to evaluate the tool. &ldquo;Free trial&rdquo; that&rsquo;s really a paywall after one generation isn&rsquo;t.</li>
+      <li><strong>A free tier that&rsquo;s actually usable.</strong> 3 to 5 generations per day is enough to evaluate the tool. &ldquo;Free trial&rdquo; that&rsquo;s really a paywall after one generation isn&rsquo;t.</li>
       <li><strong>Output that sounds casual, not corporate.</strong> Test it: paste a chat, generate a reply, and ask yourself if you&rsquo;d actually send that. If it sounds like a customer-service bot, the model is wrong for this use case.</li>
-      <li><strong>Reasonable pricing.</strong> $5–15 / month for unlimited use is fair. $30+ / month or annual-only billing is a red flag.</li>
+      <li><strong>Reasonable pricing.</strong> $5 to $15 a month for unlimited use is fair. $30 a month, or billing that is annual only, is a red flag.</li>
     </ul>
 
     <h2>Where AI assistants actually help</h2>
-    <p>The honest answer: not where you&rsquo;d expect. They&rsquo;re less useful for the dramatic moments (first message, asking for the number) and more useful for the <em>awkward middle</em> — the part of the conversation where:</p>
+    <p>The honest answer: not where you&rsquo;d expect. They&rsquo;re less useful for the dramatic moments (first message, asking for the number) and more useful for the <em>awkward middle</em>, the part of the conversation where:</p>
     <ul>
       <li>You&rsquo;ve been chatting for a few messages and momentum is fading.</li>
       <li>They sent something that requires a specific response and you&rsquo;re overthinking the phrasing.</li>
@@ -222,45 +134,73 @@
     <p>Only if you accept the first suggestion without editing. The right workflow is: read the suggestions, pick the one closest to your voice, change at least one word, send. AI is a starting point, not the finished product.</p>
 
     <h3>&ldquo;Is this cheating?&rdquo;</h3>
-    <p>People have used friends, dating coaches, advice columns, and books for the same purpose for decades. The honesty test is whether you&rsquo;d be comfortable telling the other person — and most people would be, in the same way they&rsquo;d admit running a draft past a roommate.</p>
+    <p>People have used friends, dating coaches, advice columns, and books for the same purpose for decades. The honesty test is whether you&rsquo;d be comfortable telling the other person, and most people would be, in the same way they&rsquo;d admit running a draft past a roommate.</p>
 
     <h3>&ldquo;What about privacy?&rdquo;</h3>
     <p>This one&rsquo;s real. Anything you paste into an AI tool is processed by a third party. Read the privacy policy: does the tool delete the input after processing? Does it train models on user conversations? Tools built specifically for dating-app messaging should have explicit answers to both.</p>
 
     <h2>Where Glint fits</h2>
-    <p><a href="/">Glint</a> is one option in this category. It reads the full chat, generates three replies on different tones (warm, charming, playful), and doesn&rsquo;t store screenshots or train on user conversations. Free tier is 5 generations a day; Pro is $6.99 / month for unlimited replies plus openers and a profile audit.</p>
-    <p>It&rsquo;s not the only good option — but if the checklist above is what you care about, it&rsquo;s designed against that exact spec.</p>
+    <p><a href="/">Glint</a> is one option in this category. It reads the full chat, drafts three replies, one in each voice (Genuine, Glint, Roast), and doesn&rsquo;t store screenshots or train on user conversations. Free tier is 5 generations a day; Pro is $6.99 a month for unlimited replies plus openers and a profile audit.</p>
+    <p>It&rsquo;s not the only good option, but if the checklist above is what you care about, it&rsquo;s designed against that exact spec.</p>
 
-    <div class="cta">
+    <div class="doc-cta sweep" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Early access</span>
       <h3>Try it when it launches</h3>
-      <p>Glint is in pre-launch. Join the waitlist for early access — free tier, no credit card required.</p>
-      <a href="/#download" class="btn">Join the waitlist →</a>
+      <p>Glint is not out yet. Join the waitlist for early access, on the free tier, with no card required.</p>
+      <a href="/#join" class="btn btn-primary" data-ph-event="guide_cta_clicked" data-ph-guide="ai-dating-assistant">Join the waitlist &rarr;</a>
     </div>
 
-    <div class="related">
-      <h3>Related guides</h3>
-      <ul>
-        <li><a href="/hinge-replies">How to reply on Hinge (with 25+ examples)</a></li>
-        <li><a href="/tinder-openers">Best Tinder openers that actually get replies</a></li>
-      </ul>
+    <div class="related" data-rv="fade">
+      <h3>Keep reading</h3>
+      <div class="related-grid">
+        <a href="/hinge-replies"><span class="k">Hinge</span><span class="t">How to reply on Hinge, with 25+ examples</span></a>
+        <a href="/tinder-openers"><span class="k">Tinder</span><span class="t">Best Tinder openers that get replies</span></a>
+      </div>
     </div>
   </div>
 </main>
 
 <footer>
-  <div class="container foot-inner">
-    <div>© 2026 Glint</div>
-    <div>
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+  <div class="container">
+    <div class="foot-top">
+      <div class="lead">
+        <a href="/" class="brand">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+          Glint
+        </a>
+        <p>The AI wingman for dating apps. Paste a chat, pick a voice, send the reply that actually lands.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="/#voices">Voices</a>
+          <a href="/#how">How it works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#join">Join waitlist</a>
+        </div>
+        <div class="foot-col">
+          <h4>Guides</h4>
+          <a href="/hinge-replies">Hinge replies</a>
+          <a href="/tinder-openers">Tinder openers</a>
+          <a href="/ai-dating-assistant">AI dating assistant</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="mailto:khanna.hemant3@gmail.com">Support</a>
+          <a href="https://github.com/hemant0024/glintweb" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Glint. All rights reserved.</span>
+      <span>Made for better conversations.</span>
     </div>
   </div>
+  <div class="watermark" aria-hidden="true">Glint</div>
 </footer>
 
-<script>
-  (function(){var n=document.querySelector('.nav');if(n){var f=function(){n.classList.toggle('scrolled',window.scrollY>12)};f();window.addEventListener('scroll',f,{passive:true});}})();
-  (function(){if(window.matchMedia('(pointer:fine)').matches){var g=document.getElementById('cursorGlow');if(!g)return;window.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';g.style.opacity='1';},{passive:true});window.addEventListener('mouseleave',function(){g.style.opacity='0';});}})();
-</script>
+<script src="/glint.js" defer></script>
 </body>
 </html>

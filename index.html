@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-voice="rizz">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Glint — AI wingman for Hinge, Tinder &amp; Bumble replies</title>
-<meta name="description" content="Glint is an AI wingman for Hinge, Tinder &amp; Bumble. Paste any chat → get 3 sharp replies in your voice in seconds. Free to start. Join the waitlist." />
+<meta name="description" content="Glint is an AI wingman for Hinge, Tinder &amp; Bumble. Paste any chat and get three replies in your own voice in seconds. Free to start. Join the waitlist." />
 <meta name="keywords" content="AI dating assistant, dating app replies, Hinge replies, Tinder replies, Bumble replies, AI wingman, dating openers, rizz app, Glint" />
 <meta name="author" content="Glint" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Glint" />
 <meta property="og:title" content="Glint — AI wingman for Hinge, Tinder &amp; Bumble replies" />
-<meta property="og:description" content="AI wingman for Hinge, Tinder &amp; Bumble. Paste any chat → 3 sharp replies in your voice, in seconds." />
+<meta property="og:description" content="AI wingman for Hinge, Tinder &amp; Bumble. Paste any chat and get three replies in your own voice, in seconds." />
 <meta property="og:url" content="https://glintapp.app/" />
 <meta property="og:image" content="https://glintapp.app/og.png" />
 <meta property="og:image:width" content="1200" />
@@ -26,10 +26,11 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Glint — AI wingman for dating apps" />
-<meta name="twitter:description" content="Paste a chat. Pick a tone. Get three replies that sound like you, only sharper." />
+<meta name="twitter:description" content="Paste a chat. Glint drafts three replies, one per voice. Send the one that sounds like you." />
 <meta name="twitter:image" content="https://glintapp.app/og.png" />
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230A0A0A'%3E%3Cpath d='M12 2l1.7 7.2L21 12l-7.3 1.8L12 22l-1.7-8.2L3 12l7.3-1.8z'/%3E%3C/svg%3E" />
+<!-- The mark is the spark: a bolt, matching the app -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233A5F8F'%3E%3Cpath d='M13 2 3 14h8l-1 8 10-12h-8l1-8z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://us-assets.i.posthog.com" crossorigin />
@@ -38,6 +39,7 @@
 <link rel="prefetch" href="/hinge-replies" />
 <link rel="prefetch" href="/tinder-openers" />
 <link rel="prefetch" href="/ai-dating-assistant" />
+<link rel="stylesheet" href="/glint.css" />
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -64,7 +66,7 @@
       "name": "Glint",
       "operatingSystem": "iOS, Android",
       "applicationCategory": "LifestyleApplication",
-      "description": "AI wingman for dating apps. Paste a chat from Hinge, Tinder or Bumble and get three on-tone replies.",
+      "description": "AI wingman for dating apps. Paste a chat from Hinge, Tinder or Bumble and get three replies, one in each voice.",
       "offers": [
         { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Pro", "price": "6.99", "priceCurrency": "USD" }
@@ -76,12 +78,12 @@
         {
           "@type": "Question",
           "name": "What is Glint?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Glint is an AI dating-app wingman. You paste a chat from Hinge, Tinder or Bumble, pick a tone (Genuine, Rizz, or Roast), and get three reply candidates to copy back into the dating app." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Glint is an AI dating-app wingman. You paste a chat from Hinge, Tinder or Bumble and get three reply drafts, one in each voice (Genuine, Glint, Roast), to copy back into the dating app." }
         },
         {
           "@type": "Question",
           "name": "Is Glint free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The free tier gives 5 reply generations per day across all three tones. Glint Pro adds unlimited replies, an opener generator, and a profile audit feature for $6.99 / month at launch." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The free tier gives 5 reply generations per day across all three voices. Glint Pro adds unlimited replies, an opener generator, and a profile audit feature for $6.99 / month at launch." }
         },
         {
           "@type": "Question",
@@ -91,7 +93,7 @@
         {
           "@type": "Question",
           "name": "How is Glint different from a generic AI chatbot?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Generic chatbots produce one reply that often sounds robotic. Glint generates three options on different tones (warm, charming, playful) so you can compare and pick the phrasing closest to how you actually talk, then edit." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Generic chatbots produce one reply that often sounds robotic. Glint generates three options in different voices (warm, charming, playful) so you can compare and pick the phrasing closest to how you actually talk, then edit." }
         },
         {
           "@type": "Question",
@@ -101,18 +103,19 @@
         {
           "@type": "Question",
           "name": "Is Glint available on iOS and Android?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Glint is pre-launch as of May 2026. iOS and Android apps will ship after the waitlist build. Sign up at https://glintapp.app for early access." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Both apps are in build. Sign up at https://glintapp.app and you get the download link the day it goes live." }
         },
         {
           "@type": "Question",
           "name": "What does 'rizz' mean in the context of Glint?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Rizz is slang for charisma — the ability to charm or flirt in conversation. In Glint, 'Rizz' is one of the three tone settings: confident and witty, between the warm 'Genuine' tone and the playful 'Roast' tone." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Rizz is slang for charisma, the ability to charm or flirt in conversation. In Glint that voice is called Glint: confident and witty, sitting between the warm Genuine voice and the playful Roast voice." }
         }
       ]
     }
   ]
 }
 </script>
+
 <script>
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
   posthog.init('phc_m5fs654pnWQeLM6Z2URCee4AHEEpC3HX3XCLLkYfiMcY', {
@@ -120,435 +123,531 @@
     person_profiles: 'identified_only',
   });
 </script>
+
 <style>
-  /* ═══════════════════════════════════════════════════════════════
-     GLINT — "Daylight, with depth." Premium light, black-only accent.
-     White canvas, near-black ink. Hierarchy from hairlines + soft
-     elevation shadows, not color. Text-only wordmark.
-     ═══════════════════════════════════════════════════════════════ */
-  :root {
-    --bg:#FFFFFF; --bg-elev:#FAFAFA; --surface:#FFFFFF; --surface-2:#F4F4F5; --surface-3:#ECECEE;
-    --border:rgba(0,0,0,0.08); --border-strong:rgba(0,0,0,0.22); --divider:rgba(0,0,0,0.10);
-    --ink:#0A0A0A; --ink-bright:#000000; --ink-inverse:#FFFFFF;
-    --ink-2:rgba(10,10,10,0.62); --ink-3:rgba(10,10,10,0.44); --ink-4:rgba(10,10,10,0.26);
-    --font:"Geist","Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-    --mono:"Geist Mono","JetBrains Mono",ui-monospace,monospace;
-    --serif:"Instrument Serif",Georgia,serif;
-    --glow:0 12px 34px rgba(0,0,0,0.16);
-    --shadow-sm:0 1px 2px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.05);
-    --ease:cubic-bezier(.2,.7,.2,1);
-    --max:1160px;
-  }
-  *,*::before,*::after { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  html, body { margin:0; padding:0; max-width:100%; overflow-x:hidden; }
-  body {
-    font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.55;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  a { color:inherit; text-decoration:none; }
-  ::selection { background:rgba(0,0,0,0.12); color:#000; }
-  ::-webkit-scrollbar { width:10px; }
-  ::-webkit-scrollbar-track { background:#fff; }
-  ::-webkit-scrollbar-thumb { background:#d8d8dc; border-radius:10px; border:2px solid #fff; }
-  ::-webkit-scrollbar-thumb:hover { background:#c2c2c8; }
-  .container { max-width:var(--max); margin:0 auto; padding:0 24px; }
 
-  /* ── Atmosphere layers ── */
-  .fx { position:fixed; inset:0; pointer-events:none; }
-  .fx-aurora {
-    z-index:0;
-    background:
-      radial-gradient(640px 440px at 72% -8%, rgba(0,0,0,0.035), transparent 62%),
-      radial-gradient(520px 520px at 8% 14%, rgba(0,0,0,0.025), transparent 60%),
-      radial-gradient(700px 500px at 50% 116%, rgba(0,0,0,0.03), transparent 60%);
-    animation:drift 24s var(--ease) infinite alternate;
-  }
-  @keyframes drift {
-    0% { transform:translate3d(0,0,0) scale(1); }
-    100% { transform:translate3d(-2%,1.5%,0) scale(1.06); }
-  }
-  .fx-grid {
-    z-index:0; opacity:0.6;
-    background-image:linear-gradient(rgba(0,0,0,0.028) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(0,0,0,0.028) 1px,transparent 1px);
-    background-size:64px 64px;
-    -webkit-mask-image:radial-gradient(120% 80% at 50% 0%,#000 0%,transparent 70%);
-            mask-image:radial-gradient(120% 80% at 50% 0%,#000 0%,transparent 70%);
-  }
-  .fx-grain {
-    z-index:1; opacity:0.035; mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .cursor-glow {
-    position:fixed; top:0; left:0; width:520px; height:520px; z-index:1; pointer-events:none;
-    border-radius:50%; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease;
-    background:radial-gradient(circle, rgba(0,0,0,0.035), transparent 62%); mix-blend-mode:multiply;
-  }
-  nav, main, footer { position:relative; z-index:2; }
 
-  /* ── Reveal on scroll / load ── */
-  [data-reveal] { opacity:0; transform:translateY(20px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
-  [data-reveal].is-in { opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce) {
-    *{ animation:none !important; }
-    [data-reveal]{ opacity:1; transform:none; transition:none; }
-    html{ scroll-behavior:auto; }
+  /* ──────────────────────────────────────────────────────  hero  ── */
+  .hero { padding:138px 0 78px; position:relative; }
+  .hero-grid { display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,.88fr); gap:60px; align-items:center; }
+  .chip {
+    display:inline-flex; align-items:center; gap:9px; padding:8px 16px 8px 13px; border-radius:999px;
+    background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-sm); margin-bottom:26px;
   }
+  .lede { font-size:19px; line-height:1.62; color:var(--ink-2); max-width:31em; margin:0 0 32px; }
+  .lede b { color:var(--ink); font-weight:600; }
 
-  /* ── Nav ── */
-  .nav { position:sticky; top:0; z-index:60; transition:background .3s ease, border-color .3s ease; border-bottom:1px solid transparent; }
-  .nav.scrolled { background:rgba(255,255,255,0.72); backdrop-filter:blur(22px) saturate(140%); -webkit-backdrop-filter:blur(22px) saturate(140%); border-bottom-color:var(--border); }
-  .nav-inner { display:flex; align-items:center; justify-content:space-between; height:68px; }
-  .brand { font-weight:700; font-size:19px; letter-spacing:-0.8px; color:var(--ink-bright); }
-  .nav-links { display:flex; gap:30px; align-items:center; }
-  .nav-links a:not(.nav-cta) { color:var(--ink-2); font-size:14px; transition:color .15s ease; }
-  .nav-links a:not(.nav-cta):hover { color:var(--ink); }
-  .nav-links a.nav-cta {
-    padding:10px 20px; border-radius:999px; background:var(--ink-bright); color:var(--ink-inverse);
-    font-weight:600; font-size:13.5px; letter-spacing:-0.1px; box-shadow:var(--glow);
-    transition:transform .18s var(--ease), opacity .18s ease;
+  .waitlist { display:flex; gap:9px; max-width:470px; }
+  .waitlist-email {
+    flex:1; min-width:0; height:54px; padding:0 18px; border-radius:999px;
+    background:var(--surface); border:1px solid var(--border-strong); font-size:15px; outline:none;
+    transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
   }
-  .nav-links a.nav-cta:hover { color:var(--ink-inverse); transform:translateY(-1px); opacity:0.92; }
-  @media (max-width:760px){ .nav-links a:not(.nav-cta){ display:none; } }
+  .waitlist-email::placeholder { color:var(--ink-4); }
+  .waitlist-email:focus { border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+  .waitlist-submit {
+    height:54px; padding:0 26px; border:none; border-radius:999px; cursor:pointer;
+    background:var(--ink-bright); color:var(--ink-inverse);
+    font-size:15px; font-weight:600; letter-spacing:-.01em;
+    display:inline-flex; align-items:center; gap:9px; white-space:nowrap; box-shadow:var(--halo);
+    transition:transform .3s var(--ease), box-shadow .4s var(--ease), opacity .3s ease;
+  }
+  .waitlist-submit:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 16px 38px var(--accent-glow); }
+  .waitlist-submit:disabled { opacity:.55; cursor:default; }
+  .waitlist-status { font-size:13.5px; margin-top:12px; min-height:20px; color:var(--ink-3); }
+  .waitlist-status.ok { color:var(--accent); font-weight:600; }
+  .waitlist-status.err { color:var(--roast); }
 
-  /* ── Shared atoms ── */
-  .eyebrow {
-    display:inline-flex; align-items:center; gap:9px; font-family:var(--mono);
-    font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-3); font-weight:500;
-  }
-  .eyebrow.chip { padding:7px 14px; border-radius:999px; background:rgba(0,0,0,0.03); border:1px solid var(--border); color:var(--ink-2); box-shadow:var(--shadow-sm); }
-  .eyebrow .bar { width:18px; height:1px; background:var(--border-strong); }
-  .btn {
-    display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 24px;
-    border-radius:999px; font-weight:600; font-size:15px; letter-spacing:-0.1px; border:1px solid transparent;
-    cursor:pointer; transition:transform .18s var(--ease), opacity .18s ease, background .18s ease, border-color .18s ease;
-  }
-  .btn-primary { background:var(--ink-bright); color:var(--ink-inverse); box-shadow:var(--glow); }
-  .btn-primary:hover { transform:translateY(-1px); opacity:0.93; }
-  .btn-ghost { background:transparent; color:var(--ink); border-color:var(--divider); }
-  .btn-ghost:hover { background:var(--surface-2); border-color:var(--border-strong); }
-  .ic { width:1em; height:1em; display:inline-block; vertical-align:-0.12em; flex:none; }
-  .mono { font-family:var(--mono); font-variant-numeric:tabular-nums; }
-  .sep { display:inline-flex; align-items:center; gap:14px; }
-  .sep > * + *::before { content:""; }
+  .hero-meta { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:24px; }
+  .hero-meta .item { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:500; color:var(--ink-3); }
+  .hero-meta .ic { width:15px; height:15px; stroke:var(--accent); }
+  .hero-meta .dot { width:3px; height:3px; border-radius:50%; background:var(--ink-4); }
 
-  /* ── Hero ── */
-  .hero { position:relative; padding:84px 0 76px; }
-  .hero-grid { display:grid; grid-template-columns:1.04fr 0.96fr; gap:60px; align-items:center; }
-  @media (max-width:920px){ .hero-grid{ grid-template-columns:1fr; gap:48px; } }
-  .hero h1 {
-    font-size:clamp(46px,7.2vw,82px); line-height:0.98; font-weight:800; letter-spacing:-3px;
-    margin:24px 0 20px; max-width:13ch;
-    background:linear-gradient(176deg,#0A0A0A 22%, rgba(10,10,10,0.58) 100%);
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+  .proof { display:flex; align-items:center; gap:13px; margin-top:28px; }
+  .proof .stack { display:flex; }
+  .proof .stack span {
+    width:31px; height:31px; border-radius:50%; margin-left:-9px; display:grid; place-items:center;
+    font-size:11.5px; font-weight:700; background:var(--surface-2); color:var(--ink-2);
+    border:2px solid #fff; box-shadow:var(--shadow-sm);
   }
-  .hero h1 em {
-    font-family:var(--serif); font-style:italic; font-weight:400; letter-spacing:-1px;
-    -webkit-text-fill-color:initial; color:#000;
-  }
-  .hero .lede { font-size:clamp(17px,2vw,19px); color:var(--ink-2); max-width:50ch; margin:0 0 32px; letter-spacing:-0.1px; line-height:1.6; }
-  .hero-meta { margin-top:20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-  .hero-meta .item { display:inline-flex; align-items:center; gap:8px; color:var(--ink-3); font-size:13px; }
-  .hero-meta .item svg { color:var(--ink-2); }
-  .hero-meta .rule { width:1px; height:14px; background:var(--divider); }
-  .proof { margin-top:26px; display:flex; align-items:center; gap:12px; }
-  .stack { display:flex; }
-  .stack span {
-    width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:700;
-    color:var(--ink-2); background:var(--surface-2); border:1px solid var(--bg); margin-left:-9px;
-    box-shadow:0 0 0 1px var(--divider);
-  }
-  .stack span:first-child{ margin-left:0; }
-  .proof .txt { font-size:13px; color:var(--ink-3); }
+  .proof .stack span:first-child { margin-left:0; }
+  .proof .stack span:last-child { background:var(--ink-bright); color:#fff; }
+  .proof .txt { font-size:13.5px; color:var(--ink-3); }
   .proof .txt b { color:var(--ink); font-weight:600; }
 
-  /* hero load choreography */
-  .hi { opacity:0; transform:translateY(22px); animation:rise .9s var(--ease) forwards; }
-  @keyframes rise { to { opacity:1; transform:none; } }
-  .hi.d1{animation-delay:.05s} .hi.d2{animation-delay:.15s} .hi.d3{animation-delay:.25s}
-  .hi.d4{animation-delay:.35s} .hi.d5{animation-delay:.45s} .hi.d6{animation-delay:.55s}
-
-  /* ── Phone demo ── */
-  .demo-wrap { perspective:1400px; }
+  /* the device */
+  .stage { position:relative; display:flex; flex-direction:column; align-items:center; perspective:1600px; }
+  .stage::before {
+    content:""; position:absolute; inset:-14% -10% -6%;
+    background:radial-gradient(58% 46% at 50% 42%, var(--accent-wash), transparent 68%);
+    filter:blur(28px); z-index:0;
+  }
   .phone {
-    position:relative; background:linear-gradient(180deg,#FFFFFF,#F6F6F7); border:1px solid var(--border-strong);
-    border-radius:40px; padding:18px;
-    box-shadow:0 1px 0 rgba(255,255,255,0.9) inset, 0 40px 90px rgba(0,0,0,0.16), 0 8px 24px rgba(0,0,0,0.08);
-    transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition:transform .25s var(--ease);
-    will-change:transform;
+    position:relative; z-index:1; width:344px; max-width:100%;
+    border-radius:46px; padding:9px;
+    background:linear-gradient(170deg,#fff,#f1f1f4);
+    border:1px solid var(--border-strong);
+    box-shadow:var(--shadow-xl), 0 0 0 1px rgba(255,255,255,.9) inset;
+    transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+    transition:transform .5s var(--ease);
   }
-  .phone::before {
-    content:""; position:absolute; inset:0; border-radius:40px; pointer-events:none;
-    background:radial-gradient(70% 40% at 50% 0%, rgba(0,0,0,0.025), transparent 70%);
+  .screen {
+    position:relative; border-radius:38px; background:var(--bg); overflow:hidden;
+    display:flex; flex-direction:column; min-height:600px; padding:16px 15px 15px; isolation:isolate;
   }
-  .phone-inner { position:relative; display:flex; flex-direction:column; gap:12px; }
-  .ch { display:flex; align-items:center; gap:12px; padding:4px 4px 14px; border-bottom:1px solid var(--border); }
-  .ava { width:40px; height:40px; border-radius:999px; background:var(--surface-2); border:1px solid var(--divider); display:grid; place-items:center; font-weight:700; font-size:14px; color:var(--ink-2); }
-  .ch .nm { font-weight:700; font-size:15px; letter-spacing:-0.2px; }
-  .ch .mt { font-size:10.5px; color:var(--ink-3); font-family:var(--mono); letter-spacing:0.6px; }
-  .bub { max-width:82%; padding:11px 15px; font-size:14px; line-height:1.4; }
-  .bub.them { background:var(--surface-2); border:1px solid var(--divider); border-radius:18px 18px 18px 5px; align-self:flex-start; }
-  .bub.you { background:var(--ink-bright); color:var(--ink-inverse); border-radius:18px 18px 5px 18px; align-self:flex-end; font-weight:500; }
-  .tone-row { display:flex; gap:8px; padding-top:4px; }
-  .tone {
-    flex:1; text-align:center; padding:9px 0; border-radius:12px; font-size:12.5px; font-weight:600;
-    border:1px solid var(--divider); background:transparent; color:var(--ink-2); cursor:pointer;
-    transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .12s var(--ease);
+  .screen::before {
+    content:""; position:absolute; inset:0; z-index:0;
+    background:radial-gradient(120% 62% at 88% -6%, var(--accent-wash), transparent 62%);
   }
-  .tone:hover { border-color:var(--border-strong); color:var(--ink); }
-  .tone:active { transform:scale(.97); }
-  .tone.on { background:var(--ink-bright); color:var(--ink-inverse); border-color:var(--ink-bright); }
-  .sugs { display:flex; flex-direction:column; gap:10px; min-height:152px; }
-  .sug {
-    padding:13px 15px; border:1px solid var(--border); border-radius:16px; background:var(--surface);
-    font-size:13.5px; color:var(--ink); display:flex; gap:11px; align-items:flex-start; line-height:1.5;
-    opacity:0; transform:translateY(8px); animation:sugin .5s var(--ease) forwards;
+  .scanline {
+    position:absolute; left:0; right:0; height:34%; z-index:5; pointer-events:none; top:-34%;
+    background:linear-gradient(to bottom, transparent, color-mix(in srgb, var(--accent) 9%, transparent), transparent);
+    opacity:0; animation:scan 7.5s var(--ease) infinite;
   }
-  .sug.top { background:var(--surface-3); border-color:var(--border-strong); }
-  .sug:nth-child(2){ animation-delay:.12s; }
-  @keyframes sugin { to { opacity:1; transform:none; } }
-  .sug .tg { font-family:var(--mono); font-size:9.5px; letter-spacing:1px; color:var(--ink-3); text-transform:uppercase; margin-top:3px; padding:2px 6px; border:1px solid var(--border); border-radius:6px; }
-  .typing { display:flex; gap:5px; padding:16px 15px; }
-  .typing i { width:7px; height:7px; border-radius:50%; background:var(--ink-3); animation:blink 1.2s infinite; }
-  .typing i:nth-child(2){ animation-delay:.2s; } .typing i:nth-child(3){ animation-delay:.4s; }
-  @keyframes blink { 0%,60%,100%{ opacity:.25; transform:translateY(0);} 30%{ opacity:1; transform:translateY(-3px);} }
+  @keyframes scan {
+    0%{ top:-34%; opacity:0 } 8%{ opacity:.9 } 60%{ opacity:.5 } 78%{ top:100%; opacity:0 } 100%{ top:100%; opacity:0 }
+  }
+  .scr-top { position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .back { width:22px; height:26px; display:grid; place-items:center; color:var(--ink-3); }
+  .ava { width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+         background:var(--surface-3); color:var(--ink-2); font-weight:700; font-size:13px; }
+  .who { display:flex; flex-direction:column; }
+  .who .nm { font-size:14.5px; font-weight:700; letter-spacing:-.01em; line-height:1.25; }
+  .who .mt { font-family:var(--mono); font-size:9.5px; letter-spacing:.13em; color:var(--ink-3); line-height:1.3; }
+  .scr-top .glass {
+    margin-left:auto; width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+    color:var(--ink-2); background:rgba(255,255,255,.7); border:1px solid var(--border);
+    -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+  }
+  .bub {
+    position:relative; z-index:1; max-width:86%; padding:11px 14px;
+    border-radius:20px 20px 20px 7px; font-size:13.5px; line-height:1.5;
+    background:var(--surface-2); color:var(--ink); margin-bottom:16px;
+  }
+  .drafted { position:relative; z-index:1; display:flex; align-items:center; gap:9px; margin:0 0 11px 2px; }
+  .drafted .l { font-family:var(--mono); font-size:9.5px; letter-spacing:.15em; color:var(--ink-3); }
+  .drafted .bar { flex:1; height:1px; background:var(--divider); }
+  .drafts { position:relative; z-index:1; display:flex; flex-direction:column; gap:9px; }
+  .draft {
+    --v:var(--rizz);
+    position:relative; text-align:left; width:100%; cursor:pointer; overflow:hidden;
+    padding:12px 13px 12px 15px; border-radius:19px; background:var(--surface);
+    border:1px solid var(--border); box-shadow:var(--shadow-sm);
+    transition:transform .4s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease), background .45s var(--ease);
+  }
+  .draft:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+  .draft .vh { display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+  .draft .em { font-size:12px; line-height:1; }
+  .draft .vn { font-family:var(--mono); font-size:9.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--v); font-weight:500; }
+  .draft .cp { margin-left:auto; font-size:10px; color:var(--ink-4); font-weight:600; letter-spacing:.04em; }
+  .draft p { margin:0; font-size:13px; line-height:1.52; color:var(--ink-2); }
+  .draft.on {
+    border-color:color-mix(in srgb, var(--v) 34%, transparent);
+    background:color-mix(in srgb, var(--v) 5%, #fff);
+    box-shadow:0 10px 26px color-mix(in srgb, var(--v) 18%, transparent);
+  }
+  .draft.on p { color:var(--ink); }
+  .draft.on .cp { color:var(--v); }
+  .draft::before {
+    content:""; position:absolute; left:0; top:14px; bottom:14px; width:2px;
+    background:var(--v); opacity:0; transform:scaleY(.4);
+    transition:opacity .4s var(--ease), transform .5s var(--expo);
+  }
+  .draft.on::before { opacity:1; transform:scaleY(1); }
+  /* the app's SPARKS meter, the free daily quota */
+  .sparks {
+    position:relative; z-index:1; margin-top:auto; padding:11px 14px 10px; border-radius:18px;
+    background:rgba(255,255,255,.7); border:1px solid var(--border);
+    -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px);
+  }
+  .sparks .row { display:flex; align-items:center; gap:7px; margin-bottom:8px; }
+  .sparks .row svg { width:12px; height:12px; fill:var(--accent); }
+  .sparks .k { font-family:var(--mono); font-size:9px; letter-spacing:.16em; color:var(--ink-3); }
+  .sparks .v { margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--ink-2); }
+  .sparks .meter { height:3px; border-radius:3px; background:var(--surface-3); overflow:hidden; }
+  .sparks .meter i { display:block; height:100%; width:60%; background:var(--accent); border-radius:3px; }
 
-  /* ── Marquee ── */
-  .marquee { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-elev); padding:26px 0; overflow:hidden; }
-  .marquee .lbl { text-align:center; font-family:var(--mono); font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-4); margin-bottom:18px; }
-  .track { display:flex; gap:56px; width:max-content; animation:scroll 32s linear infinite; }
+  .composer {
+    position:relative; z-index:1; margin-top:11px; display:flex; align-items:center; gap:9px;
+    padding:9px 9px 9px 16px; border-radius:999px;
+    background:rgba(255,255,255,.7); border:1px solid var(--border);
+    -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); box-shadow:var(--shadow-sm);
+  }
+  .composer .ph { font-size:13px; color:var(--ink-4); }
+  .composer .orb {
+    margin-left:auto; width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+    background:var(--ink-bright); box-shadow:var(--halo);
+  }
+  .composer .orb svg { width:15px; height:15px; fill:#fff; }
+  .stage-cap { text-align:center; margin-top:26px; font-size:13.5px; color:var(--ink-3); }
+  .stage-cap b { color:var(--ink); font-weight:600; }
+
+  /* ───────────────────────────────────────────────────  marquee  ── */
+  .marquee { padding:22px 0 6px; }
+  .mq-lbl {
+    text-align:center; font-family:var(--mono); font-size:10.5px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--ink-4); margin-bottom:20px;
+  }
+  .mq-mask {
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .track { display:flex; gap:56px; width:max-content; animation:slide 34s linear infinite; }
   .track:hover { animation-play-state:paused; }
-  .track span { font-size:26px; font-weight:700; letter-spacing:-0.6px; color:var(--ink-3); white-space:nowrap; transition:color .2s ease; }
-  .track span:hover { color:var(--ink); }
-  .mq-mask { position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
-  @keyframes scroll { to { transform:translateX(-50%); } }
+  .track span { font-family:var(--serif); font-size:30px; color:var(--ink-4); white-space:nowrap; transition:color .4s var(--ease); }
+  .track span:hover { color:var(--accent); }
+  @keyframes slide { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* ── Sections ── */
-  section { padding:104px 0; position:relative; }
-  .head { max-width:660px; margin:0 auto 60px; text-align:center; }
-  .head .eyebrow { margin-bottom:18px; }
-  .head h2 { font-size:clamp(30px,4.2vw,44px); font-weight:800; letter-spacing:-1.4px; margin:0 0 14px; color:var(--ink-bright); line-height:1.05; }
-  .head h2 em { font-family:var(--serif); font-style:italic; font-weight:400; letter-spacing:-0.6px; }
-  .head p { color:var(--ink-2); font-size:16.5px; margin:0; line-height:1.6; }
+  /* ─────────────────────────────────────────────────  manifesto  ── */
+  .manifesto { padding:150px 0 130px; }
+  .mf-copy {
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(32px, 4.8vw, 66px); line-height:1.14; letter-spacing:-.018em;
+    max-width:15.5em; margin:32px 0 0;
+  }
+  .mf-copy .w { display:inline-block; opacity:.13; will-change:opacity; }
+  .mf-copy .w.hl { color:var(--accent); font-style:italic; }
+  .mf-tail { margin:44px 0 0; max-width:34em; font-size:17px; line-height:1.68; color:var(--ink-2); }
+  .mf-tail b { color:var(--ink); font-weight:600; }
 
-  /* ── Bento features ── */
-  .bento { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
-  .tile { background:var(--surface); border:1px solid var(--border); border-radius:26px; padding:30px; position:relative; overflow:hidden; box-shadow:var(--shadow-sm); transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease); }
-  .tile:hover { border-color:var(--border-strong); transform:translateY(-3px); box-shadow:0 18px 40px rgba(0,0,0,0.10); }
-  .tile .ec { width:44px; height:44px; border-radius:13px; display:grid; place-items:center; background:var(--surface-2); border:1px solid var(--border); color:var(--ink); margin-bottom:20px; }
-  .tile h3 { margin:0 0 9px; font-size:19px; font-weight:700; letter-spacing:-0.4px; color:var(--ink-bright); }
-  .tile p { margin:0; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
-  .tile.lg { grid-column:span 4; min-height:300px; display:flex; flex-direction:column; }
-  .tile.sm { grid-column:span 2; }
-  .tile.wide { grid-column:span 3; }
-  .tile.spot::after { content:""; position:absolute; inset:0; background:radial-gradient(80% 60% at 80% 0%, rgba(0,0,0,0.04), transparent 60%); pointer-events:none; }
-  @media (max-width:920px){ .bento{ grid-template-columns:1fr; } .tile.lg,.tile.sm,.tile.wide{ grid-column:span 1; min-height:0; } }
-  /* mini stacked-replies visual */
-  .stackvis { margin-top:auto; display:flex; flex-direction:column; gap:9px; }
-  .stackvis .ln { height:38px; border-radius:11px; background:var(--surface-2); border:1px solid var(--border); display:flex; align-items:center; padding:0 14px; gap:10px; color:var(--ink-3); font-size:12.5px; }
-  .stackvis .ln.win { background:var(--surface-3); border-color:var(--border-strong); color:var(--ink); }
-  .stackvis .ln .d { font-family:var(--mono); font-size:9px; letter-spacing:1px; color:var(--ink-4); }
+  /* ────────────────────────────────────────────  section heads  ── */
+  section { position:relative; }
+  .head { max-width:660px; margin:0 0 54px; }
+  .head.center { margin-left:auto; margin-right:auto; text-align:center; }
+  .head.center .eyebrow { justify-content:center; }
+  .head p { font-size:17px; line-height:1.65; color:var(--ink-2); margin:0; }
 
-  /* ── Difference (before/after) ── */
-  .compare { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:920px; margin:0 auto; }
-  @media (max-width:760px){ .compare{ grid-template-columns:1fr; } }
-  .cc { border:1px solid var(--border); border-radius:24px; padding:28px; background:var(--surface); box-shadow:var(--shadow-sm); }
-  .cc.win { border-color:var(--ink-bright); background:var(--ink-bright); color:var(--ink-inverse); box-shadow:0 24px 50px rgba(0,0,0,0.20); }
-  .cc.win .reply { color:var(--ink-inverse); }
-  .cc.win .note { color:rgba(255,255,255,0.6); }
-  .cc .tag { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-3); margin-bottom:18px; display:block; }
-  .cc.win .tag { color:#fff; }
-  .cc .reply { font-size:16px; line-height:1.55; color:var(--ink); }
+  /* ───────────────────────────────────────────  voices (pinned)  ── */
+  .voices { padding:30px 0 0; }
+  .vx-pin { position:sticky; top:0; min-height:100vh; display:flex; align-items:center; padding:90px 0 56px; }
+  .vx-grid { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:56px; align-items:center; width:100%; }
+
+  .vx-titles { position:relative; }
+  .vx-stack { position:relative; height:226px; }
+  .vx-title {
+    position:absolute; inset:0; opacity:0; transform:translateY(22px) scale(.98); filter:blur(10px);
+    transition:opacity .65s var(--expo), transform .65s var(--expo), filter .65s var(--expo);
+    pointer-events:none;
+  }
+  .vx-title.on { opacity:1; transform:none; filter:blur(0); pointer-events:auto; }
+  .vx-title .glyph { font-size:34px; line-height:1; margin-bottom:14px; display:block; }
+  .vx-title h3 {
+    font-family:var(--serif); font-weight:400; font-size:clamp(40px,5vw,64px);
+    line-height:1; letter-spacing:-.02em; margin:0 0 12px;
+  }
+  .vx-title h3 em { font-style:italic; color:var(--accent); }
+  .vx-title p { font-size:16.5px; line-height:1.65; color:var(--ink-2); margin:0; max-width:24em; }
+  .vx-rail { display:flex; gap:10px; margin-top:26px; }
+  .vx-rail button { flex:1; max-width:120px; padding:0; border:none; background:none; cursor:pointer; text-align:left; }
+  .vx-rail .r { display:block; height:2px; border-radius:2px; background:var(--surface-3); overflow:hidden; margin-bottom:9px; }
+  .vx-rail .r i { display:block; height:100%; width:0; background:var(--accent); }
+  .vx-rail .n {
+    display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--ink-4); transition:color .4s var(--ease);
+  }
+  .vx-rail button[aria-selected="true"] .n { color:var(--ink); }
+
+  .vx-cards { position:relative; min-height:332px; }
+  .vx-card {
+    position:absolute; inset:0; opacity:0; transform:translateY(30px) scale(.97); filter:blur(12px);
+    transition:opacity .7s var(--expo), transform .7s var(--expo), filter .7s var(--expo); pointer-events:none;
+  }
+  .vx-card.on { opacity:1; transform:none; filter:blur(0); pointer-events:auto; }
+  .vx-body {
+    --v:var(--accent);
+    position:relative; border-radius:32px; padding:30px 30px 26px; background:var(--surface);
+    border:1px solid var(--border); box-shadow:var(--shadow-lg); overflow:hidden;
+  }
+  .vx-body::before {
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(90% 70% at 90% 0%, color-mix(in srgb, var(--v) 12%, transparent), transparent 62%);
+  }
+  .vx-body > * { position:relative; }
+  .vx-mt { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .vx-mt .k { font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); }
+  .vx-mt .ln { flex:1; height:1px; background:var(--divider); }
+  .vx-them {
+    max-width:88%; padding:12px 15px; border-radius:20px 20px 20px 7px;
+    background:var(--surface-2); font-size:14.5px; line-height:1.55; margin-bottom:16px;
+  }
+  .vx-reply {
+    padding:18px 20px; border-radius:22px;
+    background:color-mix(in srgb, var(--v) 5%, #fff);
+    border:1px solid color-mix(in srgb, var(--v) 26%, transparent);
+    box-shadow:0 12px 30px color-mix(in srgb, var(--v) 15%, transparent);
+    font-family:var(--serif); font-size:23px; line-height:1.38; letter-spacing:-.01em; color:var(--ink);
+  }
+  .vx-why { display:flex; gap:11px; margin-top:18px; font-size:14px; color:var(--ink-2); line-height:1.6; }
+  .vx-why svg { width:16px; height:16px; flex:none; margin-top:3px; stroke:var(--v); fill:none; }
+
+  /* ─────────────────────────────────────────────────────  how  ── */
+  .how { padding:126px 0 118px; }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); position:relative; }
+  .step { padding:0 32px; position:relative; }
+  .step:first-child { padding-left:0; }
+  .step:last-child { padding-right:0; }
+  .step + .step::before {
+    content:""; position:absolute; left:0; top:4px; bottom:4px; width:1px; background:var(--divider);
+    transform:scaleY(0); transform-origin:top; transition:transform 1s var(--expo) .15s;
+  }
+  .step.in + .step::before, .step + .step.in::before { transform:scaleY(1); }
+  .step .ec {
+    width:44px; height:44px; border-radius:14px; display:grid; place-items:center; margin-bottom:20px;
+    background:var(--accent-soft); border:1px solid var(--accent-line);
+  }
+  .step .ec svg { width:19px; height:19px; stroke:var(--accent); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .step .n { font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--accent); margin-bottom:14px; }
+  .step h3 { font-family:var(--serif); font-weight:400; font-size:29px; line-height:1.12; letter-spacing:-.015em; margin:0 0 11px; }
+  .step p { font-size:15.5px; line-height:1.65; color:var(--ink-2); margin:0; }
+
+  /* ─────────────────────────────────────────────────  compare  ── */
+  .compare-sec { padding:0 0 126px; }
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .cc { position:relative; border-radius:30px; padding:28px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-sm); }
+  .cc .tag { display:inline-block; font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-bottom:18px; }
+  .cc .reply { font-family:var(--serif); font-size:26px; line-height:1.36; letter-spacing:-.01em; margin-bottom:18px; }
+  .cc .note { font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .cc.flat { background:var(--surface-2); border-color:transparent; }
   .cc.flat .reply { color:var(--ink-3); }
-  .cc .note { margin:18px 0 0; font-size:13px; color:var(--ink-3); }
+  .cc.win {
+    border-color:var(--accent-line); box-shadow:0 18px 44px var(--accent-glow);
+    background:linear-gradient(170deg, color-mix(in srgb, var(--accent) 5%, #fff), #fff);
+  }
+  .cc.win .tag { color:var(--accent); }
 
-  /* ── How ── */
-  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  @media (max-width:760px){ .steps{ grid-template-columns:1fr; } }
-  .step { padding:30px; border:1px solid var(--border); border-radius:24px; background:var(--surface); position:relative; box-shadow:var(--shadow-sm); }
-  .step .n { font-family:var(--mono); font-size:38px; font-weight:500; letter-spacing:-1px; color:var(--ink-4); margin-bottom:16px; line-height:1; }
-  .step h3 { margin:0 0 7px; font-size:19px; font-weight:700; letter-spacing:-0.3px; }
-  .step p { margin:0; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
+  /* ─────────────────────────────────────────────────────  why  ── */
+  .why { padding:0 0 126px; }
+  .bento { display:grid; grid-template-columns:repeat(6,1fr); gap:18px; }
+  .tile {
+    position:relative; border-radius:28px; padding:26px; background:var(--surface);
+    border:1px solid var(--border); box-shadow:var(--shadow-sm);
+    transition:transform .45s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  }
+  .tile:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--border-strong); }
+  .tile.lg { grid-column:span 3; }
+  .tile.sm { grid-column:span 3; }
+  .tile.wide { grid-column:span 2; }
+  .tile .ec {
+    width:42px; height:42px; border-radius:13px; display:grid; place-items:center; margin-bottom:18px;
+    background:var(--accent-soft); border:1px solid var(--accent-line);
+  }
+  .tile .ec svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .tile h3 { font-size:18px; font-weight:700; letter-spacing:-.02em; margin:0 0 9px; }
+  .tile p { font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .stackvis { margin-top:20px; display:flex; flex-direction:column; gap:8px; }
+  .stackvis .ln {
+    display:flex; gap:10px; align-items:baseline; padding:11px 14px; border-radius:16px;
+    background:var(--surface-2); font-size:13px; line-height:1.5; color:var(--ink-2);
+  }
+  .stackvis .ln .d { font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; color:var(--ink-4); }
+  .stackvis .ln.win { background:color-mix(in srgb, var(--accent) 6%, #fff); color:var(--ink); border:1px solid var(--accent-line); }
+  .stackvis .ln.win .d { color:var(--accent); }
 
-  /* ── Privacy band ── */
-  .privsec { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-elev); }
-  .priv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:760px){ .priv-grid{ grid-template-columns:1fr; } }
-  .pcard { background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:28px; box-shadow:var(--shadow-sm); transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease); }
-  .pcard:hover { border-color:var(--border-strong); transform:translateY(-3px); box-shadow:0 18px 40px rgba(0,0,0,0.10); }
-  .pcard .ec { width:44px; height:44px; border-radius:13px; display:grid; place-items:center; background:var(--surface-2); border:1px solid var(--border); color:var(--ink); margin-bottom:18px; }
-  .pcard h3 { margin:0 0 8px; font-size:18px; font-weight:700; letter-spacing:-0.3px; color:var(--ink-bright); }
-  .pcard p { margin:0; color:var(--ink-2); font-size:14.5px; line-height:1.6; }
+  /* ─────────────────────────────────────────────────  privacy  ── */
+  .privsec { padding:0 0 126px; }
+  .priv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .pcard {
+    border-radius:28px; padding:28px 26px; background:var(--surface); border:1px solid var(--border);
+    box-shadow:var(--shadow-sm); transition:transform .45s var(--ease), box-shadow .5s var(--ease);
+  }
+  .pcard:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+  .pcard .ec {
+    width:42px; height:42px; border-radius:13px; display:grid; place-items:center; margin-bottom:18px;
+    background:var(--surface-2); border:1px solid var(--border);
+  }
+  .pcard .ec svg { width:18px; height:18px; stroke:var(--ink); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .pcard h3 { font-family:var(--serif); font-weight:400; font-size:26px; letter-spacing:-.015em; margin:0 0 10px; }
+  .pcard p { font-size:14.5px; line-height:1.65; color:var(--ink-2); margin:0; }
 
-  /* ── Tones ── */
-  .tone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:920px){ .tone-grid{ grid-template-columns:1fr; } }
-  .tcard { border-radius:26px; padding:30px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-sm); transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease); }
-  .tcard:hover { border-color:var(--border-strong); transform:translateY(-3px); box-shadow:0 18px 40px rgba(0,0,0,0.10); }
-  .tcard .glyph { font-size:24px; margin-bottom:18px; }
-  .tcard .label { font-family:var(--mono); font-size:10px; letter-spacing:2.5px; color:var(--ink-3); text-transform:uppercase; }
-  .tcard h3 { margin:6px 0 0; font-size:21px; font-weight:700; letter-spacing:-0.4px; }
-  .tcard p { color:var(--ink-2); font-size:14.5px; margin:12px 0 0; line-height:1.6; }
-  .tcard .ex { margin-top:18px; padding:13px 15px; border-radius:14px; background:var(--surface-2); border:1px solid var(--border); font-size:13px; color:var(--ink); font-style:italic; line-height:1.5; }
+  /* ───────────────────────────────────────────────────  quote  ── */
+  .quote-sec { padding:0 0 126px; }
+  .quote {
+    position:relative; border-radius:38px; padding:70px 56px; text-align:center; overflow:hidden;
+    background:linear-gradient(165deg, color-mix(in srgb, var(--accent) 7%, #fff), var(--surface) 62%);
+    border:1px solid var(--border); box-shadow:var(--shadow-lg);
+  }
+  .quote::before {
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(70% 90% at 88% -10%, var(--accent-wash), transparent 60%);
+  }
+  .quote > * { position:relative; }
+  .quote blockquote {
+    font-family:var(--serif); font-size:clamp(30px,4vw,52px); line-height:1.18; letter-spacing:-.02em;
+    margin:22px auto 18px; max-width:16em;
+  }
+  .quote .hl { font-style:italic; color:var(--accent); }
+  .quote cite {
+    font-family:var(--mono); font-style:normal; font-size:10.5px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3);
+  }
 
-  /* ── Editorial quote ── */
-  .quote { max-width:880px; margin:0 auto; text-align:center; }
-  .quote .eyebrow { justify-content:center; margin-bottom:28px; }
-  .quote blockquote { margin:0; font-family:var(--serif); font-style:italic; font-weight:400; font-size:clamp(28px,4.6vw,48px); line-height:1.24; letter-spacing:-0.6px; color:var(--ink-bright); }
-  .quote blockquote .hl { color:var(--ink-3); }
-  .quote cite { display:block; margin-top:26px; font-style:normal; font-size:13px; color:var(--ink-3); font-family:var(--mono); letter-spacing:1px; }
+  /* ─────────────────────────────────────────────────  pricing  ── */
+  .pricing { padding:0 0 126px; }
+  .price-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:860px; margin:0 auto; }
+  .price { position:relative; border-radius:32px; padding:34px 32px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-sm); }
+  .price.featured {
+    border-color:var(--accent-line); box-shadow:0 22px 54px var(--accent-glow);
+    background:linear-gradient(172deg, color-mix(in srgb, var(--accent) 5%, #fff), #fff 58%);
+  }
+  .price .badge {
+    position:absolute; top:-11px; left:32px; padding:5px 13px; border-radius:999px;
+    background:var(--ink-bright); color:#fff;
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.15em; text-transform:uppercase;
+  }
+  .ptag { font-family:var(--mono); font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3); }
+  .amount { font-family:var(--serif); font-size:52px; line-height:1.1; letter-spacing:-.025em; margin:10px 0 22px; }
+  .amount small { font-family:var(--font); font-size:14px; font-weight:500; color:var(--ink-3); letter-spacing:0; }
+  .price ul { list-style:none; margin:0 0 26px; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .price li { display:flex; align-items:flex-start; gap:11px; font-size:14.5px; color:var(--ink-2); }
+  .price li svg { width:16px; height:16px; flex:none; margin-top:3px; stroke:var(--accent); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  .price .btn { width:100%; }
 
-  /* ── Pricing ── */
-  .price-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:840px; margin:0 auto; }
-  @media (max-width:720px){ .price-grid{ grid-template-columns:1fr; } }
-  .price { border:1px solid var(--border); border-radius:26px; padding:34px; background:var(--surface); position:relative; box-shadow:var(--shadow-sm); }
-  .price.featured { border-color:var(--ink-bright); background:var(--ink-bright); color:var(--ink-inverse); box-shadow:0 24px 55px rgba(0,0,0,0.22); }
-  .price.featured .ptag { color:rgba(255,255,255,0.55); }
-  .price.featured .amount { color:#fff; }
-  .price.featured .amount small { color:rgba(255,255,255,0.55); }
-  .price.featured ul li { color:rgba(255,255,255,0.78); }
-  .price.featured ul li svg { color:#fff; }
-  .price.featured .badge { background:#fff; color:#000; }
-  .price.featured .btn-primary { background:#fff; color:#000; box-shadow:none; }
-  .price .badge { position:absolute; top:24px; right:24px; font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-inverse); background:var(--ink-bright); padding:5px 10px; border-radius:999px; }
-  .price .ptag { font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-3); }
-  .price .amount { font-family:var(--mono); font-size:44px; font-weight:500; letter-spacing:-2px; margin:14px 0 4px; color:var(--ink-bright); }
-  .price .amount small { font-size:15px; color:var(--ink-3); font-weight:400; font-family:var(--font); letter-spacing:0; }
-  .price ul { list-style:none; padding:0; margin:20px 0 0; display:flex; flex-direction:column; gap:13px; }
-  .price ul li { color:var(--ink-2); font-size:14.5px; display:flex; gap:11px; align-items:flex-start; }
-  .price ul li svg { color:var(--ink); margin-top:3px; flex:none; }
-  .price .btn { width:100%; margin-top:26px; }
-
-  /* ── FAQ ── */
-  .faq-grid { display:grid; gap:12px; max-width:780px; margin:0 auto; }
-  .faq { background:var(--surface); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow-sm); transition:border-color .2s ease; }
-  .faq[open] { border-color:var(--border-strong); }
-  .faq summary { list-style:none; cursor:pointer; padding:20px 24px; font-size:16px; font-weight:600; color:var(--ink); display:flex; justify-content:space-between; align-items:center; gap:16px; letter-spacing:-0.2px; }
+  /* ─────────────────────────────────────────────────────  faq  ── */
+  .faq-sec { padding:0 0 126px; }
+  .faq-grid { display:flex; flex-direction:column; gap:10px; max-width:820px; margin:0 auto; }
+  .faq {
+    border-radius:22px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-sm);
+    overflow:hidden; transition:border-color .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .faq[open] { border-color:var(--accent-line); box-shadow:var(--shadow-md); }
+  .faq summary {
+    list-style:none; cursor:pointer; padding:20px 24px; font-size:16px; font-weight:600;
+    letter-spacing:-.015em; display:flex; align-items:center; gap:16px;
+  }
   .faq summary::-webkit-details-marker { display:none; }
-  .faq summary .pm { width:20px; height:20px; position:relative; flex:none; }
-  .faq summary .pm::before, .faq summary .pm::after { content:""; position:absolute; background:var(--ink-3); transition:transform .25s var(--ease); }
-  .faq summary .pm::before { top:9px; left:2px; width:16px; height:1.5px; }
-  .faq summary .pm::after { left:9px; top:2px; width:1.5px; height:16px; }
-  .faq[open] summary .pm::after { transform:rotate(90deg); opacity:0; }
-  .faq .answer { padding:0 24px 22px; color:var(--ink-2); font-size:14.5px; line-height:1.7; }
-  .faq .answer a { color:var(--ink); border-bottom:1px solid var(--divider); }
+  .faq .pm { margin-left:auto; flex:none; position:relative; width:14px; height:14px; }
+  .faq .pm::before, .faq .pm::after {
+    content:""; position:absolute; left:0; top:6px; width:14px; height:2px; border-radius:2px;
+    background:var(--ink-3); transition:transform .4s var(--expo), background .3s ease;
+  }
+  .faq .pm::after { transform:rotate(90deg); }
+  .faq[open] .pm::before, .faq[open] .pm::after { background:var(--accent); }
+  .faq[open] .pm::after { transform:rotate(0deg); }
+  .faq .answer { padding:0 24px 22px; }
+  .faq .answer p { margin:0; font-size:15px; line-height:1.7; color:var(--ink-2); }
+  .faq .answer a { color:var(--accent); font-weight:600; }
 
-  /* ── CTA ── */
-  .cta-strip { margin:0 auto; max-width:1000px; border-radius:34px; padding:72px 40px; text-align:center; position:relative; overflow:hidden;
-    background:radial-gradient(120% 150% at 50% -10%, #0A0A0A, #161616 46%, #1f1f1f 100%); border:1px solid rgba(0,0,0,0.9); box-shadow:0 30px 70px rgba(0,0,0,0.22); }
-  .cta-strip h2 { margin:0 0 12px; font-size:clamp(30px,4.4vw,46px); letter-spacing:-1.4px; font-weight:800; color:#fff; line-height:1.04; }
-  .cta-strip h2 em { font-family:var(--serif); font-style:italic; font-weight:400; color:#fff; }
-  .cta-strip p { color:rgba(255,255,255,0.66); margin:0 0 28px; font-size:16px; }
-  .cta-strip .waitlist { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.18); }
-  .cta-strip .waitlist input { color:#fff; }
-  .cta-strip .waitlist input::placeholder { color:rgba(255,255,255,0.5); }
-  .cta-strip .waitlist button { background:#fff; color:#000; }
-  .cta-strip .waitlist:focus-within { border-color:rgba(255,255,255,0.4); box-shadow:0 0 0 4px rgba(255,255,255,0.08); }
-  .cta-strip .waitlist-status { color:rgba(255,255,255,0.7); }
-
-  /* ── Waitlist ── */
-  .waitlist { display:flex; gap:8px; max-width:470px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:14px; padding:7px; transition:border-color .2s ease, box-shadow .2s ease; }
-  .waitlist-hero { margin:30px 0 0; max-width:480px; }
-  .waitlist:focus-within { border-color:var(--border-strong); box-shadow:0 0 0 4px rgba(0,0,0,0.05); }
-  .waitlist input { flex:1; background:transparent; border:0; outline:0; color:var(--ink); font:inherit; font-size:15px; padding:11px 13px; }
-  .waitlist input::placeholder { color:var(--ink-3); }
-  .waitlist button { border:0; cursor:pointer; font:inherit; font-weight:600; font-size:14.5px; padding:11px 22px; border-radius:9px; background:var(--ink-bright); color:var(--ink-inverse); display:inline-flex; align-items:center; gap:7px; transition:transform .18s var(--ease), opacity .18s ease; }
-  .waitlist button:hover { opacity:0.92; transform:translateY(-1px); }
-  .waitlist button:disabled { opacity:0.55; cursor:default; transform:none; }
-  .waitlist-status { min-height:20px; font-size:13px; color:var(--ink-3); margin-top:10px; }
-  .hero .waitlist-status { text-align:left; }
+  /* ────────────────────────────────────────────────────  join  ── */
+  .cta-sec { padding:0 0 118px; }
+  .cta-strip {
+    position:relative; border-radius:40px; padding:76px 48px; text-align:center; overflow:hidden;
+    background:linear-gradient(168deg, color-mix(in srgb, var(--accent) 8%, #fff), var(--surface) 66%);
+    border:1px solid var(--border); box-shadow:var(--shadow-xl);
+  }
+  .cta-strip::before {
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(60% 80% at 50% -20%, var(--accent-wash), transparent 62%);
+  }
+  .cta-strip > * { position:relative; }
+  .cta-strip h2 { margin-top:16px; }
+  .cta-strip p { font-size:17px; color:var(--ink-2); max-width:34em; margin:0 auto 30px; }
+  .cta-strip .waitlist { margin:0 auto; }
   .cta-strip .waitlist-status { text-align:center; }
 
-  /* ── Guides ── */
-  .guides { padding:104px 0 56px; border-top:1px solid var(--border); }
-  .guides-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:920px){ .guides-grid{ grid-template-columns:1fr; } }
-  .guide { display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:26px; box-shadow:var(--shadow-sm); transition:transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease); }
-  .guide:hover { transform:translateY(-3px); border-color:var(--border-strong); box-shadow:0 18px 40px rgba(0,0,0,0.10); }
-  .guide .k { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-3); }
-  .guide h3 { margin:16px 0 8px; font-size:17px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); }
-  .guide p { margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.6; }
-  .guide .go { margin-top:auto; padding-top:18px; color:var(--ink-3); font-size:13px; font-weight:500; transition:color .2s ease; }
-  .guide:hover .go { color:var(--ink); }
-
-  /* ── Footer ── */
-  footer { border-top:1px solid var(--border); padding:60px 0 0; position:relative; overflow:hidden; }
-  .foot-top { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-bottom:48px; }
-  .foot-top .lead { max-width:300px; }
-  .foot-top .lead .brand { display:inline-block; margin-bottom:12px; }
-  .foot-top .lead p { color:var(--ink-3); font-size:14px; margin:0; line-height:1.6; }
-  .foot-links { display:flex; gap:64px; flex-wrap:wrap; }
-  .foot-col h4 { font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-4); margin:0 0 16px; }
-  .foot-col a { display:block; color:var(--ink-2); font-size:14px; margin-bottom:11px; transition:color .15s ease; }
-  .foot-col a:hover { color:var(--ink); }
-  .foot-bottom { border-top:1px solid var(--border); padding:22px 0; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--ink-4); font-size:12.5px; font-family:var(--mono); letter-spacing:0.4px; }
-  .watermark { font-size:clamp(90px,22vw,300px); font-weight:800; letter-spacing:-10px; line-height:0.8; color:transparent;
-    -webkit-text-stroke:1px rgba(0,0,0,0.06); text-stroke:1px rgba(0,0,0,0.06); text-align:center; padding:10px 0 0; user-select:none; pointer-events:none; }
-
-  /* ── Mobile polish ── */
-  .hero h1 { overflow-wrap:break-word; }
-  @media (max-width:720px){
-    .container { padding:0 20px; }
+  /* ──────────────────────────────────────────────────  guides  ── */
+  .guides { padding:0 0 116px; }
+  .guides-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .guide {
+    display:flex; flex-direction:column; border-radius:28px; padding:26px; background:var(--surface);
+    border:1px solid var(--border); box-shadow:var(--shadow-sm);
+    transition:transform .45s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
   }
-  @media (max-width:560px){
-    .hero h1 { font-size:clamp(32px,9vw,42px); line-height:1.04; letter-spacing:-1.2px; margin-top:20px; max-width:none; }
-    .hero h1 em { font-size:1.12em; }
-    .hero { padding:48px 0 60px; }
-    .hero .lede { font-size:16px; }
-    section { padding:68px 0; }
-    .guides { padding:68px 0 44px; }
-    .cta-strip { padding:48px 22px; border-radius:28px; }
-    .head { margin-bottom:40px; }
-    .head h2 { font-size:clamp(25px,7.4vw,32px); letter-spacing:-1px; }
-    .nav-inner { height:58px; }
-    .brand { font-size:18px; }
-    .nav-links a.nav-cta { padding:9px 16px; font-size:13px; }
-    .tile, .price, .cc, .step, .tcard, .pcard, .guide { padding:24px; }
-    .bento, .priv-grid, .steps, .tone-grid, .guides-grid, .price-grid, .compare { gap:12px; }
-    .foot-links { gap:36px; }
-    .phone { border-radius:34px; padding:14px; }
-    /* stack the email capture so the button is full-width and tap-friendly */
-    .waitlist { flex-direction:column; gap:8px; padding:8px; }
-    .waitlist input { padding:13px 14px; }
-    .waitlist button { width:100%; justify-content:center; padding:14px; }
+  .guide:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--accent-line); }
+  .guide .k { font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+  .guide h3 { font-size:18px; font-weight:700; letter-spacing:-.02em; margin:0 0 9px; line-height:1.3; }
+  .guide p { font-size:14.5px; line-height:1.6; color:var(--ink-2); margin:0 0 18px; }
+  .guide .go { margin-top:auto; font-size:13.5px; font-weight:600; color:var(--ink); }
+
+
+  /* ──────────────────────────────────────────────  responsive  ── */
+  @media (max-width:1000px) {
+    .hero { padding-top:118px; }
+    .hero-grid { grid-template-columns:1fr; gap:50px; }
+    .lede { max-width:none; }
+    .vx-grid { grid-template-columns:1fr; gap:32px; }
+    .vx-pin { position:static; min-height:0; padding:0 0 40px; display:block; }
+    .vx-stack { height:auto; }
+    .vx-title { position:static; opacity:1; transform:none; filter:none; margin-bottom:24px; }
+    .vx-title:not(.on) { display:none; }
+    .vx-cards { min-height:0; }
+    .vx-card { position:static; opacity:1; transform:none; filter:none; }
+    .vx-card:not(.on) { display:none; }
+    .steps { grid-template-columns:1fr; gap:38px; }
+    .step { padding:0; }
+    .step + .step::before { display:none; }
+    .bento { grid-template-columns:1fr; }
+    .tile.lg,.tile.sm,.tile.wide { grid-column:span 1; }
+    .priv-grid, .guides-grid, .compare, .price-grid { grid-template-columns:1fr; }
   }
-  @media (max-width:380px){
-    .hero-meta { gap:10px 14px; }
-    .marquee .track span { font-size:22px; }
+  @media (max-width:760px) {
+    .hero { padding:104px 0 56px; }
+    /* the row wraps down here, and a wrapped separator dot dangles */
+    .hero-meta { gap:10px 16px; }
+    .hero-meta .dot { display:none; }
+    .waitlist { flex-direction:column; max-width:none; }
+    .waitlist-submit { justify-content:center; }
+    .manifesto { padding:96px 0 88px; }
+    .quote { padding:52px 26px; border-radius:30px; }
+    .cta-strip { padding:56px 24px; border-radius:30px; }
+    .vx-body { padding:24px 22px; border-radius:26px; }
+    .vx-reply { font-size:20px; padding:16px 18px; }
+    .how { padding:92px 0 96px; }
+    .why, .privsec, .quote-sec, .pricing, .faq-sec, .compare-sec { padding-bottom:92px; }
+    .cta-sec, .guides { padding-bottom:88px; }
+    .tile, .pcard, .price, .cc, .guide { padding:24px; }
+  }
+
+  @media (prefers-reduced-motion:reduce) {
+    .mf-copy .w { opacity:1 !important; }
+    .vx-pin { position:static; min-height:0; display:block; }
+    .vx-stack, .vx-cards { height:auto; min-height:0; }
+    .vx-title, .vx-card { position:static; opacity:1; transform:none; filter:none; }
+    .vx-title:not(.on), .vx-card:not(.on) { display:none; }
   }
 </style>
 </head>
-<body>
 
+<body>
 <div class="fx fx-aurora"></div>
 <div class="fx fx-grid"></div>
 <div class="fx fx-grain"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<div class="pointer-halo" id="halo"></div>
 
 <nav class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="#" class="brand">Glint</a>
+  <div class="nav-inner">
+    <a href="#" class="brand" aria-label="Glint home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+      Glint
+    </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
+      <a href="#voices">Voices</a>
       <a href="#how">How it works</a>
+      <a href="#why">Why Glint</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#download" class="nav-cta">Join waitlist</a>
+      <a href="#join" class="nav-cta" data-ph-event="nav_cta_clicked">Join waitlist</a>
     </div>
   </div>
 </nav>
 
 <main>
+
+<!-- ═══════════════════════════════════════════════════════  hero  ── -->
 <header class="hero">
   <div class="container hero-grid">
-    <div>
-      <span class="eyebrow chip hi d1"><span class="bar"></span> AI dating wingman</span>
-      <h1 class="hi d2">Better replies.<br/><em>In seconds.</em></h1>
-      <p class="lede hi d3">
-        Paste any Hinge, Tinder, or Bumble chat. Pick a tone. Get three replies that sound like you — only sharper.
+    <div class="hero-copy">
+      <span class="chip eyebrow" data-rv="fade">
+        <svg class="bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+        AI dating wingman
+      </span>
+      <h1 data-rv style="--d:60ms">Better replies,<br/>in your <em>own voice</em>.</h1>
+      <p class="lede" data-rv style="--d:140ms">
+        Paste any Hinge, Tinder or Bumble chat. Glint reads the whole thread and drafts
+        <b>three replies, one in each voice</b>. You send the one that sounds like you.
       </p>
-      <form class="waitlist waitlist-hero hi d4" id="waitlist-form-hero" novalidate>
+
+      <form class="waitlist waitlist-hero" id="waitlist-form-hero" novalidate data-rv style="--d:220ms">
         <input type="email" name="email" class="waitlist-email" placeholder="you@example.com" autocomplete="email" required aria-label="Email for waitlist" />
         <button type="submit" class="waitlist-submit">
           <span>Join waitlist</span>
@@ -556,248 +655,387 @@
         </button>
       </form>
       <div class="waitlist-status" aria-live="polite"></div>
-      <div class="hero-meta hi d5">
-        <span class="item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free to start</span>
-        <span class="rule"></span>
-        <span class="item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> No credit card</span>
-        <span class="rule"></span>
-        <span class="item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg> iOS &amp; Android soon</span>
+
+      <div class="hero-meta" data-rv style="--d:300ms">
+        <span class="item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Free to start
+        </span>
+        <span class="dot"></span>
+        <span class="item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          No card needed
+        </span>
+        <span class="dot"></span>
+        <span class="item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          iOS and Android soon
+        </span>
       </div>
-      <div class="proof hi d6">
-        <div class="stack"><span>M</span><span>J</span><span>A</span><span>S</span><span>+</span></div>
-        <div class="txt">Join <b><span class="count" data-to="1200">0</span>+</b> on the early-access waitlist</div>
+
+      <div class="proof" data-rv style="--d:360ms">
+        <div class="stack" aria-hidden="true"><span>M</span><span>J</span><span>A</span><span>S</span><span>+</span></div>
+        <div class="txt">Join <b><span class="count" data-to="1200">0</span>+</b> on the early access list</div>
       </div>
     </div>
 
-    <div class="demo-wrap hi d3">
+    <div class="stage" data-rv="rise" style="--d:180ms">
       <div class="phone" id="phone">
-        <div class="phone-inner">
-          <div class="ch">
-            <div class="ava">M</div>
-            <div>
-              <div class="nm">Maya</div>
-              <div class="mt">HINGE — 2 MIN AGO</div>
+        <div class="screen">
+          <div class="scanline" aria-hidden="true"></div>
+
+          <div class="scr-top">
+            <span class="back" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="m15 18-6-6 6-6"/></svg>
+            </span>
+            <span class="ava">M</span>
+            <span class="who">
+              <span class="nm">Maya</span>
+              <span class="mt">HINGE · 2 MIN AGO</span>
+            </span>
+            <span class="glass" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="15" height="15"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+            </span>
+          </div>
+
+          <div class="bub">okay your profile says you make pasta from scratch. prove it 👀</div>
+
+          <div class="drafted">
+            <span class="l">GLINT DRAFTED THREE</span>
+            <span class="bar"></span>
+          </div>
+
+          <div class="drafts" id="drafts" role="tablist" aria-label="Reply voice">
+            <button class="draft" type="button" style="--v:var(--genuine)" data-voice="genuine" role="tab" aria-selected="false">
+              <span class="vh"><span class="em">🌱</span><span class="vn">Genuine</span><span class="cp">Copy</span></span>
+              <p>honestly, cacio e pepe is where my range ends. friday though, i'm in.</p>
+            </button>
+            <button class="draft on" type="button" style="--v:var(--rizz)" data-voice="rizz" role="tab" aria-selected="true">
+              <span class="vh"><span class="em">😏</span><span class="vn">Glint</span><span class="cp">Copy</span></span>
+              <p>bold to assume i'd let you near my kitchen. counter offer: i cook, you pour the wine.</p>
+            </button>
+            <button class="draft" type="button" style="--v:var(--roast)" data-voice="roast" role="tab" aria-selected="false">
+              <span class="vh"><span class="em">🔥</span><span class="vn">Roast</span><span class="cp">Copy</span></span>
+              <p>big talk from a profile that's three gym selfies and a dog that isn't yours.</p>
+            </button>
+          </div>
+
+          <div class="sparks">
+            <div class="row">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+              <span class="k">SPARKS</span>
+              <span class="v">3 / 5</span>
             </div>
+            <div class="meter"><i></i></div>
           </div>
-          <div class="bub them">okay your profile says you make pasta from scratch. prove it 👀</div>
-          <div class="tone-row" role="tablist" aria-label="Reply tone">
-            <button class="tone" data-tone="genuine" role="tab">💚 Genuine</button>
-            <button class="tone on" data-tone="rizz" role="tab" aria-selected="true">✨ Rizz</button>
-            <button class="tone" data-tone="roast" role="tab">🔥 Roast</button>
+
+          <div class="composer">
+            <span class="ph">Write something…</span>
+            <span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></span>
           </div>
-          <div class="sugs" id="sugs" aria-live="polite"></div>
         </div>
       </div>
+      <p class="stage-cap" data-rv="fade" style="--d:440ms">Tap a voice. <b>The whole page wears it</b>, exactly like the app.</p>
     </div>
   </div>
 </header>
 
+<!-- ════════════════════════════════════════════════════  marquee  ── -->
 <div class="marquee">
-  <div class="lbl">Works with every dating app</div>
+  <div class="mq-lbl">Works with every dating app</div>
   <div class="mq-mask">
-    <div class="track" id="track">
-      <span>Hinge</span><span>Tinder</span><span>Bumble</span><span>Coffee Meets Bagel</span><span>OkCupid</span><span>Raya</span><span>Feeld</span>
-      <span>Hinge</span><span>Tinder</span><span>Bumble</span><span>Coffee Meets Bagel</span><span>OkCupid</span><span>Raya</span><span>Feeld</span>
+    <div class="track">
+      <span>Hinge</span><span>Tinder</span><span>Bumble</span><span>Coffee Meets Bagel</span><span>OkCupid</span><span>Raya</span><span>Feeld</span><span>Hily</span>
+      <span>Hinge</span><span>Tinder</span><span>Bumble</span><span>Coffee Meets Bagel</span><span>OkCupid</span><span>Raya</span><span>Feeld</span><span>Hily</span>
     </div>
   </div>
 </div>
 
-<section id="features">
+<!-- ══════════════════════════════════════════════════  manifesto  ── -->
+<section class="manifesto">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">Why Glint</span>
-      <h2>Smarter messaging,<br/>without sounding <em>like a bot</em></h2>
-      <p>Built for the awkward middle of the conversation — the part where most matches quietly go cold.</p>
+    <span class="eyebrow" data-rv="fade"><span class="tick"></span> The problem</span>
+    <p class="mf-copy" data-words data-highlight="middle,nothing.">Matches rarely die from bad photos. They die in the middle of a conversation, on a reply that took twenty minutes to write and said nothing.</p>
+    <p class="mf-tail" data-rv="fade"><b>Glint is for that reply.</b> Not a chatbot answering as a stranger, and not a canned line off a list. Three drafts built from the thread you are actually in, in the voice you actually use.</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════  voices  ── -->
+<section class="voices" id="voices">
+  <div class="container">
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> The three voices</span>
+      <h2>One thread.<br/><em>Three ways</em> to answer it.</h2>
+      <p>Every draft arrives labelled, and picking a card is what picks the voice. The app takes its colour from whichever one you choose.</p>
     </div>
-    <div class="bento">
-      <div class="tile lg spot" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 11 14 11 22 21 10 13 10 13 2"/></svg></div>
-        <h3>Three replies, instantly</h3>
-        <p>Paste a screenshot or the text. Get three on-tone candidates in seconds, ranked best-first. Copy the one that lands.</p>
-        <div class="stackvis">
-          <div class="ln win"><span class="d">01</span> say less — friday, my kitchen, you on wine duty</div>
-          <div class="ln"><span class="d">02</span> bold to assume i'd let you near the stove…</div>
-          <div class="ln"><span class="d">03</span> prove it? that's a friday-night kind of dare</div>
+  </div>
+
+  <div class="vx-track" id="vxTrack">
+    <div class="vx-pin">
+      <div class="container vx-grid">
+        <div class="vx-titles">
+          <div class="vx-stack">
+            <div class="vx-title" data-stage="0">
+              <span class="glyph">🌱</span>
+              <h3><em>Genuine</em></h3>
+              <p>Warm, grounded, actually interested. For when it is going somewhere real and a joke would flatten it.</p>
+            </div>
+            <div class="vx-title on" data-stage="1">
+              <span class="glyph">😏</span>
+              <h3><em>Glint</em></h3>
+              <p>The house voice. Charming and quick, flirting smart without trying too hard. The one most people send.</p>
+            </div>
+            <div class="vx-title" data-stage="2">
+              <span class="glyph">🔥</span>
+              <h3><em>Roast</em></h3>
+              <p>Teasing, with a wink. For when they opened with something you cannot resist firing back at.</p>
+            </div>
+          </div>
+
+          <div class="vx-rail" id="vxRail">
+            <button type="button" data-go="0" aria-selected="false"><span class="r"><i></i></span><span class="n">Genuine</span></button>
+            <button type="button" data-go="1" aria-selected="true"><span class="r"><i></i></span><span class="n">Glint</span></button>
+            <button type="button" data-go="2" aria-selected="false"><span class="r"><i></i></span><span class="n">Roast</span></button>
+          </div>
+        </div>
+
+        <div class="vx-cards">
+          <div class="vx-card" data-stage="0">
+            <div class="vx-body sweep" style="--v:var(--genuine)">
+              <div class="vx-mt"><span class="k">MAYA · HINGE</span><span class="ln"></span><span class="k">GENUINE</span></div>
+              <div class="vx-them">okay your profile says you make pasta from scratch. prove it 👀</div>
+              <div class="vx-reply">honestly, cacio e pepe is where my range ends. friday though, i'm in.</div>
+              <div class="vx-why">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Admits the limit, then makes the plan anyway. Honest beats impressive once a thread is already warm.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vx-card on" data-stage="1">
+            <div class="vx-body sweep" style="--v:var(--rizz)">
+              <div class="vx-mt"><span class="k">MAYA · HINGE</span><span class="ln"></span><span class="k">GLINT</span></div>
+              <div class="vx-them">okay your profile says you make pasta from scratch. prove it 👀</div>
+              <div class="vx-reply">bold to assume i'd let you near my kitchen. counter offer: i cook, you pour the wine.</div>
+              <div class="vx-why">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+                <span>Takes the dare, flips it, and lands on an actual invitation. A reply that hands them something to say back.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vx-card" data-stage="2">
+            <div class="vx-body sweep" style="--v:var(--roast)">
+              <div class="vx-mt"><span class="k">MAYA · HINGE</span><span class="ln"></span><span class="k">ROAST</span></div>
+              <div class="vx-them">okay your profile says you make pasta from scratch. prove it 👀</div>
+              <div class="vx-reply">big talk from a profile that's three gym selfies and a dog that isn't yours.</div>
+              <div class="vx-why">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                <span>Teases the profile, never the person. Keeps the temperature up without turning mean.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="tile sm" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Reads the whole thread</h3>
-        <p>Not just the last message — so replies match where the conversation actually is.</p>
-      </div>
-      <div class="tile sm" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Private by default</h3>
-        <p>Screenshots aren't stored. We never train on your chats. Generate, copy, move on.</p>
-      </div>
-      <div class="tile wide" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4L12 3z"/><path d="M19 14l.8 2.2 2.2.8-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></svg></div>
-        <h3>Sounds like you, only sharper</h3>
-        <p>Glint mirrors your phrasing and rhythm. You're picking from versions of your own voice — not pasting in a stranger's.</p>
-      </div>
-      <div class="tile wide" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 0 0 18a14 14 0 0 0 0-18z"/></svg></div>
-        <h3>Every app, any chat</h3>
-        <p>No integration, no login to your accounts. The input is the conversation itself — so it works anywhere you match.</p>
-      </div>
     </div>
   </div>
 </section>
 
-<section id="difference" class="difference">
+<!-- ════════════════════════════════════════════════════════  how  ── -->
+<section class="how" id="how">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">The difference</span>
-      <h2>Same match. <em>Different reply.</em></h2>
-      <p>The gap between a match that fizzles and one that turns into a date is usually one message.</p>
-    </div>
-    <div class="compare">
-      <div class="cc flat" data-reveal>
-        <span class="tag">Generic / what you'd send at 1am</span>
-        <div class="reply">"haha yeah for sure, i can cook 😅 what about you"</div>
-        <p class="note">Safe, flat, forgettable. Hands the work back to them — and that's where it goes quiet.</p>
-      </div>
-      <div class="cc win" data-reveal>
-        <span class="tag">Glint · Rizz</span>
-        <div class="reply">"bold of you to assume i'd let you near my kitchen on a first date — counter offer: i cook, you pour the wine."</div>
-        <p class="note">Specific, playful, and it leaves a clear opening. That's a reply that gets a reply.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">How it works</span>
-      <h2>Three steps. <em>About ten seconds.</em></h2>
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> How it works</span>
+      <h2>Three steps.<br/><em>About ten seconds.</em></h2>
     </div>
     <div class="steps">
-      <div class="step" data-reveal><div class="n">01</div><h3>Paste the chat</h3><p>Drop a screenshot or paste the text from any dating app.</p></div>
-      <div class="step" data-reveal><div class="n">02</div><h3>Pick a tone</h3><p>Genuine, Rizz, or Roast — pick the energy you're going for.</p></div>
-      <div class="step" data-reveal><div class="n">03</div><h3>Copy &amp; send</h3><p>Three replies appear. Tap to copy the one that feels right.</p></div>
+      <div class="step" data-rv>
+        <div class="ec"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="13" height="13" rx="2.5"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg></div>
+        <div class="n">01</div>
+        <h3>Paste the chat</h3>
+        <p>Drop a screenshot or paste the text. Any app, any thread, and no access to your dating accounts.</p>
+      </div>
+      <div class="step" data-rv style="--d:110ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="n">02</div>
+        <h3>Glint reads the room</h3>
+        <p>Not only the last message. The whole conversation, the energy in it, and the exact place it stalled.</p>
+      </div>
+      <div class="step" data-rv style="--d:220ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+        <div class="n">03</div>
+        <h3>Send the one that lands</h3>
+        <p>Three drafts appear, one per voice. Tap to copy, tweak a word if you want, send it and move on.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="privacy-pitch" class="privsec">
+<!-- ════════════════════════════════════════════════════  compare  ── -->
+<section class="compare-sec" id="difference">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">Privacy</span>
-      <h2>Private in a way<br/>other AI <em>can&rsquo;t be</em></h2>
-      <p>Paste a chat into a generic chatbot and it can be logged, kept, and used to train the next model. Glint is built the opposite way.</p>
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> The difference</span>
+      <h2>Same match. <em>Different reply.</em></h2>
+      <p>The gap between a match that fizzles and one that turns into a date is usually a single message.</p>
+    </div>
+    <div class="compare">
+      <div class="cc flat" data-rv>
+        <span class="tag">What you'd send at 1am</span>
+        <div class="reply">“haha yeah for sure, i can cook 😅 what about you”</div>
+        <p class="note">Safe, flat, forgettable. It hands the work straight back to them, and that is where threads go quiet.</p>
+      </div>
+      <div class="cc win sweep" data-rv style="--d:120ms">
+        <span class="tag">Glint · the Glint voice</span>
+        <div class="reply">“bold to assume i'd let you near my kitchen. counter offer: i cook, you pour the wine.”</div>
+        <p class="note">Specific, playful, and it leaves a clear opening. That is a reply that gets a reply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════  why  ── -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Why Glint</span>
+      <h2>Smarter messaging,<br/>without sounding <em>like a bot</em></h2>
+      <p>Built for the awkward middle of the conversation, the part where most matches quietly go cold.</p>
+    </div>
+    <div class="bento">
+      <div class="tile lg sweep" data-rv>
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+        <h3>Three replies, instantly</h3>
+        <p>Paste a screenshot or the text. Three drafts land in seconds, one per voice, ready to copy.</p>
+        <div class="stackvis">
+          <div class="ln"><span class="d">01</span> honestly, cacio e pepe is where my range ends</div>
+          <div class="ln win"><span class="d">02</span> counter offer: i cook, you pour the wine</div>
+          <div class="ln"><span class="d">03</span> big talk from a profile with three gym selfies</div>
+        </div>
+      </div>
+      <div class="tile sm" data-rv style="--d:90ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Reads the whole thread</h3>
+        <p>Every message, not only the last one, so a reply matches where the conversation actually is. It knows the difference between a thread that is flowing and one that stalled three days ago.</p>
+      </div>
+      <div class="tile wide" data-rv style="--d:150ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Private by default</h3>
+        <p>Screenshots are never stored. Your chats never become training data.</p>
+      </div>
+      <div class="tile wide" data-rv style="--d:200ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4z"/><path d="M19 14l.8 2.2 2.2.8-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></svg></div>
+        <h3>Sounds like you, sharper</h3>
+        <p>Glint mirrors your phrasing and rhythm. You pick from versions of your own voice.</p>
+      </div>
+      <div class="tile wide" data-rv style="--d:250ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 0 0 18a14 14 0 0 0 0-18z"/></svg></div>
+        <h3>Every app, any chat</h3>
+        <p>No integration and no account access. The input is the conversation itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════  privacy  ── -->
+<section class="privsec" id="privacy-pitch">
+  <div class="container">
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Privacy</span>
+      <h2>Private in a way<br/>other AI <em>cannot be</em></h2>
+      <p>Paste a chat into a general chatbot and it can be logged, kept, and used to train the next model. Glint is built the opposite way.</p>
     </div>
     <div class="priv-grid">
-      <div class="pcard" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <div class="pcard" data-rv>
+        <div class="ec"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <h3>Never stored</h3>
-        <p>Screenshots and chat text are processed only long enough to draft your replies — then discarded. Nothing sits on a server.</p>
+        <p>Screenshots and chat text live only long enough to draft your replies, then they are gone. Nothing sits on a server.</p>
       </div>
-      <div class="pcard" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M4.5 4.5l15 15"/></svg></div>
+      <div class="pcard" data-rv style="--d:110ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M4.5 4.5l15 15"/></svg></div>
         <h3>Never trained on</h3>
-        <p>Your conversations never become training data — not for us, not for anyone. That&rsquo;s a line generic AI tools can&rsquo;t promise.</p>
+        <p>Your conversations never become training data, not for us and not for anyone else. General AI tools cannot promise that.</p>
       </div>
-      <div class="pcard" data-reveal>
-        <div class="ec"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+      <div class="pcard" data-rv style="--d:220ms">
+        <div class="ec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
         <h3>Never sold</h3>
-        <p>No data brokers, no ad targeting, no third-party tracking of who you match with or message.</p>
+        <p>No data brokers, no ad targeting, and no outside company tracking who you match with or what you message.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tones">
-  <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">The three tones</span>
-      <h2>Match the energy<br/>of the <em>conversation</em></h2>
-      <p>Each tone is tuned for a different kind of moment. Try them live in the demo above.</p>
-    </div>
-    <div class="tone-grid">
-      <div class="tcard" data-reveal>
-        <div class="glyph">💚</div><span class="label">Genuine</span><h3>Warm, authentic</h3>
-        <p>For when the conversation is going somewhere real and you don't want to flatten it with a joke.</p>
-        <div class="ex">"honestly half-lie — cacio e pepe is where my range ends. friday though, i'm in."</div>
-      </div>
-      <div class="tcard" data-reveal>
-        <div class="glyph">✨</div><span class="label">Rizz</span><h3>Charming, witty</h3>
-        <p>Confident and a little playful. The default if you're keeping momentum without coming on too strong.</p>
-        <div class="ex">"counter offer: i cook, you pour the wine and pretend to be impressed."</div>
-      </div>
-      <div class="tcard" data-reveal>
-        <div class="glyph">🔥</div><span class="label">Roast</span><h3>Playful banter</h3>
-        <p>Lightly teasing. Use it when they opened with something you can't resist firing back at.</p>
-        <div class="ex">"big talk from a profile that's three gym selfies and a dog that isn't yours."</div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ══════════════════════════════════════════════════════  quote  ── -->
 <section class="quote-sec">
-  <div class="container quote" data-reveal>
-    <span class="eyebrow"><span class="bar"></span> The voice</span>
-    <blockquote>It doesn't write <span class="hl">for</span> you.<br/>It writes <span class="hl">like</span> you — only on a better day.</blockquote>
-    <cite>— how Glint thinks about every reply</cite>
+  <div class="container">
+    <div class="quote" data-rv>
+      <span class="eyebrow"><span class="tick"></span> The voice</span>
+      <blockquote>It doesn't write <span class="hl">for</span> you.<br/>It writes <span class="hl">like</span> you, on a better day.</blockquote>
+      <cite>how Glint thinks about every reply</cite>
+    </div>
   </div>
 </section>
 
-<section id="pricing">
+<!-- ════════════════════════════════════════════════════  pricing  ── -->
+<section class="pricing" id="pricing">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">Pricing</span>
+    <div class="head center" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Pricing</span>
       <h2>Free to start. <em>Pay when it works.</em></h2>
     </div>
     <div class="price-grid">
-      <div class="price" data-reveal>
+      <div class="price" data-rv>
         <span class="ptag">Free</span>
-        <div class="amount">$0 <small>/ forever</small></div>
+        <div class="amount">$0 <small>forever</small></div>
         <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 replies per day</li>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> All three tones</li>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Screenshot &amp; text input</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 5 replies per day</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> All three voices</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Screenshot and text input</li>
         </ul>
-        <a href="#download" class="btn btn-ghost">Join waitlist</a>
+        <a href="#join" class="btn btn-ghost">Join waitlist</a>
       </div>
-      <div class="price featured" data-reveal>
+      <div class="price featured" data-rv style="--d:120ms">
         <span class="badge">Most popular</span>
         <span class="ptag">Pro</span>
         <div class="amount">$6.99 <small>/ month</small></div>
         <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited replies</li>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Opener generator</li>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Profile audit (photos + bio)</li>
-          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority responses</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited replies</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Opener generator</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Profile audit for photos and bio</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority responses</li>
         </ul>
-        <a href="#download" class="btn btn-primary" data-ph-event="pricing_pro_clicked">Join waitlist for Pro</a>
+        <a href="#join" class="btn btn-primary" data-ph-event="pricing_pro_clicked">Join waitlist for Pro</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="faq">
+<!-- ════════════════════════════════════════════════════════  faq  ── -->
+<section class="faq-sec" id="faq">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">FAQ</span>
+    <div class="head center" data-rv>
+      <span class="eyebrow"><span class="tick"></span> FAQ</span>
       <h2>Questions people ask</h2>
     </div>
     <div class="faq-grid">
-      <details class="faq" data-reveal><summary>What is Glint? <span class="pm"></span></summary><div class="answer"><p>Glint is an AI dating-app wingman. You paste a chat from Hinge, Tinder, or Bumble, pick a tone — Genuine, Rizz, or Roast — and get three reply candidates to copy back into the dating app.</p></div></details>
-      <details class="faq" data-reveal><summary>Is Glint free? <span class="pm"></span></summary><div class="answer"><p>Yes. The free tier gives 5 reply generations per day across all three tones. Glint Pro adds unlimited replies, an opener generator, and a profile audit feature for $6.99 / month at launch.</p></div></details>
-      <details class="faq" data-reveal><summary>Which dating apps does Glint support? <span class="pm"></span></summary><div class="answer"><p>Glint works with screenshots or pasted text from Hinge, Tinder, Bumble, and other major dating apps. The input is the conversation itself, not an integration, so it works with any dating platform.</p></div></details>
-      <details class="faq" data-reveal><summary>How is Glint different from a generic AI chatbot? <span class="pm"></span></summary><div class="answer"><p>Generic chatbots produce one reply that often sounds robotic. Glint generates three options on different tones (warm, charming, playful) so you can compare and pick the phrasing closest to how you actually talk, then edit.</p></div></details>
-      <details class="faq" data-reveal><summary>Does Glint store my conversations or train AI on them? <span class="pm"></span></summary><div class="answer"><p>No. Screenshots and chat text are processed only long enough to generate the replies, then discarded. Glint does not train AI models on user conversations and does not sell user data.</p></div></details>
-      <details class="faq" data-reveal><summary>Is Glint available on iOS and Android? <span class="pm"></span></summary><div class="answer"><p>Glint is pre-launch. iOS and Android apps will ship after the waitlist build. Sign up below for early access.</p></div></details>
-      <details class="faq" data-reveal><summary>What does &ldquo;rizz&rdquo; mean in the context of Glint? <span class="pm"></span></summary><div class="answer"><p>Rizz is slang for charisma — the ability to charm or flirt in conversation. In Glint, &ldquo;Rizz&rdquo; is one of three tone settings: confident and witty, between the warm &ldquo;Genuine&rdquo; tone and the playful &ldquo;Roast&rdquo; tone. <a href="/ai-dating-assistant">More on what rizz means</a>.</p></div></details>
+      <details class="faq" data-rv><summary>What is Glint? <span class="pm"></span></summary><div class="answer"><p>Glint is an AI wingman for dating apps. You paste a chat from Hinge, Tinder or Bumble and get three reply drafts, one in each voice (Genuine, Glint, Roast), to copy back into the app.</p></div></details>
+      <details class="faq" data-rv><summary>Is Glint free? <span class="pm"></span></summary><div class="answer"><p>Yes. The free tier gives 5 reply generations a day across all three voices. Glint Pro adds unlimited replies, an opener generator and a profile audit for $6.99 a month at launch.</p></div></details>
+      <details class="faq" data-rv><summary>Which dating apps does Glint support? <span class="pm"></span></summary><div class="answer"><p>Glint works with screenshots or pasted text from Hinge, Tinder, Bumble and every other major dating app. The input is the conversation itself rather than an integration, so it works anywhere you match.</p></div></details>
+      <details class="faq" data-rv><summary>How is Glint different from a general AI chatbot? <span class="pm"></span></summary><div class="answer"><p>A general chatbot gives you one reply that often reads as robotic. Glint gives three, each in a different voice, so you can compare and pick the phrasing closest to how you actually talk, then edit it.</p></div></details>
+      <details class="faq" data-rv><summary>Does Glint store my conversations or train AI on them? <span class="pm"></span></summary><div class="answer"><p>No. Screenshots and chat text are processed only long enough to generate the replies, then discarded. Glint does not train models on user conversations and does not sell user data.</p></div></details>
+      <details class="faq" data-rv><summary>Is Glint on iOS and Android? <span class="pm"></span></summary><div class="answer"><p>Both apps are in build. Join the waitlist and you get the download link the day it goes live.</p></div></details>
+      <details class="faq" data-rv><summary>What does “rizz” mean here? <span class="pm"></span></summary><div class="answer"><p>Rizz is slang for charisma, the knack for charming someone in conversation. In Glint that voice is simply called Glint: confident and witty, sitting between the warm Genuine voice and the playful Roast voice. <a href="/ai-dating-assistant">More on what rizz means</a>.</p></div></details>
     </div>
   </div>
 </section>
 
-<section id="download">
+<!-- ═══════════════════════════════════════════════════════  join  ── -->
+<section class="cta-sec" id="join">
   <div class="container">
-    <div class="cta-strip" data-reveal>
+    <div class="cta-strip" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Early access</span>
       <h2>Stop overthinking <em>the next reply</em></h2>
-      <p>Join the waitlist — we'll email you the moment Glint goes live.</p>
+      <p>Join the waitlist and we will email you the moment Glint goes live, with the download link and a free week of Pro.</p>
       <form class="waitlist" novalidate>
         <input type="email" name="email" class="waitlist-email" placeholder="you@example.com" autocomplete="email" required aria-label="Email for waitlist" />
         <button type="submit" class="waitlist-submit">
@@ -810,27 +1048,28 @@
   </div>
 </section>
 
+<!-- ═════════════════════════════════════════════════════  guides  ── -->
 <section class="guides">
   <div class="container">
-    <div class="head" data-reveal>
-      <span class="eyebrow">Guides</span>
+    <div class="head" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Guides</span>
       <h2>Read while you wait</h2>
       <p>Practical writing that complements what Glint does.</p>
     </div>
     <div class="guides-grid">
-      <a href="/hinge-replies" class="guide" data-reveal>
+      <a href="/hinge-replies" class="guide" data-rv>
         <span class="k">Hinge</span>
-        <h3>How to reply on Hinge — 25+ examples</h3>
-        <p>What to send for the most common prompts, photo likes, and stalled chats.</p>
+        <h3>How to reply on Hinge, with 25+ examples</h3>
+        <p>What to send for the most common prompts, photo likes and stalled chats.</p>
         <span class="go">Read the guide →</span>
       </a>
-      <a href="/tinder-openers" class="guide" data-reveal>
+      <a href="/tinder-openers" class="guide" data-rv style="--d:110ms">
         <span class="k">Tinder</span>
         <h3>Best Tinder openers that get replies</h3>
         <p>The four openers that get ignored, and the formula that doesn't.</p>
         <span class="go">Read the guide →</span>
       </a>
-      <a href="/ai-dating-assistant" class="guide" data-reveal>
+      <a href="/ai-dating-assistant" class="guide" data-rv style="--d:220ms">
         <span class="k">AI</span>
         <h3>What is an AI dating assistant?</h3>
         <p>What these tools do, what to look for, and where they actually help.</p>
@@ -839,22 +1078,26 @@
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
   <div class="container">
     <div class="foot-top">
       <div class="lead">
-        <a href="#" class="brand">Glint</a>
-        <p>The AI wingman for dating apps. Paste a chat, pick a tone, send the reply that actually lands.</p>
+        <a href="#" class="brand">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+          Glint
+        </a>
+        <p>The AI wingman for dating apps. Paste a chat, pick a voice, send the reply that actually lands.</p>
       </div>
       <div class="foot-links">
         <div class="foot-col">
           <h4>Product</h4>
-          <a href="#features">Features</a>
+          <a href="#voices">Voices</a>
           <a href="#how">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="#download">Join waitlist</a>
+          <a href="#join">Join waitlist</a>
         </div>
         <div class="foot-col">
           <h4>Guides</h4>
@@ -880,124 +1123,222 @@
 </footer>
 
 <script>
-  /* ── Reveal on scroll ── */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+  var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
+
+  /* ── 1 · Reveal on enter: blur, scale and rise settle out ── */
   (function () {
-    var els = document.querySelectorAll('[data-reveal]');
-    if (!('IntersectionObserver' in window) || !els.length) {
-      els.forEach(function (e) { e.classList.add('is-in'); });
+    var els = document.querySelectorAll('[data-rv]');
+    if (!('IntersectionObserver' in window) || reduce) {
+      each(els, function (e) { e.classList.add('in'); });
       return;
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+        var sweeps = en.target.classList.contains('sweep') ? [en.target] : en.target.querySelectorAll('.sweep');
+        setTimeout(function () { each(sweeps, function (s) { s.classList.add('lit'); }); }, 420);
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
-    els.forEach(function (e) { io.observe(e); });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.14 });
+    each(els, function (e) { io.observe(e); });
+
+    // the hairline between steps draws itself on the same trigger
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io2.unobserve(en.target); } });
+    }, { threshold: 0.2 });
+    each(document.querySelectorAll('.step'), function (e) { io2.observe(e); });
   })();
 
-  /* ── Nav scrolled state ── */
+  /* ── 2 · Word by word scroll reveal ── */
+  var wordBlocks = [];
   (function () {
-    var nav = document.getElementById('nav');
-    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 12); };
-    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    each(document.querySelectorAll('[data-words]'), function (el) {
+      var hl = (el.getAttribute('data-highlight') || '').split(',')
+        .map(function (s) { return s.trim().toLowerCase(); }).filter(Boolean);
+      var words = el.textContent.trim().split(/\s+/);
+      el.textContent = '';
+      var spans = words.map(function (w) {
+        var s = document.createElement('span');
+        s.className = 'w' + (hl.indexOf(w.toLowerCase()) > -1 ? ' hl' : '');
+        s.textContent = w;
+        el.appendChild(s);
+        el.appendChild(document.createTextNode(' '));
+        return s;
+      });
+      wordBlocks.push({ el: el, spans: spans });
+      if (reduce) spans.forEach(function (s) { s.style.opacity = 1; });
+    });
   })();
 
-  /* ── Cursor glow (pointer devices only) ── */
-  (function () {
-    if (window.matchMedia('(pointer: fine)').matches) {
-      var g = document.getElementById('cursorGlow');
-      window.addEventListener('mousemove', function (e) {
-        g.style.left = e.clientX + 'px'; g.style.top = e.clientY + 'px'; g.style.opacity = '1';
+  function paintWords() {
+    if (reduce) return;
+    var vh = window.innerHeight;
+    wordBlocks.forEach(function (b) {
+      var r = b.el.getBoundingClientRect();
+      if (r.bottom < -240 || r.top > vh + 240) return;
+      // 0 as the block's top passes 84% of the viewport, 1 once it has cleared
+      var p = clamp((vh * 0.84 - r.top) / (r.height + vh * 0.30), 0, 1);
+      var n = b.spans.length;
+      for (var i = 0; i < n; i++) {
+        var t = clamp((p - i / n) * n, 0, 1);
+        b.spans[i].style.opacity = (0.13 + t * 0.87).toFixed(3);
+      }
+    });
+  }
+
+  /* ── 3 · The voice IS the accent (the app wears your voice) ── */
+  var root = document.documentElement;
+  var drafts = document.querySelectorAll('.draft');
+  var railBtns = document.querySelectorAll('#vxRail button');
+  var vxTitles = document.querySelectorAll('.vx-title');
+  var vxCards = document.querySelectorAll('.vx-card');
+  var ORDER = ['genuine', 'rizz', 'roast'];
+  var current = 'rizz';
+
+  function setVoice(v, from) {
+    if (!v || v === current) return;
+    current = v;
+    root.setAttribute('data-voice', v);
+    each(drafts, function (d) {
+      var on = d.getAttribute('data-voice') === v;
+      d.classList.toggle('on', on);
+      d.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    var idx = ORDER.indexOf(v);
+    each(vxTitles, function (t) { t.classList.toggle('on', +t.getAttribute('data-stage') === idx); });
+    each(vxCards, function (c) {
+      var on = +c.getAttribute('data-stage') === idx;
+      c.classList.toggle('on', on);
+      if (on && !reduce) {
+        var s = c.querySelector('.sweep');
+        if (s) { s.classList.remove('lit'); void s.offsetWidth; s.classList.add('lit'); }
+      }
+    });
+    each(railBtns, function (b) {
+      b.setAttribute('aria-selected', +b.getAttribute('data-go') === idx ? 'true' : 'false');
+    });
+    if (window.posthog && from) posthog.capture('demo_tone_clicked', { tone: v, from: from });
+  }
+
+  each(drafts, function (d) {
+    d.addEventListener('click', function () { setVoice(d.getAttribute('data-voice'), 'hero_phone'); });
+  });
+
+  var track = document.getElementById('vxTrack');
+  function pinned() { return track && window.innerWidth > 1000 && !reduce; }
+
+  each(railBtns, function (b) {
+    b.addEventListener('click', function () {
+      var idx = +b.getAttribute('data-go');
+      if (pinned()) {
+        var span = track.offsetHeight - window.innerHeight;
+        window.scrollTo({ top: track.offsetTop + span * ((idx + 0.5) / 3), behavior: 'smooth' });
+      } else {
+        setVoice(ORDER[idx], 'voice_rail');
+      }
+    });
+  });
+
+  /* ── 4 · Pinned voice stage: scroll picks the live voice ── */
+  function sizeTrack() {
+    if (!track) return;
+    // 2.6 viewports of scroll across 3 stages: enough room for each voice to
+    // land and settle, without turning the section into a tunnel.
+    track.style.height = pinned() ? Math.round(window.innerHeight * 2.6) + 'px' : '';
+  }
+  function paintStage() {
+    if (!pinned()) return;
+    var span = track.offsetHeight - window.innerHeight;
+    if (span <= 0) return;
+    var raw = clamp((window.scrollY - track.offsetTop) / span, 0, 1) * 3;
+    var idx = clamp(Math.floor(raw), 0, 2);
+    each(railBtns, function (b, i) {
+      var fill = b.querySelector('i');
+      if (fill) fill.style.width = (clamp(raw - i, 0, 1) * 100).toFixed(1) + '%';
+    });
+    // only claim the accent while the stage actually owns the screen
+    var r = track.getBoundingClientRect();
+    var mid = window.innerHeight * 0.5;
+    if (r.top < mid && r.bottom > mid) setVoice(ORDER[idx], null);
+  }
+
+  /* ── 5 · Nav state, pointer halo, device tilt ── */
+  var nav = document.getElementById('nav');
+  var halo = document.getElementById('halo');
+  var phone = document.getElementById('phone');
+
+  if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('mousemove', function (e) {
+      halo.style.left = e.clientX + 'px';
+      halo.style.top = e.clientY + 'px';
+      halo.style.opacity = '1';
+    }, { passive: true });
+    window.addEventListener('mouseleave', function () { halo.style.opacity = '0'; });
+
+    if (phone) {
+      var wrap = phone.parentElement;
+      wrap.addEventListener('mousemove', function (e) {
+        var r = wrap.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        phone.style.setProperty('--ry', (px * 8).toFixed(2) + 'deg');
+        phone.style.setProperty('--rx', (-py * 8).toFixed(2) + 'deg');
       }, { passive: true });
-      window.addEventListener('mouseleave', function () { g.style.opacity = '0'; });
+      wrap.addEventListener('mouseleave', function () {
+        phone.style.setProperty('--ry', '0deg');
+        phone.style.setProperty('--rx', '0deg');
+      });
     }
-  })();
+  }
 
-  /* ── Count-up numbers ── */
+  /* ── 6 · One rAF loop drives every scroll effect ── */
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    nav.classList.toggle('stuck', window.scrollY > 12);
+    paintWords();
+    paintStage();
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { sizeTrack(); onScroll(); }, { passive: true });
+  sizeTrack();
+  frame();
+
+  /* ── 7 · Count up ── */
   (function () {
-    var counted = new WeakSet();
-    var run = function (el) {
-      var to = parseInt(el.getAttribute('data-to'), 10) || 0, t0 = null, dur = 1200;
-      var step = function (ts) {
+    var done = new WeakSet();
+    function run(el) {
+      var to = parseInt(el.getAttribute('data-to'), 10) || 0, t0 = null, dur = 1400;
+      requestAnimationFrame(function step(ts) {
         if (!t0) t0 = ts;
         var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.round(to * e).toLocaleString();
         if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
+      });
+    }
+    var els = document.querySelectorAll('.count');
+    if (!('IntersectionObserver' in window) || reduce) {
+      each(els, function (e) { e.textContent = (+e.getAttribute('data-to')).toLocaleString(); });
+      return;
+    }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting && !counted.has(en.target)) { counted.add(en.target); run(en.target); }
+        if (en.isIntersecting && !done.has(en.target)) { done.add(en.target); run(en.target); }
       });
     }, { threshold: 0.6 });
-    document.querySelectorAll('.count').forEach(function (e) { io.observe(e); });
+    each(els, function (e) { io.observe(e); });
   })();
 
-  /* ── Phone tilt ── */
-  (function () {
-    var phone = document.getElementById('phone');
-    if (!phone || !window.matchMedia('(pointer: fine)').matches) return;
-    var wrap = phone.parentElement;
-    wrap.addEventListener('mousemove', function (e) {
-      var r = wrap.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
-      phone.style.setProperty('--ry', (px * 9).toFixed(2) + 'deg');
-      phone.style.setProperty('--rx', (-py * 9).toFixed(2) + 'deg');
-    });
-    wrap.addEventListener('mouseleave', function () {
-      phone.style.setProperty('--ry', '0deg'); phone.style.setProperty('--rx', '0deg');
-    });
-  })();
-
-  /* ── Interactive tone demo ── */
-  (function () {
-    var REPLIES = {
-      genuine: [
-        "honestly the pasta thing is half-lie — cacio e pepe is where my range ends. friday though, i'm in.",
-        "okay you've got me curious. what's the dish you'd actually want me to attempt?"
-      ],
-      rizz: [
-        "bold of you to assume i'd let you near my kitchen on a first date — counter offer: i cook, you pour the wine.",
-        "fair. friday, 8pm, bring an appetite and a strong opinion on cilantro."
-      ],
-      roast: [
-        "big talk from a profile that's three gym selfies and a dog that's clearly not yours.",
-        "i'll prove the pasta if you prove that 'low maintenance' line. friday. bring receipts."
-      ]
-    };
-    var sugs = document.getElementById('sugs');
-    var tones = document.querySelectorAll('.tone');
-    var timer = null;
-
-    function paint(list) {
-      sugs.innerHTML =
-        '<div class="sug top"><span class="tg">Best</span><span>' + list[0] + '</span></div>' +
-        '<div class="sug"><span class="tg">Alt</span><span>' + list[1] + '</span></div>';
-    }
-    function render(tone, instant) {
-      var list = REPLIES[tone] || REPLIES.rizz;
-      if (instant) { paint(list); return; }
-      sugs.innerHTML = '<div class="typing"><i></i><i></i><i></i></div>';
-      clearTimeout(timer);
-      timer = setTimeout(function () { paint(list); }, 620);
-    }
-    tones.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        tones.forEach(function (b) { b.classList.remove('on'); b.removeAttribute('aria-selected'); });
-        btn.classList.add('on'); btn.setAttribute('aria-selected', 'true');
-        render(btn.getAttribute('data-tone'));
-        if (window.posthog) posthog.capture('demo_tone_clicked', { tone: btn.getAttribute('data-tone') });
-      });
-    });
-    render('rizz', true);
-  })();
-
-  /* ── PostHog click events ── */
+  /* ── 8 · PostHog click events ── */
   document.addEventListener('click', function (e) {
-    var el = e.target.closest('[data-ph-event]');
+    var el = e.target.closest && e.target.closest('[data-ph-event]');
     if (!el || !window.posthog) return;
-    var name = el.getAttribute('data-ph-event');
     var props = {};
     for (var i = 0; i < el.attributes.length; i++) {
       var a = el.attributes[i];
@@ -1005,10 +1346,10 @@
         props[a.name.slice('data-ph-'.length)] = a.value;
       }
     }
-    posthog.capture(name, props);
+    posthog.capture(el.getAttribute('data-ph-event'), props);
   });
 
-  /* ── Waitlist (Supabase) ── */
+  /* ── 9 · Waitlist (Supabase) ── */
   (function () {
     var forms = document.querySelectorAll('form.waitlist');
     if (!forms.length) return;
@@ -1016,7 +1357,7 @@
     var SUPABASE_URL = 'https://qtkzacjyuasglgknxghg.supabase.co';
     var SUPABASE_ANON_KEY = 'sb_publishable_K4ZFQrnj4R7ILk7cuPNO7w_Fi17-qK3';
 
-    forms.forEach(function (form) {
+    each(forms, function (form) {
       var input = form.querySelector('.waitlist-email');
       var btn = form.querySelector('.waitlist-submit');
       var btnLabel = btn.querySelector('span');
@@ -1028,13 +1369,12 @@
         status.className = 'waitlist-status' + (kind ? ' ' + kind : '');
         status.textContent = msg || '';
       }
-
       function markJoined(email) {
         btn.disabled = true;
         btnLabel.textContent = 'You’re in';
         input.value = '';
         input.disabled = true;
-        setStatus('ok', 'Thanks — we’ll email you at ' + email + '.');
+        setStatus('ok', 'Thanks. We’ll email you at ' + email + '.');
       }
 
       form.addEventListener('submit', function (e) {
@@ -1079,6 +1419,7 @@
       });
     });
   })();
+})();
 </script>
 
 </body>

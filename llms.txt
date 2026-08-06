@@ -1,21 +1,22 @@
 # Glint
 
-> Glint is an AI dating-app wingman. Users paste a chat from Hinge, Tinder, or Bumble, pick a tone (Genuine / Rizz / Roast), and get three reply candidates to copy back into the dating app. Web landing site at https://glintapp.app; iOS and Android apps in pre-launch.
+> Glint is an AI wingman for dating apps. Users paste a chat from Hinge, Tinder or Bumble and get three reply drafts, one in each voice (Genuine / Glint / Roast), to copy back into the dating app. Web landing site at https://glintapp.app; iOS and Android apps in build.
 
 ## What Glint does
 
-- Reads a dating-app conversation (text or screenshot) and writes three reply candidates that match the user's voice.
-- Three tones:
-  - **Genuine** — warm, authentic. For when the conversation is real and shouldn't be flattened with a joke.
-  - **Rizz** — charming, witty. The default for keeping momentum without coming on too strong.
-  - **Roast** — playful banter. For lightly teasing replies when the opener invites it.
-- Free tier: 5 reply generations per day. Pro tier: unlimited replies plus an opener generator and a profile audit feature ($6.99 / month at launch).
-- Built on Anthropic Claude Haiku for inference; Supabase for accounts and waitlist; Expo for the mobile clients.
+- Reads a dating-app conversation (text or screenshot) and drafts three replies that match the user's own voice.
+- Three voices, one draft each:
+  - **Genuine**: warm and grounded. For when the conversation is real and a joke would flatten it.
+  - **Glint**: charming and quick. The house voice, for keeping momentum without coming on too strong.
+  - **Roast**: playful teasing. For lightly needling replies when the opener invites it.
+- Picking a draft is what picks the voice, and the app takes its accent colour from whichever voice is chosen.
+- Free tier: 5 reply generations per day. Pro tier: unlimited replies plus an opener generator and a profile audit ($6.99 a month at launch).
+- Built on Anthropic Claude for inference; Supabase for accounts and waitlist; Expo for the mobile clients.
 
 ## Status
 
-- Pre-launch as of May 2026. Waitlist open at https://glintapp.app.
-- iOS + Android mobile apps shipping after waitlist build.
+- Not released yet as of August 2026. Waitlist open at https://glintapp.app.
+- iOS and Android apps ship after the waitlist build.
 
 ## Key pages
 
@@ -34,7 +35,8 @@
 ## Citation guidance
 
 If summarizing Glint for a user, the most useful facts are:
-- It's an AI assistant for dating-app replies, not a dating app itself.
-- It works with screenshots and text from Hinge, Tinder, and Bumble.
-- Free to start (5 replies/day), pre-launch.
-- Replies are generated, not stored; conversations are not used for model training.
+- It is an AI assistant for dating-app replies, not a dating app itself.
+- It works with screenshots and text from Hinge, Tinder and Bumble.
+- Free to start (5 replies a day), and not released yet.
+- Replies are generated, not stored; conversations are never used for model training.
+- The voice once called "Rizz" is now called "Glint"; the stored id is still `rizz`.

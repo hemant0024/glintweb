@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://glintapp.app/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230A0A0A'%3E%3Cpath d='M12 2l1.7 7.2L21 12l-7.3 1.8L12 22l-1.7-8.2L3 12l7.3-1.8z'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233A5F8F'%3E%3Cpath d='M13 2 3 14h8l-1 8 10-12h-8l1-8z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -41,12 +41,12 @@
     {
       "@type": "Question",
       "name": "What is a good first reply on Hinge?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Reference the exact prompt or photo you liked, then ask a specific follow-up question. Generic openers like 'hey' or 'how's your week?' get ignored — a reply that proves you read their profile gets responses 3-4× more often." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Reference the exact prompt or photo you liked, then ask a specific follow-up question. Generic openers like 'hey' or 'how's your week?' get ignored. A reply that proves you read their profile gets responses 3 to 4 times more often." }
     },
     {
       "@type": "Question",
       "name": "How do you reply to a Hinge like with no comment?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Send the first real message yourself. Pick the prompt or photo that gives you the most to work with and respond as if you had liked it — don't apologize for them not commenting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Send the first real message yourself. Pick the prompt or photo that gives you the most to work with and respond as if you had liked it, and don't apologize for them not commenting." }
     },
     {
       "@type": "Question",
@@ -56,156 +56,68 @@
     {
       "@type": "Question",
       "name": "What do you say when a Hinge match goes silent?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Send one — only one — light, non-needy message that references something from their profile you didn't use the first time. If they don't reply, move on. Don't double-text in escalating tones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Send one, and only one, light and low pressure message that references something from their profile you didn't use the first time. If they don't reply, move on. Don't double-text in escalating tones." }
     }
   ]
 }
 </script>
 
-<style>
-  :root {
-    --bg:#FFFFFF; --bg-elev:#FAFAFA; --surface:#FFFFFF; --surface-2:#F4F4F5; --surface-3:#ECECEE;
-    --border:rgba(0,0,0,0.08); --border-strong:rgba(0,0,0,0.22); --divider:rgba(0,0,0,0.10);
-    --ink:#0A0A0A; --ink-bright:#000000; --ink-inverse:#FFFFFF;
-    --ink2:rgba(10,10,10,0.62); --ink3:rgba(10,10,10,0.44); --ink4:rgba(10,10,10,0.26);
-    --presence:#5EEAD4;
-    --mono:"Geist Mono","JetBrains Mono",ui-monospace,monospace; --serif:"Instrument Serif",Georgia,serif; --ease:cubic-bezier(.2,.7,.2,1);
-    --font:"Geist","Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-    --mono:"JetBrains Mono",ui-monospace,monospace;
-    --serif:"Instrument Serif",Georgia,serif;
-    --glow:0 12px 34px rgba(0,0,0,0.16);
-  }
-  *,*::before,*::after { box-sizing:border-box; }
-  body { margin:0; font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-  ::selection { background:rgba(0,0,0,0.12); color:#000; }
-  a { color:var(--ink); text-decoration:none; border-bottom:1px solid var(--divider); padding-bottom:1px; transition:color .15s ease,border-color .15s ease; }
-  a:hover { color:var(--ink-bright); border-color:var(--ink3); }
-  .container { max-width:720px; margin:0 auto; padding:0 24px; }
-  .nav { position:sticky; top:0; z-index:50; border-bottom:1px solid var(--border); padding:14px 0; background:rgba(255,255,255,0.72); backdrop-filter:blur(20px) saturate(140%); -webkit-backdrop-filter:blur(20px) saturate(140%); }
-  .nav-inner { display:flex; justify-content:space-between; align-items:center; }
-  .brand { display:flex; align-items:center; gap:9px; font-weight:700; font-size:18px; letter-spacing:-0.6px; color:var(--ink-bright); border:0; }
-  .brand:hover { color:var(--ink-bright); }
-  .spark { width:18px; height:18px; color:var(--ink-bright); flex:none; filter:none; }
-  .nav .links a { color:var(--ink2); font-size:14px; margin-left:22px; border:0; padding:0; }
-  .nav .links a:hover { color:var(--ink); }
-  @media (max-width:560px){ .nav .links a { margin-left:14px; font-size:13px; } }
-  main { padding:56px 0 96px; }
-  h1 { font-size:clamp(32px,4.5vw,46px); font-weight:700; letter-spacing:-1.2px; margin:0 0 14px; line-height:1.1; color:var(--ink-bright); }
-  .meta { color:var(--ink3); font-size:12px; font-family:var(--mono); letter-spacing:1.5px; margin:0 0 36px; text-transform:uppercase; }
-  .lede { font-size:19px; color:var(--ink2); margin:0 0 36px; letter-spacing:-0.1px; }
-  h2 { font-size:24px; font-weight:700; letter-spacing:-0.5px; margin:48px 0 14px; color:var(--ink-bright); }
-  h3 { font-size:17px; font-weight:600; margin:28px 0 8px; letter-spacing:-0.2px; }
-  p,li { color:var(--ink2); font-size:16px; }
-  ul,ol { padding-left:22px; margin:12px 0 20px; }
-  li { margin-bottom:8px; }
-  li::marker { color:var(--ink3); }
-  strong { color:var(--ink); font-weight:600; }
-  em { color:var(--ink); font-style:italic; }
-  blockquote { margin:16px 0; padding:14px 18px; background:var(--surface); border-left:2px solid var(--border-strong); border-radius:0 12px 12px 0; color:var(--ink); font-style:italic; }
-  blockquote.them { border-left-color:var(--presence); }
-  .reply-block { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px 20px; margin:14px 0; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.05); }
-  .reply-block .label { font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--ink3); text-transform:uppercase; }
-  .reply-block.bad { border-color:rgba(220,38,38,0.32); }
-  .reply-block.bad .label { color:#DC2626; }
-  .reply-block.good { border-color:var(--border-strong); }
-  .reply-block.good .label { color:var(--ink-bright); }
-  .reply-block .prompt { font-size:13px; color:var(--ink3); margin:4px 0 10px; font-style:italic; }
-  .reply-block .reply { color:var(--ink); font-size:15.5px; }
-  .checklist { list-style:none; padding-left:0; }
-  .checklist li { position:relative; padding-left:28px; margin-bottom:12px; }
-  .checklist li::before { content:""; position:absolute; left:0; top:7px; width:16px; height:16px; border-radius:5px; background:var(--surface-2); border:1px solid var(--border-strong); }
-  .checklist li::after { content:"\2713"; position:absolute; left:3.5px; top:3px; color:var(--ink-bright); font-size:11px; font-weight:700; }
-  .cta { margin:56px 0 0; padding:34px; border-radius:24px; background:radial-gradient(90% 130% at 50% 0%, rgba(0,0,0,0.035), transparent 60%), var(--surface); border:1px solid var(--border); box-shadow:0 12px 34px rgba(0,0,0,0.08); }
-  .cta h3 { margin:0 0 8px; font-size:22px; color:var(--ink-bright); letter-spacing:-0.4px; }
-  .cta p { margin:0 0 18px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px; background:var(--ink-bright); color:var(--ink-inverse); font-weight:600; border:0; box-shadow:var(--glow); transition:transform .15s ease,opacity .15s ease; }
-  .btn:hover { opacity:0.93; transform:translateY(-1px); color:var(--ink-inverse); }
-  footer { border-top:1px solid var(--border); padding:28px 0; color:var(--ink3); font-size:13px; }
-  .foot-inner { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  .foot-inner a { color:var(--ink3); margin-left:18px; border:0; }
-  .foot-inner a:first-child { margin-left:0; }
-  .foot-inner a:hover { color:var(--ink); }
-  .related { margin:56px 0 0; padding-top:32px; border-top:1px solid var(--border); }
-  .related h3 { margin:0 0 14px; font-size:13px; color:var(--ink3); font-family:var(--mono); letter-spacing:2px; text-transform:uppercase; }
-  .related ul { list-style:none; padding:0; }
-  .related li { margin-bottom:8px; }
-  .related a { font-weight:500; }
-
-  /* ── Atmosphere ── */
-  ::selection { background:rgba(0,0,0,0.12); color:#000; }
-  ::-webkit-scrollbar { width:10px; }
-  ::-webkit-scrollbar-track { background:#fff; }
-  ::-webkit-scrollbar-thumb { background:#d8d8dc; border-radius:10px; border:2px solid #fff; }
-  .fx { position:fixed; inset:0; pointer-events:none; }
-  .fx-aurora { z-index:0; background:
-      radial-gradient(640px 420px at 78% -10%, rgba(0,0,0,0.03), transparent 62%),
-      radial-gradient(520px 480px at 6% 6%, rgba(0,0,0,0.022), transparent 60%);
-      animation:drift 26s var(--ease) infinite alternate; }
-  @keyframes drift { 0%{transform:translate3d(0,0,0) scale(1);} 100%{transform:translate3d(-2%,1.5%,0) scale(1.06);} }
-  .fx-grain { z-index:1; opacity:0.035; mix-blend-mode:multiply;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  .cursor-glow { position:fixed; top:0; left:0; width:500px; height:500px; z-index:1; pointer-events:none;
-      border-radius:50%; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease;
-      background:radial-gradient(circle, rgba(0,0,0,0.035), transparent 62%); mix-blend-mode:multiply; }
-  main, footer { position:relative; z-index:2; }
-  .nav { transition:background .3s ease, border-color .3s ease; }
-  .nav.scrolled { background:rgba(255,255,255,0.78) !important; backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom-color:var(--border) !important; }
-  main { animation:fadeup .7s var(--ease) both; }
-  @keyframes fadeup { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:none;} }
-  h1 { background:linear-gradient(176deg,#0A0A0A 22%, rgba(10,10,10,0.58) 100%);
-       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
-  @media (prefers-reduced-motion:reduce){ *{animation:none !important;} main{opacity:1;transform:none;} }
-</style>
+<link rel="stylesheet" href="/glint.css" />
 </head>
 <body>
 
 <div class="fx fx-aurora"></div>
+<div class="fx fx-grid"></div>
 <div class="fx fx-grain"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<div class="pointer-halo" id="halo"></div>
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="/" class="brand"><span>Glint</span></a>
-    <div class="links">
-      <a href="/">Home</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Glint home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+      Glint
+    </a>
+    <div class="nav-links">
       <a href="/tinder-openers">Tinder openers</a>
-      <a href="/ai-dating-assistant">AI assistant guide</a>
+      <a href="/ai-dating-assistant">AI assistant</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#join" class="nav-cta">Join waitlist</a>
     </div>
   </div>
 </nav>
 
-<main>
+<main class="doc">
   <div class="container">
-    <p class="meta">HINGE · UPDATED 26 MAY 2026</p>
-    <h1>How to Reply on Hinge: 25+ Examples That Actually Get Responses</h1>
-    <p class="lede">Most Hinge replies fail for the same three reasons: too generic, too eager, or too long. Here&rsquo;s what to send instead — with concrete examples for prompts, photo likes, and conversations that have gone quiet.</p>
+    <p class="meta" data-rv="fade"><span class="tick"></span> HINGE · UPDATED 26 MAY 2026</p>
+    <h1 data-rv>How to Reply on Hinge: 25+ Examples That Actually Get Responses</h1>
+    <p class="lede" data-rv style="--d:90ms">Most Hinge replies fail for the same three reasons: too generic, too eager, or too long. Here&rsquo;s what to send instead, with concrete examples for prompts, photo likes, and conversations that have gone quiet.</p>
 
     <h2>The one rule that beats every &ldquo;tip&rdquo; you&rsquo;ll read</h2>
-    <p>Reference something <em>specific</em> from their profile. Not &ldquo;your photos are great&rdquo; — the photo of them at Joshua Tree wearing the absurdly large hat. Specificity proves you read the profile and gives the other person something concrete to respond to. Hinge&rsquo;s own data has shown that messages referencing a specific photo or prompt get replied to ~3× more than generic ones.</p>
+    <p>Reference something <em>specific</em> from their profile. Not &ldquo;your photos are great&rdquo;, but the photo of them at Joshua Tree wearing the absurdly large hat. Specificity proves you read the profile and gives the other person something concrete to respond to. Hinge&rsquo;s own data has shown that messages referencing a specific photo or prompt get replied to ~3× more than generic ones.</p>
     <p>Everything below is an application of that rule.</p>
 
     <h2>Replies for the most common Hinge prompts</h2>
 
     <h3>&ldquo;Two truths and a lie&rdquo;</h3>
     <p>Don&rsquo;t guess at random. Pick the one that&rsquo;s either the boldest claim or has a detail that only a real story would include.</p>
-    <div class="reply-block">
+    <div class="reply-block" data-rv="fade">
       <div class="label">REPLY</div>
       <div class="prompt">Their prompt: &ldquo;I&rsquo;ve been to 14 countries / I make my own pasta / I once got booed off stage at karaoke.&rdquo;</div>
-      <div class="reply">the karaoke one is true — there&rsquo;s no way you&rsquo;d include &ldquo;booed off stage&rdquo; if you were making it up. what song was it?</div>
+      <div class="reply">the karaoke one is true. there&rsquo;s no way you&rsquo;d include &ldquo;booed off stage&rdquo; if you were making it up. what song was it?</div>
     </div>
     <p>The follow-up question is the whole game here. Without it, they have to do all the work.</p>
 
     <h3>&ldquo;The way to win me over is…&rdquo;</h3>
     <p>Don&rsquo;t literally try to win them over in the message. Acknowledge what they said and add yourself to it.</p>
-    <div class="reply-block">
+    <div class="reply-block" data-rv="fade">
       <div class="label">REPLY</div>
       <div class="prompt">&ldquo;The way to win me over is bring me coffee unprompted.&rdquo;</div>
       <div class="reply">noted, but I need to know your coffee order before I commit. (the &ldquo;unprompted&rdquo; rule has loopholes.)</div>
     </div>
 
     <h3>&ldquo;A shower thought I recently had…&rdquo;</h3>
-    <p>Reply with a shower thought of your own — escalate, don&rsquo;t analyze theirs.</p>
-    <div class="reply-block">
+    <p>Reply with a shower thought of your own. Escalate, don&rsquo;t analyze theirs.</p>
+    <div class="reply-block" data-rv="fade">
       <div class="label">REPLY</div>
       <div class="prompt">&ldquo;Bananas are berries but strawberries aren&rsquo;t. Nothing is real.&rdquo;</div>
       <div class="reply">also: a hot dog is a sandwich, and I will die on this hill. defend your stance.</div>
@@ -213,19 +125,19 @@
 
     <h3>&ldquo;Dating me is like…&rdquo;</h3>
     <p>Avoid sarcastic put-downs (they read as insecure). Stay in their frame.</p>
-    <div class="reply-block">
+    <div class="reply-block" data-rv="fade">
       <div class="label">REPLY</div>
       <div class="prompt">&ldquo;Dating me is like having a personal hype-man with strong opinions on pizza.&rdquo;</div>
       <div class="reply">strong opinions on pizza are the kind of red flag I look for. what&rsquo;s the worst pizza take you&rsquo;ll defend in public?</div>
     </div>
 
     <h2>Replying to a photo like (no comment)</h2>
-    <p>About 60% of Hinge likes don&rsquo;t have a comment attached. Don&rsquo;t apologize for that — just send the first real message yourself.</p>
+    <p>About 60% of Hinge likes don&rsquo;t have a comment attached. Don&rsquo;t apologize for that. Just send the first real message yourself.</p>
     <p>Pick whichever element gives you the most to work with: usually a photo with a clear setting (a trip, a hobby, a pet) or a prompt with a hook.</p>
-    <div class="reply-block">
+    <div class="reply-block" data-rv="fade">
       <div class="label">REPLY</div>
       <div class="prompt">They liked a photo of you, no comment. You see they have a photo at a climbing gym.</div>
-      <div class="reply">since the algorithm didn&rsquo;t give me a prompt to work with — that&rsquo;s clearly a Mission Cliffs photo. how long have you been climbing?</div>
+      <div class="reply">since the algorithm didn&rsquo;t give me a prompt to work with, so i&rsquo;ll improvise: that&rsquo;s clearly a Mission Cliffs photo. how long have you been climbing?</div>
     </div>
 
     <h2>Reviving a conversation that&rsquo;s gone quiet</h2>
@@ -233,13 +145,13 @@
     <p>What works:</p>
     <ul>
       <li><strong>The callback.</strong> &ldquo;just saw a guy in line at the bagel place with the exact jacket from your second photo. unrelated, but felt like you should know.&rdquo;</li>
-      <li><strong>The new hook.</strong> &ldquo;going back to your profile — you can&rsquo;t put &lsquo;I&rsquo;ll out-argue you about The Bear&rsquo; in your prompts and not expect questions.&rdquo;</li>
+      <li><strong>The new hook.</strong> &ldquo;going back to your profile: you can&rsquo;t put &lsquo;I&rsquo;ll out-argue you about The Bear&rsquo; in your prompts and not expect questions.&rdquo;</li>
       <li><strong>The honest one.</strong> &ldquo;i lost the thread but I still want to know what your karaoke song was.&rdquo;</li>
     </ul>
     <p>What doesn&rsquo;t work: &ldquo;hey, you ghosted me lol&rdquo;, &ldquo;guess you&rsquo;re not interested&rdquo;, or any version of asking for the reply you didn&rsquo;t get.</p>
 
     <h2>Replying to a long, thoughtful message</h2>
-    <p>Mirror the energy. If they sent four sentences, send three or four back — not one word, not eight sentences. Pick the one most interesting thing they said and dig into it.</p>
+    <p>Mirror the energy. If they sent four sentences, send three or four back, not one word and not eight sentences. Pick the one most interesting thing they said and dig into it.</p>
     <p>The most common mistake here is over-answering every point in their message. You don&rsquo;t need to address all of it. Pick the thread you want to follow.</p>
 
     <h2>When humor backfires</h2>
@@ -251,39 +163,67 @@
     </ol>
 
     <h2>How AI fits in (without sounding like a chatbot)</h2>
-    <p>AI dating tools are useful for the awkward middle: when you&rsquo;ve read the profile, you have <em>something</em> in mind, but the phrasing isn&rsquo;t landing. The trap is letting the AI write the entire message — that&rsquo;s when replies start to feel generic.</p>
-    <p>The trick is to use AI for variation, then pick the option closest to how you&rsquo;d actually talk. <a href="/">Glint</a> generates three replies on different tones (warm / charming / playful), so you can compare and edit instead of accepting whatever the first draft says.</p>
+    <p>AI dating tools are useful for the awkward middle: when you&rsquo;ve read the profile, you have <em>something</em> in mind, but the phrasing isn&rsquo;t landing. The trap is letting the AI write the entire message, which is when replies start to feel generic.</p>
+    <p>The trick is to use AI for variation, then pick the option closest to how you&rsquo;d actually talk. <a href="/">Glint</a> drafts three replies, one in each voice (Genuine, Glint, Roast), so you can compare and edit instead of accepting whatever the first draft says.</p>
 
-    <div class="cta">
-      <h3>Get three replies, instantly</h3>
-      <p>Glint reads the chat and the profile, picks up your voice, and gives you three on-tone options to choose from. Free to start — join the waitlist for early access.</p>
-      <a href="/#download" class="btn">Join the waitlist →</a>
+    <div class="doc-cta sweep" data-rv>
+      <span class="eyebrow"><span class="tick"></span> Early access</span>
+      <h3>Get three replies,<br/><em>instantly</em></h3>
+      <p>Glint reads the chat and the profile, picks up your voice, and gives you three drafts to choose from, one per voice. Free to start, and the waitlist gets early access.</p>
+      <a href="/#join" class="btn btn-primary" data-ph-event="guide_cta_clicked" data-ph-guide="hinge-replies">Join the waitlist &rarr;</a>
     </div>
 
-    <div class="related">
-      <h3>Related guides</h3>
-      <ul>
-        <li><a href="/tinder-openers">Best Tinder openers that actually get replies</a></li>
-        <li><a href="/ai-dating-assistant">What is an AI dating assistant? A practical guide</a></li>
-      </ul>
+    <div class="related" data-rv="fade">
+      <h3>Keep reading</h3>
+      <div class="related-grid">
+        <a href="/tinder-openers"><span class="k">Tinder</span><span class="t">Best Tinder openers that get replies</span></a>
+        <a href="/ai-dating-assistant"><span class="k">AI</span><span class="t">What is an AI dating assistant?</span></a>
+      </div>
     </div>
   </div>
 </main>
 
 <footer>
-  <div class="container foot-inner">
-    <div>© 2026 Glint</div>
-    <div>
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+  <div class="container">
+    <div class="foot-top">
+      <div class="lead">
+        <a href="/" class="brand">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+          Glint
+        </a>
+        <p>The AI wingman for dating apps. Paste a chat, pick a voice, send the reply that actually lands.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="/#voices">Voices</a>
+          <a href="/#how">How it works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#join">Join waitlist</a>
+        </div>
+        <div class="foot-col">
+          <h4>Guides</h4>
+          <a href="/hinge-replies">Hinge replies</a>
+          <a href="/tinder-openers">Tinder openers</a>
+          <a href="/ai-dating-assistant">AI dating assistant</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="mailto:khanna.hemant3@gmail.com">Support</a>
+          <a href="https://github.com/hemant0024/glintweb" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Glint. All rights reserved.</span>
+      <span>Made for better conversations.</span>
     </div>
   </div>
+  <div class="watermark" aria-hidden="true">Glint</div>
 </footer>
 
-<script>
-  (function(){var n=document.querySelector('.nav');if(n){var f=function(){n.classList.toggle('scrolled',window.scrollY>12)};f();window.addEventListener('scroll',f,{passive:true});}})();
-  (function(){if(window.matchMedia('(pointer:fine)').matches){var g=document.getElementById('cursorGlow');if(!g)return;window.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';g.style.opacity='1';},{passive:true});window.addEventListener('mouseleave',function(){g.style.opacity='0';});}})();
-</script>
+<script src="/glint.js" defer></script>
 </body>
 </html>
